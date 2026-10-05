@@ -1,0 +1,361 @@
+/* Importa a fonte Quicksand do Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+/* Reset básico aplicado a todos os elementos da página. */
+* {
+    /* Remove os espaçamentos internos criados pelo navegador. */
+    padding: 0;
+
+    /* Remove as margens criadas pelo navegador. */
+    margin: 0;
+
+    /* Inclui padding e border no tamanho total do elemento. */
+    box-sizing: border-box;
+}
+
+body {
+    /* Define a cor de fundo da página. */
+    background-color: rgb(24, 24, 24);
+
+    /* Usa a fonte importada; sans-serif é a fonte reserva. */
+    font-family: "Quicksand", sans-serif;
+
+    /* Faz o body ocupar no mínimo toda a altura da tela. */
+    min-height: 100vh;
+
+    /* Evita uma barra horizontal causada por algum elemento muito largo. */
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(119, 167, 0, 0.12),
+            transparent 35rem
+        ),
+        rgb(24, 24, 24);
+}
+
+.header {
+    /* Ocupa 90% da largura disponível. */
+    width: 90%;
+
+    /* Impede que o header fique largo demais em monitores grandes. */
+    max-width: 1400px;
+
+    /* Centraliza o header horizontalmente. */
+    margin: 0 auto;
+
+    /* Cria espaço interno: 1rem vertical e 1.25rem horizontal. */
+    padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 4vw, 2.25rem);
+
+    /* Coloca o título e a navegação lado a lado. */
+    display: flex;
+
+    /* Mantém o título à esquerda e a navegação à direita. */
+    justify-content: space-between;
+
+    /* Centraliza verticalmente os elementos do header. */
+    align-items: center;
+
+    /* Mantém um espaço mínimo entre o título e a navegação. */
+    gap: 1rem;
+
+    /* Aplica o fundo escuro semitransparente. */
+    background-color: rgba(1, 1, 1, 0);
+
+    margin-bottom: clamp(2rem, 6vw, 4rem);
+
+    border-radius: 0 0 8px 8px;
+}
+
+.header_title {
+    /* Define a cor do título. */
+    color: white;
+
+    /* Adapta a fonte à tela: mínimo, tamanho variável e máximo. */
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+
+    /* Impede que MYSERVER seja dividido em duas linhas. */
+    white-space: nowrap;
+
+    border: 1px solid white;
+
+    padding: 0.5rem;
+}
+
+.header_navigation {
+    /* Coloca os links lado a lado. */
+    display: flex;
+
+    /* Alinha os links no lado direito. */
+    justify-content: flex-end;
+
+    /* Centraliza os links verticalmente. */
+    align-items: center;
+
+    /* Cria um espaçamento igual entre todos os links. */
+    gap: 1rem;
+
+    /* Leva links para outra linha quando não houver espaço. */
+    flex-wrap: wrap;
+}
+
+.header_navigation a {
+    /* Ajuda o padding e o movimento a funcionarem corretamente. */
+    display: inline-block;
+
+    /* Aumenta a área clicável: vertical e horizontal. */
+    padding: 0.85rem clamp(0.8rem, 2vw, 1.5rem);
+
+    /* Define a aparência normal do link. */
+    color: white;
+    background-color: rgba(42, 45, 46, 0);
+    text-decoration: none;
+    border-radius: 7px;
+
+    /* Suaviza a mudança de cor e o movimento. */
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* :hover funciona com o mouse; :focus-visible funciona com o teclado. */
+.header_navigation a:hover,
+.header_navigation a:focus-visible {
+    /* Ativa o fundo verde. */
+    background-color: rgb(119, 167, 0);
+
+    /* Move o link dois pixels para cima. */
+    transform: translateY(-2px);
+}
+
+.main_title {
+    color: white;
+    text-align: center;
+
+    /* O título cresce com a tela, mas nunca fica pequeno ou grande demais. */
+    font-size: clamp(2.25rem, 7vw, 5rem);
+    font-weight: 300;
+    border-bottom: 1px solid white;
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
+    padding-bottom: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.main {
+    /* Grid permite que os cartões mudem de 3 para 2 e depois 1 coluna. */
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    gap: clamp(1.25rem, 3vw, 3rem);
+    padding-bottom: 3rem;
+}
+
+.plan_card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(42, 45, 46);
+
+    /* O cartão ocupa sua coluna e cresce se o conteúdo precisar. */
+    width: 100%;
+    min-width: 0;
+    min-height: 32rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border-radius: 15px;
+
+    /* Prepara uma animação suave para o hover. */
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.plan_card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+}
+
+.plan_badge {
+    align-self: flex-start;
+    margin: -0.4rem 0 1.15rem;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid rgb(119, 167, 0);
+    border-radius: 999px;
+    background: rgba(119, 167, 0, 0.12);
+    color: #b7e552;
+    font-size: clamp(0.66rem, 1vw, 0.75rem);
+    font-weight: 700;
+    letter-spacing: 0.045em;
+    line-height: 1.35;
+}
+
+.plan_title {
+    color: white;
+    border-bottom: 3px solid rgb(119, 167, 0);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-family: "Abel", sans-serif;
+    letter-spacing: 1px;
+}
+
+.plan_price_value {
+    color: white;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    font-family: "Abel", sans-serif;
+}
+
+.plan_price_month {
+    color: white;
+    font-size: 1rem;
+}
+
+.plane_price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.about_list {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 0.5rem 0 1.5rem 1.25rem;
+}
+
+.about_list li {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.4;
+}
+
+.about_list li::marker {
+    color: rgb(119, 167, 0);
+    font-size: 1.2rem;
+}
+
+.button_buy {
+    background-color: rgb(119, 167, 0);
+    margin-top: auto;
+    color: black;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.button_buy:hover,
+.button_buy:focus-visible {
+    background-color: white;
+    color: rgb(42, 45, 46);
+    transform: translateY(-2px);
+    box-shadow: 0 0.7rem 1.5rem rgba(119, 167, 0, 0.25);
+}
+
+/* Tablets: os cartões passam para duas colunas. */
+@media (max-width: 950px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header_navigation {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares: um cartão por linha e menu compacto. */
+@media (max-width: 650px) {
+    .header,
+    .main_title,
+    .main {
+        width: min(92%, 32rem);
+    }
+
+    .header_navigation {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .header_navigation a {
+        padding: 0.75rem;
+        text-align: center;
+    }
+
+    .main {
+        grid-template-columns: 1fr;
+    }
+
+    .plan_card {
+        min-height: auto;
+    }
+
+    .plane2 {
+        transform: none;
+    }
+
+    .button_buy {
+        margin-top: 1.5rem;
+    }
+}
+
+/* Reduz movimentos para usuários que ativaram essa preferência no sistema. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+.plane2 {
+    border: 2px solid rgb(119, 167, 0);
+    transform: scale(1.03);
+    box-shadow: 0 0 2rem rgba(119, 167, 0, 0.08);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.plan_card {
+    animation: aparecer 0.7s ease both;
+}
+
+.plane2 {
+    animation-delay: 0.15s;
+}
+
+.plane3 {
+    animation-delay: 0.3s;
+}

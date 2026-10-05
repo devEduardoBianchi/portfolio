@@ -1,0 +1,10 @@
+# Portfólio — Atlas de Sinais
+
+- **Propósito:** apresentar a recrutadores a capacidade de Eduardo Pires Bianchi de construir interfaces e fluxos completos, com projetos verificáveis e contato direto.
+- **Tese visual:** um mapa técnico de conexões, com tipografia sem serifa direta e detalhes de grade, rotas e pontos que sugerem a passagem de estrutura para interação e dados. A arte é original, abstrata e não contém interfaces ou métricas fictícias. Sua filosofia está em `assets/signal-atlas-philosophy.md`.
+- **Composição:** a primeira tela é apenas a apresentação de Eduardo. O Nexo Desk começa abaixo, em um capítulo próprio e com capturas reais. Entre Cenas, Forma e Price Cards seguem em linhas editoriais; sobre, formação e contato encerram o percurso.
+- **Cor e material:** o tema escuro é o padrão; o claro conserva a mesma estrutura. Superfícies azul-noite ou azul-gelo, linhas finas e um acento ciano/teal orientam ações, foco e índices. As imagens dos projetos mantêm as identidades próprias.
+- **Cursos:** o curso Desenvolvimento Frontend permanece isolado. Quatro cursos de JavaScript somam 40 h; quatro de HTML e CSS somam 42 h; Internet: fundamentos da web tem 8 h; Lógica de Programação tem 6 h. Os subtítulos deixam claro que as somas representam grupos de cursos.
+- **Interação:** PT/EN e claro/escuro são botões independentes, com `aria-pressed` e preferências salvas localmente. A timeline GSAP introduz a abertura, ScrollTrigger acompanha a leitura e os links respondem a hover/foco. O conteúdo existe sem animação e `prefers-reduced-motion` omite efeitos não essenciais.
+- **Responsive:** o layout mantém ordem de leitura em 320–1440 px. Navegação e controles ocupam duas linhas no celular; a arte perde intensidade atrás do texto; as capturas e os cursos se reorganizam sem rolagem lateral.
+- **Acabamento:** conferir os dois temas e idiomas, foco, contraste, estados dos botões, curso/PDF, capturas reais, largura em celular/tablet/desktop, ausência de erros no navegador e validação do JavaScript.

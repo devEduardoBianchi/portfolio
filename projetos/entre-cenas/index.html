@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10110f" />
+    <meta
+      name="description"
+      content="Descubra filmes, organize sua lista e anote o que ficou depois da sessão."
+    />
+    <title>Entre Cenas — seu diário de cinema</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2310110f'/%3E%3Crect x='19' y='14' width='17' height='36' fill='none' stroke='%23f1eee6' stroke-width='3'/%3E%3Cpath d='M36 24 54 18v28L36 40z' fill='%23e6ad65'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="theme-cinema.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#explore-view">Pular para os filmes</a>
+    <div class="page-shell">
+      <header class="site-header">
+        <a
+          class="brand"
+          href="#inicio"
+          aria-label="Entre Cenas, voltar ao início"
+        >
+          <span class="brand-icon" aria-hidden="true"><span></span></span>
+          <span>entre<span class="brand-accent">cenas.</span></span>
+        </a>
+        <div class="header-actions">
+          <span class="header-caption">DIÁRIO DE CINEMA</span>
+          <button
+            id="open-settings"
+            class="icon-button"
+            type="button"
+            aria-label="Configurar catálogo de filmes"
+            title="Configurar catálogo"
+          >
+            <span class="settings-mark" aria-hidden="true">TMDb</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="inicio">
+        <section class="hero" aria-labelledby="page-title">
+          <span class="projection-sweep" aria-hidden="true"></span>
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span> DESCUBRA · ASSISTA · REGISTRE
+            </p>
+            <h1 id="page-title">
+              <span class="hero-word">Descubra filmes.</span>
+              <span class="hero-word">Anote o que fica.</span>
+            </h1>
+            <p>
+              Organize os filmes que quer assistir e escreva uma nota depois da sessão.
+            </p>
+            <button class="hero-link" type="button" data-go="explore" data-magnetic>
+              Ver filmes <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div class="hero-art">
+            <figure class="hero-art-frame">
+              <img class="hero-art-image" src="assets/hero-projection-dark.png" alt="Projetor de cinema iluminando uma tela âmbar em uma sala escura" fetchpriority="high" width="1672" height="936" />
+              <figcaption>Uma sessão termina. A lembrança continua.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <div class="film-marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <div class="marquee-group">
+              <span>FILMES</span><i></i><span>SESSÕES</span><i></i><span>ANOTAÇÕES</span><i></i><span>LEMBRANÇAS</span><i></i><span>SUA LISTA</span><i></i>
+            </div>
+            <div class="marquee-group">
+              <span>FILMES</span><i></i><span>SESSÕES</span><i></i><span>ANOTAÇÕES</span><i></i><span>LEMBRANÇAS</span><i></i><span>SUA LISTA</span><i></i>
+            </div>
+          </div>
+        </div>
+
+        <section class="overview" aria-label="Resumo da sua coleção">
+          <div>
+            <span class="overview-number" id="overview-total">00</span
+            ><span class="overview-label">NA MINHA LISTA</span>
+          </div>
+          <div>
+            <span class="overview-number" id="overview-watched">00</span
+            ><span class="overview-label">JÁ ASSISTI</span>
+          </div>
+          <div>
+            <span class="overview-number" id="overview-pending">00</span
+            ><span class="overview-label">QUERO VER</span>
+          </div>
+          <p class="overview-note">
+            Filmes, sessões<br />e anotações em um lugar.
+          </p>
+        </section>
+
+        <nav class="section-nav" aria-label="Seções do aplicativo">
+          <button
+            class="nav-button is-active"
+            type="button"
+            data-view="explore"
+            aria-current="page"
+          >
+            <span>01</span> Descobrir
+          </button>
+          <button class="nav-button" type="button" data-view="library">
+            <span>02</span> Minha lista
+          </button>
+          <button class="nav-button" type="button" data-view="stats">
+            <span>03</span> Meu painel
+          </button>
+        </nav>
+
+        <section
+          id="explore-view"
+          class="app-section"
+          aria-labelledby="explore-title"
+        >
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">DESCOBRIR</p>
+              <h2 id="explore-title">Um filme para a próxima sessão.</h2>
+            </div>
+            <p id="catalog-source" class="source-badge">
+              CATÁLOGO DE DEMONSTRAÇÃO
+            </p>
+          </div>
+          <form id="search-form" class="search-form" role="search">
+            <label for="search-input" class="sr-only"
+              >Buscar filme pelo título</label
+            >
+            <span class="search-symbol" aria-hidden="true">⌕</span>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Digite o título de um filme"
+              autocomplete="off"
+              maxlength="100"
+            />
+            <button type="submit">
+              Buscar <span aria-hidden="true">↗</span>
+            </button>
+          </form>
+          <div class="catalog-toolbar">
+            <p id="catalog-heading">Filmes em destaque</p>
+            <p id="catalog-count"></p>
+          </div>
+          <p
+            id="catalog-message"
+            class="feedback-message"
+            role="status"
+            hidden
+          ></p>
+          <div id="catalog-grid" class="film-grid" aria-live="polite"></div>
+        </section>
+
+        <section
+          id="library-view"
+          class="app-section"
+          aria-labelledby="library-title"
+          hidden
+        >
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">MINHA LISTA</p>
+              <h2 id="library-title">Sua lista de filmes.</h2>
+            </div>
+            <p class="section-aside">
+              Reúna o que quer assistir e o que já viu.
+            </p>
+          </div>
+          <div class="library-toolbar">
+            <div
+              class="filter-group"
+              role="group"
+              aria-label="Filtrar sua lista"
+            >
+              <button
+                type="button"
+                class="filter-button is-active"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                Todos
+              </button>
+              <button
+                type="button"
+                class="filter-button"
+                data-filter="pending"
+                aria-pressed="false"
+              >
+                Quero ver
+              </button>
+              <button
+                type="button"
+                class="filter-button"
+                data-filter="watched"
+                aria-pressed="false"
+              >
+                Já vi
+              </button>
+            </div>
+            <label class="sort-label" for="sort-select"
+              >Ordenar por
+              <select id="sort-select">
+                <option value="recent">Mais recentes</option>
+                <option value="title">Título</option>
+                <option value="rating">Minha nota</option>
+              </select></label
+            >
+          </div>
+          <p
+            id="library-message"
+            class="feedback-message"
+            role="status"
+            hidden
+          ></p>
+          <div id="library-grid" class="film-grid"></div>
+        </section>
+
+        <section
+          id="stats-view"
+          class="app-section"
+          aria-labelledby="stats-title"
+          hidden
+        >
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">MEU PAINEL</p>
+              <h2 id="stats-title">O que você já viu.</h2>
+            </div>
+            <p class="section-aside">
+              Um resumo da sua coleção e das suas avaliações.
+            </p>
+          </div>
+          <div class="stat-cards">
+            <article class="stat-card">
+              <span>FILMES ASSISTIDOS</span><strong id="stat-watched">0</strong
+              ><small>na sua lista</small>
+            </article>
+            <article class="stat-card">
+              <span>QUERO VER</span><strong id="stat-pending">0</strong
+              ><small>na sua lista</small>
+            </article>
+            <article class="stat-card">
+              <span>NOTA MÉDIA</span><strong id="stat-average">—</strong
+              ><small>dos filmes avaliados</small>
+            </article>
+          </div>
+          <div class="insight-grid">
+            <article class="insight-card">
+              <div class="insight-heading">
+                <span class="eyebrow">GÊNEROS</span>
+              </div>
+              <h3>Mais vistos por você</h3>
+              <div id="genre-chart" class="genre-chart"></div>
+            </article>
+            <article class="insight-card quote-card" aria-labelledby="memory-heading">
+              <span class="eyebrow">ANOTAÇÕES DO DIÁRIO</span>
+              <h3 id="memory-heading">O que ficou da sessão.</h3>
+              <p id="memory-empty" class="memory-empty">
+                Suas anotações aparecem aqui depois que você registra a primeira.
+              </p>
+              <div id="memory-carousel" class="memory-carousel" hidden>
+                <blockquote>
+                  <p id="memory-note" aria-live="polite"></p>
+                  <footer>
+                    <cite id="memory-title"></cite>
+                    <span id="memory-date"></span>
+                  </footer>
+                </blockquote>
+                <div class="memory-controls" role="group" aria-label="Percorrer anotações">
+                  <span id="memory-position" class="memory-position"></span>
+                  <button id="memory-prev" type="button" aria-label="Anotação anterior">←</button>
+                  <button id="memory-next" type="button" aria-label="Próxima anotação">→</button>
+                </div>
+              </div>
+              <button type="button" class="text-link" data-go="explore">
+                Ver filmes <span aria-hidden="true">↗</span>
+              </button>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>entre<span class="brand-accent">cenas.</span></span>
+        <p>Seu catálogo, sua lista, suas lembranças.</p>
+        <div class="tmdb-credit">
+          <a
+            href="https://www.themoviedb.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+              alt="TMDB"
+              loading="lazy"
+          /></a>
+          <p>
+            This product uses the TMDB API but is not endorsed or certified by
+            TMDB.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <dialog
+      id="detail-dialog"
+      class="modal detail-modal"
+      aria-labelledby="detail-title"
+    >
+      <button
+        id="close-detail"
+        class="modal-close"
+        type="button"
+        aria-label="Fechar detalhes"
+      >
+        ×
+      </button>
+      <div class="detail-layout">
+        <div id="detail-poster" class="detail-poster"></div>
+        <div class="detail-content">
+          <p class="eyebrow">FICHA DO FILME</p>
+          <h2 id="detail-title"></h2>
+          <p id="detail-meta" class="detail-meta"></p>
+          <p id="detail-overview" class="detail-overview"></p>
+          <form id="detail-form">
+            <input id="detail-id" type="hidden" />
+            <div class="detail-fields">
+              <label for="detail-status"
+                >Na minha lista<select id="detail-status">
+                  <option value="pending">Quero ver</option>
+                  <option value="watched">Já vi</option>
+                  <option value="remove">Remover da lista</option>
+                </select></label
+              ><label for="detail-rating"
+                >Minha nota<select id="detail-rating">
+                  <option value="0">Ainda sem nota</option>
+                  <option value="1">★ 1</option>
+                  <option value="2">★★ 2</option>
+                  <option value="3">★★★ 3</option>
+                  <option value="4">★★★★ 4</option>
+                  <option value="5">★★★★★ 5</option>
+                </select></label
+              >
+            </div>
+            <label for="detail-date"
+              >Quando assisti<input id="detail-date" type="date" /></label
+            ><label for="detail-note"
+              >Minha anotação<textarea
+                id="detail-note"
+                rows="3"
+                maxlength="600"
+              placeholder="Anote uma cena, ideia ou sensação que ficou."
+              ></textarea></label
+            ><button class="primary-button" type="submit">
+              Salvar no diário <span aria-hidden="true">↗</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog
+      id="settings-dialog"
+      class="modal settings-modal"
+      aria-labelledby="settings-title"
+    >
+      <button
+        id="close-settings"
+        class="modal-close"
+        type="button"
+        aria-label="Fechar configurações"
+      >
+        ×
+      </button>
+      <p class="eyebrow">PREFERÊNCIAS DO CATÁLOGO</p>
+      <h2 id="settings-title">Catálogo de filmes</h2>
+      <p>
+        Você pode usar a coleção de demonstração ou conectar sua conta TMDb para
+        pesquisar o catálogo completo. O token fica apenas nesta sessão do navegador.
+      </p>
+      <form id="settings-form">
+        <label for="tmdb-token">Token de leitura do TMDb</label
+        ><input
+          id="tmdb-token"
+          type="password"
+          placeholder="Cole o API Read Access Token"
+          autocomplete="off"
+          spellcheck="false"
+          aria-describedby="token-error"
+        /><p id="token-error" class="form-error" role="alert" hidden></p>
+        <button class="primary-button" type="submit">
+          Ativar catálogo <span aria-hidden="true">↗</span>
+        </button>
+      </form>
+      <button id="use-demo" type="button" class="text-link">
+        Usar coleção de demonstração
+      </button>
+      <p class="settings-help">
+        Gere seu token nas
+        <a
+          href="https://www.themoviedb.org/settings/api"
+          target="_blank"
+          rel="noopener noreferrer"
+          >configurações da sua conta TMDb</a
+        >. Sua lista pessoal continua salva neste navegador.
+      </p>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>
