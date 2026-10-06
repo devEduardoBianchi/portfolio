@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a111b">
-  <meta name="description" content="Portfólio de Eduardo Pires Bianchi, estudante de Engenharia de Software em Dourados, MS. Interfaces web e projetos como Nexo Desk, Entre Cenas, Forma e Price Cards.">
+  <meta name="description" content="Portfólio de Eduardo Pires Bianchi, estudante de Engenharia de Software em Dourados, MS. Interfaces web e projetos como Nexo Desk, FIO / tech, Entre Cenas, Forma e Price Cards.">
   <title>Eduardo Bianchi — Desenvolvimento Web</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="preload" href="assets/fonts/InstrumentSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('portfolio-theme')==='light'?'light':'dark'}catch{document.documentElement.dataset.theme='dark'}</script>
   <link rel="stylesheet" href="style.css">
   <script src="assets/vendor/gsap.min.js" defer></script>
@@ -53,7 +53,7 @@
           </div>
           <div class="hero-actions">
             <a class="action-link action-link-primary" href="#projetos"><span>Conheça meu trabalho</span><span class="action-arrow" aria-hidden="true">↗</span></a>
-            <span class="availability"><span class="availability-dot" aria-hidden="true"></span> Em busca de estágio</span>
+            <span class="availability"><span class="availability-dot" aria-hidden="true"></span> Aberto a estágio e trabalho</span>
           </div>
         </div>
         <div class="hero-coordinates" aria-hidden="true"><span>01 / ESTRUTURA</span><span>02 / INTERAÇÃO</span><span>03 / DADOS</span></div>
@@ -61,51 +61,53 @@
       <div class="hero-baseline"><span>INTERFACES · SISTEMAS · EXPERIÊNCIA</span><a href="#projetos">Explore os projetos</a></div>
     </section>
 
-    <section class="work-intro section-wrap" id="projetos" aria-labelledby="work-title">
-      <div class="section-label"><span>01 / TRABALHOS SELECIONADOS</span><span>QUATRO PROJETOS, QUATRO FORMAS DE RESOLVER</span></div>
-      <div class="work-intro-body"><h2 id="work-title">Projetos que <br><em>mostram o processo.</em></h2><p>Do estudo visual a um sistema completo: cada projeto exercita uma parte diferente do desenvolvimento web.</p></div>
-    </section>
-
-    <section class="featured-project" id="nexo-desk" aria-labelledby="nexo-title">
-      <div class="featured-inner">
-        <div class="featured-heading">
-          <div><span class="chapter-index">01 / PROJETO PRINCIPAL</span><h2 id="nexo-title">Nexo Desk<span>.</span></h2></div>
-          <p>Uma central de suporte para acompanhar chamados, prioridades, pessoas e prazos em um único espaço.</p>
-        </div>
-        <div class="featured-media">
-          <div class="featured-media-main"><picture><source media="(max-width: 520px)" srcset="assets/nexo-desk-mobile.png"><img src="assets/nexo-desk.png" width="1440" height="1400" alt="Visão geral do Nexo Desk com indicadores e fila de chamados" loading="lazy"></picture></div>
-          <div class="featured-media-side"><img src="assets/nexo-desk-mobile.png" width="390" height="1704" alt="Versão móvel do Nexo Desk em inglês e tema claro" loading="lazy"><span>DESKTOP / MOBILE</span></div>
-        </div>
-        <div class="featured-details">
-          <div class="featured-overview"><span class="detail-label">O PROJETO</span><p>Criação e edição de chamados, filas, busca, filtros, quadro por status, indicadores, notas internas e histórico. Alterações em lote podem ser desfeitas por 60 segundos.</p></div>
-          <div class="featured-stack"><span class="detail-label">TECNOLOGIAS</span><p>HTML · CSS · JavaScript · GSAP<br>Node.js · Express · SQLite</p><span class="project-availability" id="nexo-link-slot">Demonstração local · link público pendente</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="project-index section-wrap" aria-labelledby="other-title">
-      <div class="section-label"><span>02–04 / OUTROS PROJETOS</span><span>INTERFACES EM CONTEXTOS DIFERENTES</span></div>
-      <h2 id="other-title">Outras formas de <em>construir.</em></h2>
+    <section class="work-section section-wrap" id="projetos" aria-labelledby="work-title">
+      <div class="section-label"><span>01 / TRABALHOS SELECIONADOS</span><span>CINCO PROJETOS, CINCO FORMAS DE RESOLVER</span></div>
+      <div class="work-intro-body"><h2 id="work-title">Projetos em <em>prática.</em></h2><p>Interfaces, interação e sistemas: cinco projetos para explorar por dentro.</p></div>
+      <div class="project-list">
+      <article class="project-row" id="nexo-desk" aria-labelledby="nexo-title">
+        <div class="project-visual"><picture><source media="(max-width: 520px)" srcset="assets/nexo-desk-mobile.png"><img src="assets/nexo-desk.png" width="1440" height="1400" alt="Visão geral do Nexo Desk com indicadores e fila de chamados" loading="lazy"></picture></div>
+        <div class="project-copy"><div class="project-headline"><span class="chapter-index">01 / SISTEMA DE CHAMADOS</span><h3 id="nexo-title">Nexo Desk<span>.</span></h3></div><p>Central de suporte para acompanhar chamados, prioridades, pessoas e prazos. Reúne filas, busca, filtros, quadro por status, indicadores, notas internas e histórico; ações em lote podem ser desfeitas por 60 segundos.</p><p class="project-stack">HTML · CSS · JavaScript · GSAP · Node.js · Express · SQLite</p><span class="project-availability" id="nexo-link-slot">Demonstração local · link público pendente</span></div>
+      </article>
       <article class="project-row" id="entre-cenas" aria-labelledby="entrecenas-title">
-        <a class="project-visual" href="projetos/entre-cenas/" data-project="entreCenas" target="_blank" rel="noopener noreferrer" aria-label="Experimentar Entre Cenas em nova aba"><img src="assets/entrecenas-hero.png" width="1672" height="940" alt="Projetor de cinema iluminando uma tela âmbar, identidade visual do Entre Cenas" loading="lazy"><span class="visual-corner" aria-hidden="true">↗</span></a>
+        <a class="project-visual" href="projetos/entre-cenas/" data-project="entreCenas" target="_blank" rel="noopener noreferrer" aria-label="Experimentar Entre Cenas em nova aba"><picture><source media="(max-width: 520px)" srcset="assets/entrecenas-interface-mobile.png"><img src="assets/entrecenas-interface.png" width="1440" height="900" alt="Interface real do Entre Cenas com busca, filmes em destaque e catálogo de demonstração" loading="lazy"></picture><span class="visual-corner" aria-hidden="true">↗</span></a>
         <div class="project-copy"><div class="project-headline"><span class="chapter-index">02 / APLICAÇÃO WEB</span><h3 id="entrecenas-title">Entre Cenas<span>.</span></h3></div><p>Diário de cinema com visual de sala de projeção: descoberta de filmes, lista pessoal, notas, filtros e estatísticas da coleção. O catálogo TMDb é opcional.</p><p class="project-stack">HTML · CSS · JavaScript · GSAP · localStorage · API TMDb opcional</p><a class="text-link" href="projetos/entre-cenas/" data-project="entreCenas" target="_blank" rel="noopener noreferrer">Experimentar projeto <span aria-hidden="true">↗</span></a></div>
       </article>
       <article class="project-row" id="forma" aria-labelledby="forma-title">
-        <a class="project-visual" href="projetos/forma/" data-project="forma" target="_blank" rel="noopener noreferrer" aria-label="Abrir Forma em nova aba"><img src="assets/forma.jpg" width="1265" height="1206" alt="Forma em tema escuro, com acentos verdes, formulário e controle de tema" loading="lazy"><span class="visual-corner" aria-hidden="true">↗</span></a>
+        <a class="project-visual" href="projetos/forma/" data-project="forma" target="_blank" rel="noopener noreferrer" aria-label="Abrir Forma em nova aba"><picture><source media="(max-width: 520px)" srcset="assets/forma-interface-mobile.png"><img src="assets/forma-interface-wide.png" width="1600" height="900" alt="Interface real do Forma em tema escuro, com apresentação à esquerda e formulário à direita" loading="lazy"></picture><span class="visual-corner" aria-hidden="true">↗</span></a>
         <div class="project-copy"><div class="project-headline"><span class="chapter-index">03 / INTERAÇÃO E FORMULÁRIOS</span><h3 id="forma-title">Forma<span>.</span></h3></div><p>Página de contato com temas escuro e claro, validação acessível e estados de envio, conclusão e falha recuperável. Assunto e orçamento são opcionais; no modo demonstração, nenhuma mensagem é enviada.</p><p class="project-stack">HTML · CSS · JavaScript · GSAP</p><a class="text-link" href="projetos/forma/" data-project="forma" target="_blank" rel="noopener noreferrer">Experimentar Forma <span aria-hidden="true">↗</span></a></div>
       </article>
       <article class="project-row" id="price-cards" aria-labelledby="price-title">
-        <a class="project-visual" href="projetos/price-cards/" data-project="priceCards" target="_blank" rel="noopener noreferrer" aria-label="Abrir Price Cards em nova aba"><img src="assets/price-cards.png" width="1440" height="1000" alt="Price Cards: planos MyServer com o Premium recomendado para pequenos projetos" loading="lazy"><span class="visual-corner" aria-hidden="true">↗</span></a>
-        <div class="project-copy"><div class="project-headline"><span class="chapter-index">04 / ESTUDO DE INTERFACE</span><h3 id="price-title">Price Cards<span>.</span></h3></div><p>Página de planos de hospedagem com comparação de recursos, layout responsivo e destaque visual para o Premium, recomendado para pequenos projetos.</p><p class="project-stack">HTML · CSS · Design responsivo</p><a class="text-link" href="projetos/price-cards/" data-project="priceCards" target="_blank" rel="noopener noreferrer">Explorar Price Cards <span aria-hidden="true">↗</span></a><p class="project-note">Preços demonstrativos; nenhum plano pode ser contratado.</p></div>
+        <a class="project-visual" href="projetos/price-cards/" data-project="priceCards" target="_blank" rel="noopener noreferrer" aria-label="Abrir Price Cards em nova aba"><picture><source media="(max-width: 520px)" srcset="assets/price-cards-interface-mobile.png"><img src="assets/price-cards-interface.png" width="1440" height="900" alt="Interface real de Price Cards com três planos, comparação de recursos e Premium recomendado" loading="lazy"></picture><span class="visual-corner" aria-hidden="true">↗</span></a>
+        <div class="project-copy"><div class="project-headline"><span class="chapter-index">04 / ESTUDO DE INTERFACE</span><h3 id="price-title">Price Cards<span>.</span></h3></div><p>Estudo de planos de hospedagem com comparação interativa, resumos dos planos e uma indicação baseada no número de sites e na necessidade de e-mail personalizado. O Premium recebe destaque para pequenos projetos.</p><p class="project-stack">HTML · CSS · JavaScript · Design responsivo</p><a class="text-link" href="projetos/price-cards/" data-project="priceCards" target="_blank" rel="noopener noreferrer">Explorar Price Cards <span aria-hidden="true">↗</span></a><p class="project-note">Preços demonstrativos; nenhum plano pode ser contratado.</p></div>
       </article>
+      <article class="project-row" id="fio-tech" aria-labelledby="fio-title">
+        <div class="project-visual"><picture><source media="(max-width: 520px)" srcset="assets/fio-tech-interface-mobile.png"><img src="assets/fio-tech-interface.png" width="1440" height="900" alt="Interface real da home FIO / tech com produtos de informática, chamada principal e acesso ao catálogo" loading="lazy"></picture></div>
+        <div class="project-copy"><div class="project-headline"><span class="chapter-index">05 / LOJA CONCEITUAL</span><h3 id="fio-title">FIO / tech<span>.</span></h3></div><p>Loja conceitual de eletrônicos e informática com catálogo filtrável, comparação de até três itens, favoritos e um questionário de setup com critérios explicados. Produtos e preços são fictícios; não há compra.</p><p class="project-stack">React · TypeScript · Vite · CSS · GSAP · localStorage</p><span class="project-availability" id="fio-link-slot">Prévia local · link público pendente</span></div>
+      </article>
+      </div>
     </section>
 
     <section class="about section-wrap" id="sobre" aria-labelledby="about-title">
       <div class="section-label"><span>02 / SOBRE MIM</span><span>TECNOLOGIA & APRENDIZADO</span></div>
-      <div class="about-grid"><div><h2 id="about-title">Um passo de cada vez. <br><em>Sempre em frente.</em></h2><div class="about-signature">Eduardo Pires Bianchi <span>↗</span></div></div><div class="about-copy"><p class="lead">Sou Eduardo Pires Bianchi, estudante de Engenharia de Software na Unigran.</p><p>Meu contato com computadores começou cedo e se transformou em interesse por entender como as coisas funcionam. Hoje, levo essa curiosidade para o desenvolvimento web, unindo a faculdade a cursos e projetos pessoais.</p><p>Busco minha primeira oportunidade de estágio em tecnologia para contribuir, aprender com uma equipe e transformar conhecimento em experiência prática.</p><a class="text-link" href="assets/curriculo-eduardo-bianchi.pdf" target="_blank" rel="noopener noreferrer" type="application/pdf" aria-describedby="resume-note">Ver currículo em PDF <span aria-hidden="true">↗</span></a><p class="quiet-note" id="resume-note">PDF em português · Abre em nova aba</p><div class="about-facts"><div><span>BASE</span><strong>Dourados, MS</strong></div><div><span>IDIOMA</span><strong>Inglês intermediário</strong></div></div></div></div>
+      <div class="about-grid">
+        <div class="about-identity">
+          <h2 id="about-title">Um passo de cada vez. <br><em>Sempre em frente.</em></h2>
+          <figure class="about-portrait"><div class="portrait-frame"><img src="assets/eduardo-perfil.jpeg" width="640" height="640" alt="Retrato de Eduardo Pires Bianchi" loading="lazy"></div><figcaption class="about-signature">Eduardo Pires Bianchi</figcaption></figure>
+        </div>
+        <div class="about-copy">
+          <p class="lead">Sou Eduardo Pires Bianchi, estudante de Engenharia de Software na Unigran.</p>
+          <p>Meu contato com computadores começou cedo e se transformou em interesse por entender como as coisas funcionam. Hoje, levo essa curiosidade para o desenvolvimento web, unindo a faculdade a cursos e projetos pessoais.</p>
+          <p>Busco oportunidades de estágio ou trabalho em tecnologia para contribuir, aprender com uma equipe e transformar conhecimento em experiência prática.</p>
+          <a class="text-link" href="assets/curriculo-eduardo-bianchi.pdf" target="_blank" rel="noopener noreferrer" type="application/pdf" aria-describedby="resume-note">Ver currículo em PDF <span aria-hidden="true">↗</span></a>
+          <p class="quiet-note" id="resume-note">PDF em português · Abre em nova aba</p>
+          <div class="about-facts"><div><span>BASE</span><strong>Dourados, MS</strong></div><div><span>IDIOMA</span><strong>Inglês intermediário</strong></div></div>
+          <div class="about-path"><h3>Meu percurso</h3><dl><div><dt>Ensino Médio</dt><dd>Elite Rede de Ensino · Dourados</dd></div><div><dt>Estudos complementares</dt><dd>Alura · Udemy</dd></div></dl></div>
+        </div>
+      </div>
       <div class="capabilities"><h3>Minha caixa de ferramentas</h3><p>Conhecimentos que estou colocando em prática.</p></div>
       <div class="skill-row"><span>01</span><h4>Interfaces web</h4><p>HTML5 · CSS3 · JavaScript</p></div>
-      <div class="skill-row"><span>02</span><h4>Fundamentos & ferramentas</h4><p>Lógica de programação · Git · GitHub</p></div>
+      <div class="skill-row"><span>02</span><h4>Fundamentos & ferramentas</h4><p>Lógica de programação · Git · GitHub · Codex como apoio ao desenvolvimento</p></div>
       <div class="skill-row"><span>03</span><h4>Além do front-end</h4><p>Banco de dados / SQL · Noções de Node.js · Hardware</p></div>
     </section>
 
@@ -115,7 +117,7 @@
     </section>
 
     <section class="contact" id="contato" aria-labelledby="contact-title">
-      <div class="contact-inner"><div class="section-label"><span>04 / VAMOS CONVERSAR</span><span>ABERTO A OPORTUNIDADES DE ESTÁGIO</span></div><h2 id="contact-title">O próximo passo <br>começa com um <em>olá.</em></h2><div class="contact-bottom"><p>Tem uma oportunidade ou quer conhecer melhor meu trabalho? Vou gostar de conversar.</p><div class="contact-actions"><a class="email-link" href="mailto:eduardopiresbianchi2003@gmail.com">eduardopiresbianchi2003@gmail.com <span aria-hidden="true">↗</span></a><div class="contact-links"><button id="copy-email" type="button">Copiar e-mail <span aria-hidden="true">⧉</span></button><a href="https://github.com/devEduardoBianchi" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/eduardo-bianchi-31bb76321/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span></div></div></div>
+      <div class="contact-inner"><div class="section-label"><span>04 / VAMOS CONVERSAR</span><span>ABERTO A OPORTUNIDADES DE ESTÁGIO E TRABALHO</span></div><h2 id="contact-title">Encontrou o que procura?<br><em>Vamos conversar.</em></h2><div class="contact-bottom"><p>Estou aberto a oportunidades de estágio ou trabalho e a conversas sobre interfaces e tecnologia.</p><div class="contact-actions"><a class="email-link" href="mailto:eduardopiresbianchi2003@gmail.com">eduardopiresbianchi2003@gmail.com <span aria-hidden="true">↗</span></a><a class="phone-link" href="tel:+5567999969634"><span>Telefone</span><strong>+55 (67) 9 9996-9634</strong><span aria-hidden="true">↗</span></a><div class="contact-links"><button id="copy-email" type="button">Copiar e-mail <span aria-hidden="true">⧉</span></button><a href="https://github.com/devEduardoBianchi" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/eduardo-bianchi-31bb76321/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span></div></div></div>
     </section>
   </main>
   <footer class="footer"><a class="footer-brand" href="#inicio" aria-label="Voltar ao início">EB<span>.</span></a><p>© <span id="year">2026</span> Eduardo Pires Bianchi</p><span>FEITO COM CURIOSIDADE E CÓDIGO.</span><a href="#inicio">Voltar ao topo ↑</a></footer>

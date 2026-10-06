@@ -6,6 +6,7 @@ const portfolio = {
     entreCenas: '',
     forma: '',
     priceCards: '',
+    fioTech: '',
   },
 };
 
@@ -42,17 +43,21 @@ document.querySelectorAll('[data-project]').forEach(link => {
   if (url) link.href = url;
 });
 
-const nexoUrl = confirmedUrl(portfolio.projectUrls.nexoDesk);
-if (nexoUrl) {
-  const slot = document.querySelector('#nexo-link-slot');
+[
+  { key: 'nexoDesk', slot: '#nexo-link-slot', label: 'Abrir Nexo Desk ↗' },
+  { key: 'fioTech', slot: '#fio-link-slot', label: 'Abrir FIO / tech ↗' },
+].forEach(project => {
+  const url = confirmedUrl(portfolio.projectUrls[project.key]);
+  if (!url) return;
   const link = document.createElement('a');
-  link.href = nexoUrl;
+  link.href = url;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
-  link.className = 'featured-public-link';
-  link.textContent = window.PortfolioLanguage?.text('Abrir Nexo Desk ↗') || 'Abrir Nexo Desk ↗';
-  slot.replaceWith(link);
-}
+  link.className = 'project-public-link';
+  link.dataset.publicProject = project.key;
+  link.textContent = window.PortfolioLanguage?.text(project.label) || project.label;
+  document.querySelector(project.slot).replaceWith(link);
+});
 
 const copyButton = document.querySelector('#copy-email');
 const copyStatus = document.querySelector('#copy-status');
@@ -90,12 +95,11 @@ if (window.gsap && window.ScrollTrigger) {
     });
 
     gsap.timeline({
-      scrollTrigger: { trigger: '.featured-heading', start: 'top 82%', once: true },
+      scrollTrigger: { trigger: '.work-intro-body', start: 'top 82%', once: true },
       defaults: { ease: 'power2.out', duration: .65 },
     })
-      .from('.featured-heading .chapter-index', { y: 14, clearProps: 'transform' })
-      .from('.featured-heading h2', { y: 24, clearProps: 'transform' }, '<.1')
-      .from('.featured-heading>p', { y: 16, clearProps: 'transform' }, '<.08');
+      .from('.work-intro-body h2', { y: 24, clearProps: 'transform' })
+      .from('.work-intro-body>p', { y: 16, clearProps: 'transform' }, '<.08');
 
     gsap.utils.toArray('.project-row').forEach(row => {
       gsap.from(row.querySelector('.project-copy'), {

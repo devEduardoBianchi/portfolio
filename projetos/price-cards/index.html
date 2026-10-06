@@ -1,79 +1,131 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="building a prices page">
-    <title>Planos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare os planos de hospedagem MYSERVER e encontre uma opção para o seu número de sites.">
+  <meta name="theme-color" content="#0c1312">
+  <title>Planos de hospedagem | MYSERVER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-    <header class="header">
-        <h1 class="header_title">MYSERVER</h1>
-
-        <nav class="header_navigation" aria-label="Navegação principal">
-            <a href="#">Home</a>
-            <a href="#">Planos</a>
-            <a href="#">Suporte</a>
-            <a href="#">Contato</a>
-        </nav>
-    </header>
-
-    <h1 class="main_title">ESCOLHA SEU PLANO</h1>
-
-    <main class="main">
-        <section class="plan_card plane1">
-            <h2 class="plan_title">ESSENTIAL</h2>
-            <p class="plane_price">
-                <span class="plan_price_value">R$ 3,95</span>
-                <span class="plan_price_month">/ mês</span>
-            </p>
-            <ul class="about_list">
-                <li>1 Website</li>
-                <li>1 GB de Armazenamento</li>
-                <li>10 GB de Transferência</li>
-            </ul>
-
-            <a href="#" class="button_buy">ASSINE JÁ</a>
-        </section>
-
-        <section class="plan_card plane2" aria-label="Plano recomendado para pequenos projetos">
-            <p class="plan_badge">RECOMENDADO PARA PEQUENOS PROJETOS</p>
-            <h2 class="plan_title">PREMIUM</h2>
-            <p class="plane_price">
-                <span class="plan_price_value">R$ 7,95</span>
-                <span class="plan_price_month">/ mês</span>
-            </p>
-            
-            <ul class="about_list">
-                <li>5 Websites</li>
-                <li>3 GB de Armazenamento</li>
-                <li>Transferência ilimitada</li>
-                <li>10 horas de suporte mensais</li>
-            </ul>
-
-            <a href="#" class="button_buy">ASSINE JÁ</a>
-        </section>
-
-        <section class="plan_card plane3">
-            <h2 class="plan_title">GOLD</h2>
-            <p class="plane_price">
-                <span class="plan_price_value">R$ 59,90</span>
-                <span class="plan_price_month">/ mês</span>
-            </p>
-            <ul class="about_list">
-                <li>10 Websites</li>
-                <li>30 GB de Armazenamento</li>
-                <li>Transferência ilimitada</li>
-                <li>30 horas de suporte mensais</li>
-                <li>E-mail personalizado</li>
-            </ul>
-
-            <a href="#" class="button_buy">ASSINE JÁ</a>
-        </section>
-
-    </main>
+  <a class="skip-link" href="#planos">Ir para os planos</a>
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="MYSERVER, voltar ao início">
+        <span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span>MYSERVER
+      </a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="#planos">Planos</a>
+        <a href="#comparar">Comparar</a>
+        <a href="#assistente">Encontre seu plano</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Hospedagem MYSERVER</p>
+          <h1 id="hero-title">Seu projeto.<br><span>A estrutura certa.</span></h1>
+          <p class="hero-description">Compare os limites de cada plano e escolha com base no que seu site precisa agora.</p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#planos">Ver planos <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#assistente">Encontrar uma indicação <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="infrastructure" aria-hidden="true">
+          <div class="rack-rim">
+            <div class="rack-unit"><span class="rack-led"></span><span class="rack-port"></span><span class="rack-trace"></span><span class="rack-slots"></span></div>
+            <div class="rack-unit"><span class="rack-led"></span><span class="rack-port"></span><span class="rack-trace"></span><span class="rack-slots"></span></div>
+            <div class="rack-unit"><span class="rack-led"></span><span class="rack-port"></span><span class="rack-trace"></span><span class="rack-slots"></span></div>
+            <div class="rack-unit"><span class="rack-led"></span><span class="rack-port"></span><span class="rack-trace"></span><span class="rack-slots"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="plans-section section-shell" id="planos" aria-labelledby="plans-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Escolha com clareza</p><h2 id="plans-title">Planos para cada escala.</h2></div>
+        <p>Preços mensais e benefícios conforme cadastrados. Selecione os planos que deseja ver na comparação.</p>
+      </div>
+      <div class="plans-grid">
+        <!-- Atualize preços e benefícios nos cartões; o JavaScript lê esses textos para comparar e recomendar. -->
+        <article class="plan-card" data-plan="essential" data-selected="true" aria-labelledby="essential-title">
+          <div class="card-topline"><span>ESSENTIAL</span><span class="card-index">01 / 03</span></div>
+          <div class="card-main"><h3 id="essential-title">Essential</h3><p class="plan-price"><span>R$ 3,95</span><small>/ mês</small></p></div>
+          <div class="benefits-block"><p class="benefits-heading">O que está incluído</p><ul class="benefits-list">
+            <li data-feature="sites">1 Website</li>
+            <li data-feature="storage">1 GB de Armazenamento</li>
+            <li data-feature="transfer">10 GB de Transferência</li>
+          </ul></div>
+          <div class="card-actions"><button class="summary-button" type="button" data-open-summary aria-label="Ver resumo do plano Essential">Ver resumo <span aria-hidden="true">↗</span></button><button class="compare-button" type="button" data-toggle-compare aria-label="Remover Essential da comparação">Remover da comparação</button></div>
+        </article>
+        <article class="plan-card featured" data-plan="premium" data-selected="true" aria-labelledby="premium-title">
+          <div class="featured-label">Recomendado para pequenos projetos</div>
+          <div class="card-topline"><span>PREMIUM</span><span class="card-index">02 / 03</span></div>
+          <div class="card-main"><h3 id="premium-title">Premium</h3><p class="plan-price"><span>R$ 7,95</span><small>/ mês</small></p></div>
+          <div class="benefits-block"><p class="benefits-heading">O que está incluído</p><ul class="benefits-list">
+            <li data-feature="sites">5 Websites</li>
+            <li data-feature="storage">3 GB de Armazenamento</li>
+            <li data-feature="transfer">Transferência ilimitada</li>
+            <li data-feature="support">10 horas de suporte mensais</li>
+          </ul></div>
+          <div class="card-actions"><button class="summary-button" type="button" data-open-summary aria-label="Ver resumo do plano Premium">Ver resumo <span aria-hidden="true">↗</span></button><button class="compare-button" type="button" data-toggle-compare aria-label="Remover Premium da comparação">Remover da comparação</button></div>
+        </article>
+        <article class="plan-card" data-plan="gold" data-selected="true" aria-labelledby="gold-title">
+          <div class="card-topline"><span>GOLD</span><span class="card-index">03 / 03</span></div>
+          <div class="card-main"><h3 id="gold-title">Gold</h3><p class="plan-price"><span>R$ 59,90</span><small>/ mês</small></p></div>
+          <div class="benefits-block"><p class="benefits-heading">O que está incluído</p><ul class="benefits-list">
+            <li data-feature="sites">10 Websites</li>
+            <li data-feature="storage">30 GB de Armazenamento</li>
+            <li data-feature="transfer">Transferência ilimitada</li>
+            <li data-feature="support">30 horas de suporte mensais</li>
+            <li data-feature="email">E-mail personalizado</li>
+          </ul></div>
+          <div class="card-actions"><button class="summary-button" type="button" data-open-summary aria-label="Ver resumo do plano Gold">Ver resumo <span aria-hidden="true">↗</span></button><button class="compare-button" type="button" data-toggle-compare aria-label="Remover Gold da comparação">Remover da comparação</button></div>
+        </article>
+      </div>
+    </section>
+    <section class="comparison-section section-shell" id="comparar" aria-labelledby="comparison-title">
+      <div class="section-heading compare-heading">
+        <div><p class="eyebrow">Lado a lado</p><h2 id="comparison-title">Compare os detalhes.</h2></div>
+        <label class="difference-toggle"><input id="differences-only" type="checkbox"><span class="toggle-track" aria-hidden="true"></span><span>Mostrar só diferenças</span></label>
+      </div>
+      <p class="comparison-help">Use os botões nos cartões para adicionar ou remover planos. “Não informado” significa que o benefício não consta nos dados cadastrados.</p>
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Tabela comparativa dos planos">
+        <table class="comparison-table"><thead><tr id="comparison-head"><th scope="col">Benefício</th></tr></thead><tbody id="comparison-body"></tbody></table>
+      </div>
+      <p id="comparison-empty" class="comparison-empty" hidden>Selecione ao menos um plano nos cartões para comparar.</p>
+      <p id="comparison-status" class="sr-only" role="status"></p>
+    </section>
+    <section class="assistant-section" id="assistente" aria-labelledby="assistant-title">
+      <div class="assistant-inner section-shell">
+        <div class="assistant-intro"><p class="eyebrow">Uma indicação objetiva</p><h2 id="assistant-title">Encontre seu plano.</h2><p>A indicação considera apenas o número de sites e a necessidade de e-mail personalizado.</p></div>
+        <div class="assistant-workspace">
+          <form id="plan-finder">
+            <div class="field-group"><label for="site-count">Quantos sites você precisa hospedar?</label><input id="site-count" name="sites" type="number" min="1" step="1" value="1" required inputmode="numeric"></div>
+            <fieldset class="field-group"><legend>Precisa de e-mail personalizado?</legend><div class="radio-options">
+              <label><input type="radio" name="email" value="no" checked><span>Não</span></label>
+              <label><input type="radio" name="email" value="yes"><span>Sim</span></label>
+            </div></fieldset>
+            <button class="finder-button" type="submit">Ver indicação <span aria-hidden="true">→</span></button>
+          </form>
+          <div id="finder-result" class="finder-result" role="status" aria-live="polite"><span class="result-marker" aria-hidden="true"></span><p>Informe suas necessidades e veja qual plano atende aos critérios publicados.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><span class="footer-brand">MYSERVER</span><p>Consulte os planos e benefícios publicados nesta página.</p><a href="#inicio">Voltar ao início ↑</a></footer>
+  <dialog id="plan-dialog" class="plan-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-topline"><span>Resumo do plano</span><button type="button" class="dialog-close" data-close-dialog aria-label="Fechar resumo">×</button></div>
+    <h2 id="dialog-title"></h2><p id="dialog-price" class="dialog-price"></p><ul id="dialog-benefits" class="dialog-benefits"></ul>
+    <p class="dialog-note">Ainda não há checkout integrado. Este resumo não inicia uma contratação.</p>
+    <button type="button" class="dialog-done" data-close-dialog>Fechar resumo</button>
+  </dialog>
 </body>
-
 </html>

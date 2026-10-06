@@ -25,11 +25,12 @@
     'Sistema de chamados': 'Ticket management system',
     'Explore os projetos': 'Explore the projects',
     '01 / TRABALHOS SELECIONADOS': '01 / SELECTED WORK',
-    'QUATRO PROJETOS, QUATRO FORMAS DE RESOLVER': 'FOUR PROJECTS, FOUR WAYS TO SOLVE',
-    'Projetos que': 'Projects that',
-    'mostram o processo.': 'show the process.',
-    'Do estudo visual a um sistema completo: cada projeto exercita uma parte diferente do desenvolvimento web.': 'From a visual study to a complete system, each project exercises a different part of web development.',
-    '01 / PROJETO PRINCIPAL': '01 / MAIN PROJECT',
+    'CINCO PROJETOS, CINCO FORMAS DE RESOLVER': 'FIVE PROJECTS, FIVE WAYS TO SOLVE',
+    'Projetos em': 'Projects in',
+    'prática.': 'practice.',
+    'Interfaces, interação e sistemas: cinco projetos para explorar por dentro.': 'Interfaces, interaction and systems: five projects to explore in detail.',
+    '01 / SISTEMA DE CHAMADOS': '01 / TICKET SYSTEM',
+    'Central de suporte para acompanhar chamados, prioridades, pessoas e prazos. Reúne filas, busca, filtros, quadro por status, indicadores, notas internas e histórico; ações em lote podem ser desfeitas por 60 segundos.': 'A support workspace for tracking tickets, priorities, people and deadlines. It brings together queues, search, filters, a status board, metrics, internal notes and history; bulk actions can be undone for 60 seconds.',
     'Uma central de suporte para acompanhar chamados, prioridades, pessoas e prazos em um único espaço.': 'A support workspace for tracking tickets, priorities, people and deadlines in one place.',
     'DESKTOP / MOBILE': 'DESKTOP / MOBILE',
     'O PROJETO': 'THE PROJECT',
@@ -47,8 +48,13 @@
     '03 / INTERAÇÃO E FORMULÁRIOS': '03 / INTERACTION & FORMS',
     'Página de contato com temas escuro e claro, validação acessível e estados de envio, conclusão e falha recuperável. Assunto e orçamento são opcionais; no modo demonstração, nenhuma mensagem é enviada.': 'A contact page with dark and light themes, accessible validation, and sending, completion and recoverable failure states. Subject and budget are optional; demo mode sends no messages.',
     '04 / ESTUDO DE INTERFACE': '04 / UI STUDY',
-    'Página de planos de hospedagem com comparação de recursos, layout responsivo e destaque visual para o Premium, recomendado para pequenos projetos.': 'A hosting plans page with feature comparison, responsive layout and visual emphasis on Premium, recommended for small projects.',
-    'HTML · CSS · Design responsivo': 'HTML · CSS · Responsive design',
+    'Estudo de planos de hospedagem com comparação interativa, resumos dos planos e uma indicação baseada no número de sites e na necessidade de e-mail personalizado. O Premium recebe destaque para pequenos projetos.': 'A hosting plans study with interactive comparison, plan summaries, and a recommendation based on site count and custom email needs. Premium stands out for small projects.',
+    'HTML · CSS · JavaScript · Design responsivo': 'HTML · CSS · JavaScript · Responsive design',
+    '05 / LOJA CONCEITUAL': '05 / CONCEPT STORE',
+    'Loja conceitual de eletrônicos e informática com catálogo filtrável, comparação de até três itens, favoritos e um questionário de setup com critérios explicados. Produtos e preços são fictícios; não há compra.': 'A concept electronics and computer store with a filterable catalog, comparison of up to three items, favorites and a setup quiz with explained criteria. Products and prices are fictional; no purchases are made.',
+    'Prévia local · link público pendente': 'Local preview · public link pending',
+    'Abrir FIO / tech ↗': 'Open FIO / tech ↗',
+    'Interface real da home FIO / tech com produtos de informática, chamada principal e acesso ao catálogo': 'Actual FIO / tech home page with computer products, a main headline and catalog access',
     'Desenvolvimento Frontend: 10 Projetos': 'Front-End Development: 10 Projects',
     'Um passo de cada vez.': 'One step at a time.',
     'Sempre em frente.': 'Always moving forward.',
@@ -66,16 +72,16 @@
     'Visão geral do Nexo Desk com indicadores e fila de chamados': 'Nexo Desk overview with metrics and ticket queue',
     'Versão móvel do Nexo Desk em inglês e tema claro': 'Nexo Desk mobile view in English and light theme',
     'Experimentar Entre Cenas em nova aba': 'Try Entre Cenas in a new tab',
-    'Projetor de cinema iluminando uma tela âmbar, identidade visual do Entre Cenas': 'Cinema projector lighting an amber screen, the visual identity of Entre Cenas',
+    'Interface real do Entre Cenas com busca, filmes em destaque e catálogo de demonstração': 'Actual Entre Cenas interface with search, featured films, and demo catalog',
     'Abrir Forma em nova aba': 'Open Forma in a new tab',
-    'Forma em tema escuro, com acentos verdes, formulário e controle de tema': 'Forma in dark mode, with green accents, a form and theme control',
+    'Interface real do Forma em tema escuro, com apresentação à esquerda e formulário à direita': 'Actual Forma interface in dark mode, with an introduction on the left and form on the right',
     'Abrir Price Cards em nova aba': 'Open Price Cards in a new tab',
-    'Price Cards: planos MyServer com o Premium recomendado para pequenos projetos': 'Price Cards: MyServer plans with Premium recommended for small projects',
+    'Interface real de Price Cards com três planos, comparação de recursos e Premium recomendado': 'Actual Price Cards interface with three plans, feature comparison, and recommended Premium',
     'Pular para o conteúdo': 'Skip to content',
     'Projetos': 'Projects', 'Sobre': 'About', 'Formação': 'Education',
     'Vamos conversar': "Let’s talk", 'Contato': 'Contact',
     'DESENVOLVIMENTO WEB · PORTFÓLIO': 'WEB DEVELOPMENT · PORTFOLIO',
-    'Em busca de estágio': 'Seeking an internship',
+    'Aberto a estágio e trabalho': 'Open to internships and jobs',
     'Curiosidade que vira código.': 'Curiosity turned into code.',
     'Aprendizado que vira projeto.': 'Learning turned into projects.',
     'Estudante de Engenharia de Software, construindo meu caminho no desenvolvimento web.': 'Software Engineering student, building my path in web development.',
@@ -116,15 +122,20 @@
     'Um passo': 'One step', 'de cada vez.': 'at a time.', 'Sempre': 'Always', 'em frente.': 'moving forward.',
     'Sou Eduardo Pires Bianchi, estudante de Engenharia de Software na Unigran.': 'I’m Eduardo Pires Bianchi, a Software Engineering student at Unigran.',
     'Meu contato com computadores começou cedo e se transformou em interesse por entender como as coisas funcionam. Hoje, levo essa curiosidade para o desenvolvimento web, unindo a faculdade a cursos e projetos pessoais.': 'I started using computers at an early age and became curious about how things work. Today, I bring that curiosity to web development, combining university studies with courses and personal projects.',
-    'Busco minha primeira oportunidade de estágio em tecnologia para contribuir, aprender com uma equipe e transformar conhecimento em experiência prática.': 'I’m looking for my first internship in technology to contribute, learn from a team and turn knowledge into practical experience.',
+    'Busco oportunidades de estágio ou trabalho em tecnologia para contribuir, aprender com uma equipe e transformar conhecimento em experiência prática.': 'I’m looking for internship or job opportunities in technology to contribute, learn from a team and turn knowledge into practical experience.',
     'BASE': 'BASED IN', 'IDIOMA': 'LANGUAGE', 'Inglês intermediário': 'Intermediate English',
     'Ver currículo em PDF': 'View résumé PDF',
     'PDF em português · Abre em nova aba': 'PDF in Portuguese · Opens in a new tab',
+    'Meu percurso': 'My path',
+    'Ensino Médio': 'High school',
+    'Estudos complementares': 'Additional studies',
+    'Elite Rede de Ensino · Dourados': 'Elite Rede de Ensino · Dourados',
     'Minha caixa de ferramentas': 'My toolkit',
+    'Retrato de Eduardo Pires Bianchi': 'Portrait of Eduardo Pires Bianchi',
     'Conhecimentos que estou colocando em prática.': 'Skills I’m putting into practice.',
     'Interfaces web': 'Web interfaces',
     'Fundamentos & ferramentas': 'Fundamentals & tools',
-    'Lógica de programação · Git · GitHub': 'Programming logic · Git · GitHub',
+    'Lógica de programação · Git · GitHub · Codex como apoio ao desenvolvimento': 'Programming logic · Git · GitHub · Codex as a development aid',
     'Além do front-end': 'Beyond the front end',
     'Banco de dados / SQL · Noções de Node.js · Hardware': 'Databases / SQL · Node.js basics · Hardware',
     '03 / FORMAÇÃO': '03 / EDUCATION',
@@ -144,9 +155,12 @@
     'Lógica de Programação': 'Programming Logic',
     '04 / VAMOS CONVERSAR': '04 / LET’S TALK',
     'Aberto a oportunidades de estágio': 'Open to internship opportunities',
-    'O próximo passo': 'The next step', 'começa com um': 'starts with a', 'olá.': 'hello.',
-    'Tem uma oportunidade ou quer conhecer melhor meu trabalho? Vou gostar de conversar.': 'Have an opportunity or want to learn more about my work? I’d love to talk.',
+    'Encontrou o que procura?': 'Found what you were looking for?',
+    'Vamos conversar.': 'Let’s talk.',
+    'ABERTO A OPORTUNIDADES DE ESTÁGIO E TRABALHO': 'OPEN TO INTERNSHIP AND JOB OPPORTUNITIES',
+    'Estou aberto a oportunidades de estágio ou trabalho e a conversas sobre interfaces e tecnologia.': 'I’m open to internship or job opportunities and conversations about interfaces and technology.',
     'Copiar e-mail': 'Copy email',
+    'Telefone': 'Phone',
     'FEITO COM CURIOSIDADE E CÓDIGO.': 'MADE WITH CURIOSITY AND CODE.',
     'Voltar ao topo ↑': 'Back to top ↑',
     'Eduardo Bianchi, início': 'Eduardo Bianchi, home',
@@ -194,10 +208,12 @@
     attributes.forEach(record => record.element.setAttribute(record.name, isEnglish ? record.translated : record.original));
     document.documentElement.lang = language;
     document.title = isEnglish ? 'Eduardo Bianchi — Web Development' : originalTitle;
-    description.content = isEnglish ? 'Portfolio of Eduardo Pires Bianchi, a Software Engineering student in Dourados, Brazil. Web interfaces and projects including Nexo Desk, Entre Cenas, Forma and Price Cards.' : originalDescription;
+    description.content = isEnglish ? 'Portfolio of Eduardo Pires Bianchi, a Software Engineering student in Dourados, Brazil. Web interfaces and projects including Nexo Desk, FIO / tech, Entre Cenas, Forma and Price Cards.' : originalDescription;
     document.querySelectorAll('[data-language]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
-    const nexoLink = document.querySelector('.featured-public-link');
-    if (nexoLink) nexoLink.textContent = isEnglish ? 'Open Nexo Desk ↗' : 'Abrir Nexo Desk ↗';
+    document.querySelectorAll('[data-public-project]').forEach(link => {
+      const labels = link.dataset.publicProject === 'fioTech' ? ['Abrir FIO / tech ↗', 'Open FIO / tech ↗'] : ['Abrir Nexo Desk ↗', 'Open Nexo Desk ↗'];
+      link.textContent = labels[Number(isEnglish)];
+    });
     document.querySelector('#copy-status').textContent = '';
     document.querySelector('#theme-status').textContent = '';
     if (announce) status.textContent = isEnglish ? 'Page language changed to English.' : 'Idioma da página alterado para português.';
