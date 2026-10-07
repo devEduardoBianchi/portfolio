@@ -37,6 +37,8 @@
     'Criação e edição de chamados, filas, busca, filtros, quadro por status, indicadores, notas internas e histórico. Alterações em lote podem ser desfeitas por 60 segundos.': 'Create and edit tickets, use queues, search, filters, a status board, analytics, internal notes and history. Bulk changes can be undone for 60 seconds.',
     'TECNOLOGIAS': 'TECHNOLOGIES',
     'Demonstração local · link público pendente': 'Local demo · public link pending',
+    'Demonstração pública disponível': 'Public demo available',
+    'A demonstração pública usa dados fictícios e salva as alterações neste navegador.': 'The public demo uses fictional data and saves changes in this browser.',
     'Abrir Nexo Desk ↗': 'Open Nexo Desk ↗',
     '02–04 / OUTROS PROJETOS': '02–04 / OTHER PROJECTS',
     'INTERFACES EM CONTEXTOS DIFERENTES': 'INTERFACES FOR DIFFERENT CONTEXTS',

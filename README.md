@@ -9,20 +9,20 @@ Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Soft
 - Página responsiva em português e inglês, com temas claro e escuro.
 - Animações GSAP com suporte à preferência por movimento reduzido.
 - **Nexo Desk**, **Entre Cenas**, **Forma**, **Price Cards** e **FIO / tech** apresentados em uma galeria de painéis equivalentes, com capturas reais das interfaces.
-- Demonstrações locais de **Entre Cenas**, **Forma** e **Price Cards**.
+- Demonstrações públicas do [**Nexo Desk**](https://nexo-desk-pi.vercel.app/) e do [**Forma**](https://forma-nine-wheat.vercel.app/#inicio), além de versões locais de **Entre Cenas**, **Forma** e **Price Cards**.
 - Currículo em PDF disponível na seção Sobre.
 
 ## Projetos
 
 | Projeto | Sobre | Tecnologias |
 | --- | --- | --- |
-| **Nexo Desk** | Sistema local de suporte com fila e quadro de chamados, filtros, indicadores, histórico, notas internas e ações em lote com opção de desfazer. O portfólio mostra capturas; não inclui a API nem o banco do sistema. | HTML, CSS, JavaScript, GSAP, Node.js, Express, SQLite |
+| [**Nexo Desk**](https://nexo-desk-pi.vercel.app/) | Sistema de suporte com fila e quadro de chamados, filtros, indicadores, histórico, notas internas e ações em lote com opção de desfazer. A demonstração pública usa dados fictícios no navegador; não atende chamados reais nem inclui a API ou o banco. | HTML, CSS, JavaScript, GSAP, localStorage na demonstração, Node.js, Express, SQLite |
 | **Entre Cenas** | Diário de cinema para descobrir filmes, organizar uma lista pessoal e registrar avaliações e anotações. O catálogo TMDb é opcional e pede um token no navegador; a coleção de demonstração funciona sem ele. | HTML, CSS, JavaScript, GSAP, localStorage, TMDb opcional |
-| **Forma** | Página de contato com temas claro e escuro, validação acessível, assunto e orçamento opcionais. A demonstração não envia mensagens; o envio real depende de um serviço configurado. | HTML, CSS, JavaScript, GSAP |
+| [**Forma**](https://forma-nine-wheat.vercel.app/#inicio) | Página de contato com temas claro e escuro, validação acessível, assunto e orçamento opcionais. A demonstração não envia mensagens; o envio real depende de um serviço configurado. | HTML, CSS, JavaScript, GSAP |
 | **Price Cards** | Estudo responsivo de planos de hospedagem com comparação interativa, resumos e indicação por quantidade de sites e necessidade de e-mail personalizado. Preços apenas demonstrativos. | HTML, CSS, JavaScript |
 | **FIO / tech** | Loja conceitual de eletrônicos e informática com catálogo, filtros, comparação de até três itens, favoritos e questionário de setup baseado em regras explicadas. Produtos e preços fictícios; sem compra real. | React, TypeScript, Vite, CSS, GSAP, localStorage |
 
-As demonstrações de Entre Cenas, Forma e Price Cards estão incluídas em `projetos/` e podem ser abertas pelo portfólio. Cada uma funciona sem instalar dependências. Nexo Desk e FIO / tech são apresentados com capturas reais; suas aplicações não fazem parte deste repositório. Os links públicos podem ser preenchidos em `script.js` quando estiverem disponíveis.
+As demonstrações de Entre Cenas, Forma e Price Cards estão incluídas em `projetos/` e podem ser abertas pelo portfólio. Cada uma funciona sem instalar dependências. Nexo Desk e FIO / tech são apresentados com capturas reais; suas aplicações não fazem parte deste repositório. Os endereços públicos confirmados do Nexo Desk e do Forma ficam configurados em `script.js`; o link do FIO / tech pode ser adicionado quando estiver disponível.
 
 ## Executar localmente
 

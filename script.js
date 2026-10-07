@@ -2,9 +2,9 @@
 const portfolio = {
   email: 'eduardopiresbianchi2003@gmail.com',
   projectUrls: {
-    nexoDesk: '',
+    nexoDesk: 'https://nexo-desk-pi.vercel.app/',
     entreCenas: '',
-    forma: '',
+    forma: 'https://forma-nine-wheat.vercel.app/#inicio',
     priceCards: '',
     fioTech: '',
   },
