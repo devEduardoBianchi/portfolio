@@ -3,10 +3,10 @@ const portfolio = {
   email: 'eduardopiresbianchi2003@gmail.com',
   projectUrls: {
     nexoDesk: 'https://nexo-desk-pi.vercel.app/',
-    entreCenas: '',
+    entreCenas: 'https://entrecenas-blond.vercel.app/',
     forma: 'https://forma-nine-wheat.vercel.app/#inicio',
-    priceCards: '',
-    fioTech: '',
+    priceCards: 'https://pricecards.vercel.app/#inicio',
+    fioTech: 'https://fiotech-six.vercel.app/',
   },
 };
 

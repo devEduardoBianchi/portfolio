@@ -9,7 +9,8 @@ Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Soft
 - Página responsiva em português e inglês, com temas claro e escuro.
 - Animações GSAP com suporte à preferência por movimento reduzido.
 - **Nexo Desk**, **Entre Cenas**, **Forma**, **Price Cards** e **FIO / tech** apresentados em uma galeria de painéis equivalentes, com capturas reais das interfaces.
-- Demonstrações públicas do [**Nexo Desk**](https://nexo-desk-pi.vercel.app/) e do [**Forma**](https://forma-nine-wheat.vercel.app/#inicio), além de versões locais de **Entre Cenas**, **Forma** e **Price Cards**.
+- Demonstrações públicas dos cinco projetos, além de versões locais de **Entre Cenas**, **Forma** e **Price Cards**.
+- Contato por e-mail, telefone e botão que abre uma conversa no WhatsApp.
 - Currículo em PDF disponível na seção Sobre.
 
 ## Projetos
@@ -17,12 +18,12 @@ Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Soft
 | Projeto | Sobre | Tecnologias |
 | --- | --- | --- |
 | [**Nexo Desk**](https://nexo-desk-pi.vercel.app/) | Sistema de suporte com fila e quadro de chamados, filtros, indicadores, histórico, notas internas e ações em lote com opção de desfazer. A demonstração pública usa dados fictícios no navegador; não atende chamados reais nem inclui a API ou o banco. | HTML, CSS, JavaScript, GSAP, localStorage na demonstração, Node.js, Express, SQLite |
-| **Entre Cenas** | Diário de cinema para descobrir filmes, organizar uma lista pessoal e registrar avaliações e anotações. O catálogo TMDb é opcional e pede um token no navegador; a coleção de demonstração funciona sem ele. | HTML, CSS, JavaScript, GSAP, localStorage, TMDb opcional |
+| [**Entre Cenas**](https://entrecenas-blond.vercel.app/) | Diário de cinema para descobrir filmes, organizar uma lista pessoal e registrar avaliações e anotações. O catálogo TMDb é opcional e pede um token no navegador; a coleção de demonstração funciona sem ele. | HTML, CSS, JavaScript, GSAP, localStorage, TMDb opcional |
 | [**Forma**](https://forma-nine-wheat.vercel.app/#inicio) | Página de contato com temas claro e escuro, validação acessível, assunto e orçamento opcionais. A demonstração não envia mensagens; o envio real depende de um serviço configurado. | HTML, CSS, JavaScript, GSAP |
-| **Price Cards** | Estudo responsivo de planos de hospedagem com comparação interativa, resumos e indicação por quantidade de sites e necessidade de e-mail personalizado. Preços apenas demonstrativos. | HTML, CSS, JavaScript |
-| **FIO / tech** | Loja conceitual de eletrônicos e informática com catálogo, filtros, comparação de até três itens, favoritos e questionário de setup baseado em regras explicadas. Produtos e preços fictícios; sem compra real. | React, TypeScript, Vite, CSS, GSAP, localStorage |
+| [**Price Cards**](https://pricecards.vercel.app/#inicio) | Estudo responsivo de planos de hospedagem com comparação interativa, resumos e indicação por quantidade de sites e necessidade de e-mail personalizado. Preços apenas demonstrativos. | HTML, CSS, JavaScript |
+| [**FIO / tech**](https://fiotech-six.vercel.app/) | Loja conceitual de eletrônicos e informática com catálogo, filtros, comparação de até três itens, favoritos e questionário de setup baseado em regras explicadas. Produtos e preços fictícios; sem compra real. | React, TypeScript, Vite, CSS, GSAP, localStorage |
 
-As demonstrações de Entre Cenas, Forma e Price Cards estão incluídas em `projetos/` e podem ser abertas pelo portfólio. Cada uma funciona sem instalar dependências. Nexo Desk e FIO / tech são apresentados com capturas reais; suas aplicações não fazem parte deste repositório. Os endereços públicos confirmados do Nexo Desk e do Forma ficam configurados em `script.js`; o link do FIO / tech pode ser adicionado quando estiver disponível.
+As demonstrações de Entre Cenas, Forma e Price Cards também estão incluídas em `projetos/` e funcionam sem instalar dependências. Nexo Desk e FIO / tech são apresentados com capturas reais; suas aplicações não fazem parte deste repositório. Os cinco endereços públicos estão configurados em `script.js`.
 
 ## Executar localmente
 
@@ -45,7 +46,7 @@ No Windows, também é possível usar `py -3 -m http.server 8080`. Acesse `http:
 
 ## Informações públicas
 
-O portfólio exibe nome, cidade, e-mail, LinkedIn e telefone para contato profissional. O PDF público mantém os dados que já constam nele. A configuração de envio do Forma está vazia por padrão: nenhum formulário envia dados até que um serviço seja configurado pelo responsável pelo deploy. Entre Cenas solicita o token TMDb ao visitante e o guarda apenas na sessão do navegador.
+O portfólio exibe nome, cidade, e-mail, LinkedIn e telefone para contato profissional. O botão de WhatsApp abre uma conversa com o mesmo número exibido na página; nenhuma mensagem é enviada pelo portfólio. O PDF público mantém os dados que já constam nele. A configuração de envio do Forma está vazia por padrão: nenhum formulário envia dados até que um serviço seja configurado pelo responsável pelo deploy. Entre Cenas solicita o token TMDb ao visitante e o guarda apenas na sessão do navegador.
 
 O README, o código e os recursos deste repositório não precisam de arquivos `.env`, tokens, banco de dados local ou credenciais. Não adicione esses dados ao publicar. A pasta `tmp/` é local e fica ignorada pelo Git.
 
