@@ -13,7 +13,7 @@
     '02 / INTERAÇÃO': '02 / INTERACTION',
     '03 / DADOS': '03 / DATA',
     'Estudos de JavaScript': 'JavaScript studies',
-    '4 cursos · fundamentos, tipos, condicionais e laços': '4 courses · fundamentals, types, conditionals and loops',
+    '4 cursos · lógica de programação, fundamentos, tipos, condicionais e laços': '4 courses · programming logic, fundamentals, types, conditionals and loops',
     'Estudos de HTML e CSS': 'HTML and CSS studies',
     '4 cursos · estrutura, estilo, layout, formulários, SEO e acessibilidade': '4 courses · structure, styling, layout, forms, SEO and accessibility',
     'Internet: fundamentos da web': 'Internet: web fundamentals',
