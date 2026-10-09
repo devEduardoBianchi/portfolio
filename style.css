@@ -367,6 +367,12 @@ body{background:var(--paper);color:var(--ink)}
 .course-list h4{font-size:16px;line-height:1.4;font-weight:400;letter-spacing:0}
 .course-list li p{margin-top:3px;color:var(--muted);font-size:12px;line-height:1.45}
 .course-list strong{font-size:14px;font-variant-numeric:tabular-nums}
+.course-list .course-current{grid-template-columns:30px minmax(0,1fr);padding:23px 0 26px}
+.course-current h4{font-weight:700}
+.course-list li .course-state{margin-top:5px;color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.02em}
+.course-syllabus{display:grid;gap:7px;margin-top:15px;padding-left:15px;border-left:2px solid var(--blue)}
+.course-list li .course-syllabus p{margin:0;font-size:13px;line-height:1.5}
+.course-syllabus b{color:var(--ink);font-weight:700}
 .contact{background:var(--contact-bg);color:var(--ink)}
 .contact .section-label{color:var(--muted)}
 .contact h2 em,.email-link span,.contact-links button:hover,.contact-links a:hover,.copy-status{color:var(--blue)}
@@ -406,6 +412,8 @@ body{background:var(--paper);color:var(--ink)}
   .course-list h4{font-size:15px}
   .course-list li p{font-size:11px}
   .course-list strong{font-size:12px}
+  .course-list .course-current{grid-template-columns:24px minmax(0,1fr)}
+  .course-list li .course-syllabus p{font-size:12px}
   .featured-media{padding:7px}
 }
 @media(max-width:360px){

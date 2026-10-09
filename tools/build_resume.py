@@ -67,8 +67,9 @@ p('Loja demonstrativa de eletrônicos com catálogo filtrável, comparação, fa
 
 section('CURSOS COMPLEMENTARES')
 for course in [
+    'FullStack PRO (Sujeito Programador) - <b>em andamento</b>; React, TypeScript, Next.js, Node.js, bancos de dados, testes e IA para devs.',
     'Desenvolvimento Frontend: 10 Projetos - <b>132,5 h</b>',
-    'Estudos de JavaScript (4 cursos: fundamentos, tipos, condicionais e laços) - <b>40 h</b>',
+    'Estudos de JavaScript (4 cursos: lógica de programação, fundamentos, tipos, condicionais e laços) - <b>40 h</b>',
     'Estudos de HTML e CSS (4 cursos: estrutura, estilo, layout, formulários, SEO e acessibilidade) - <b>42 h</b>',
     'Internet: fundamentos da web - <b>8 h</b>',
     'Lógica de Programação - <b>6 h</b>',
