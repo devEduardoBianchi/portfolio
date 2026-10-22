@@ -894,3 +894,21 @@ html{scroll-padding-top:120px}
 }
 @media(max-width:360px){.header{gap:4px 7px}.header-controls{gap:4px}.quick-open{width:36px;min-height:38px}}
 @media(prefers-reduced-motion:reduce){.quick-dialog[open]{animation:none}}
+
+/* Idiomas: bandeira centralizada e área de toque mais generosa. */
+.language-switch{gap:3px;padding:3px;border-radius:7px}
+.language-button{
+  flex-direction:column;gap:3px;min-width:73px;min-height:53px;padding:5px 9px;
+  border-radius:4px;text-align:center;font-size:11px;line-height:1;
+}
+.language-button img{width:29px;height:21px;object-fit:cover;object-position:center;border-radius:1px;box-shadow:0 0 0 1px rgba(0,0,0,.16)}
+.language-button span{display:block;min-width:2.5ch;text-align:center}
+@media(max-width:520px){
+  .language-switch{gap:2px;padding:2px}
+  .language-button{min-width:53px;min-height:49px;padding:4px 5px;font-size:10px}
+  .language-button img{width:25px;height:18px}
+}
+@media(max-width:360px){
+  .language-button{min-width:50px}
+  .header-controls{gap:3px}
+}
