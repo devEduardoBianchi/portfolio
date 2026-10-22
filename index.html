@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a111b">
+  <meta name="theme-color" content="#090a0d">
   <meta name="description" content="Portfólio de Eduardo Pires Bianchi, estudante de Engenharia de Software em Dourados, MS. Interfaces web e projetos como Nexo Desk, FIO / tech, Entre Cenas, Forma e Price Cards.">
   <title>Eduardo Bianchi — Desenvolvimento Web</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -26,6 +26,7 @@
       <a href="#contato">Contato <span aria-hidden="true">↗</span></a>
     </nav>
     <div class="header-controls">
+      <button class="quick-open" id="quick-open" type="button" aria-label="Abrir acesso rápido" aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K" title="Acesso rápido (Ctrl/⌘ K)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span>Acesso rápido</span><kbd>⌘ K</kbd></button>
       <div class="theme-switch" role="group" aria-label="Tema da página">
         <button class="theme-button" type="button" data-theme-choice="light" aria-label="Usar tema claro" aria-pressed="false" title="Tema claro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
         <button class="theme-button" type="button" data-theme-choice="dark" aria-label="Usar tema escuro" aria-pressed="true" title="Tema escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.4 15.2A8.6 8.6 0 0 1 8.8 3.6a8.6 8.6 0 1 0 11.6 11.6Z"/></svg></button>
@@ -39,6 +40,19 @@
   <div class="reading-progress" aria-hidden="true"></div>
   <p id="language-status" class="sr-only" role="status" aria-live="polite"></p>
   <p id="theme-status" class="sr-only" role="status" aria-live="polite"></p>
+
+  <dialog class="quick-dialog" id="quick-dialog" aria-labelledby="quick-title">
+    <div class="quick-panel">
+      <div class="quick-top"><span id="quick-title">ACESSO RÁPIDO / PORTFÓLIO</span><button class="quick-close" type="button" aria-label="Fechar acesso rápido">×</button></div>
+      <label class="quick-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span class="sr-only">Buscar destino</span><input id="quick-input" type="search" autocomplete="off" placeholder="Busque uma seção ou projeto"></label>
+      <div class="quick-results">
+        <div class="quick-group"><p>SEÇÕES</p><nav aria-label="Seções do portfólio"><a class="quick-result" href="#inicio" data-search="início inicio home abertura eduardo"><span class="quick-result-icon" aria-hidden="true">↗</span><span>Início</span><span class="quick-result-arrow" aria-hidden="true">↗</span></a><a class="quick-result" href="#projetos" data-search="projetos projects trabalhos portfolio"><span class="quick-result-icon" aria-hidden="true">↗</span><span>Projetos</span><span class="quick-result-arrow" aria-hidden="true">↗</span></a><a class="quick-result" href="#sobre" data-search="sobre about perfil eduardo"><span class="quick-result-icon" aria-hidden="true">↗</span><span>Sobre mim</span><span class="quick-result-arrow" aria-hidden="true">↗</span></a><a class="quick-result" href="#formacao" data-search="formação formacao education cursos estudos"><span class="quick-result-icon" aria-hidden="true">↗</span><span>Formação</span><span class="quick-result-arrow" aria-hidden="true">↗</span></a><a class="quick-result" href="#contato" data-search="contato contact email whatsapp telefone"><span class="quick-result-icon" aria-hidden="true">↗</span><span>Contato</span><span class="quick-result-arrow" aria-hidden="true">↗</span></a></nav></div>
+        <div class="quick-group"><p>PROJETOS</p><nav aria-label="Projetos do portfólio"><a class="quick-result" href="#nexo-desk" data-search="nexo desk suporte chamados tickets"><span class="quick-result-icon" aria-hidden="true">01</span><span>Nexo Desk</span><span class="quick-result-arrow" aria-hidden="true">↗</span></a><a class="quick-result" href="#entre-cenas" data-search="entre cenas cinema filmes diário diario movies"><span class="quick-result-icon" aria-hidden="true">02</span><span>Entre Cenas</span><span class="quick-result-arrow" aria-hidden="true">↗</span></a><a class="quick-result" href="#forma" data-search="forma formulário formulario contato form"><span class="quick-result-icon" aria-hidden="true">03</span><span>Forma</span><span class="quick-result-arrow" aria-hidden="true">↗</span></a><a class="quick-result" href="#price-cards" data-search="price cards planos comparação comparacao pricing"><span class="quick-result-icon" aria-hidden="true">04</span><span>Price Cards</span><span class="quick-result-arrow" aria-hidden="true">↗</span></a><a class="quick-result" href="#fio-tech" data-search="fio tech loja eletrônicos eletronicos computers ecommerce"><span class="quick-result-icon" aria-hidden="true">05</span><span>FIO / tech</span><span class="quick-result-arrow" aria-hidden="true">↗</span></a></nav></div>
+        <p class="quick-empty" hidden>Nenhum resultado encontrado.</p>
+      </div>
+      <div class="quick-foot"><span>↑ ↓ navegar · Enter abrir</span><span>ESC fechar</span></div>
+    </div>
+  </dialog>
 
   <main id="conteudo">
     <section class="hero" id="inicio" aria-labelledby="hero-title">
@@ -63,7 +77,14 @@
 
     <section class="work-section section-wrap" id="projetos" aria-labelledby="work-title">
       <div class="section-label"><span>01 / TRABALHOS SELECIONADOS</span><span>CINCO PROJETOS, CINCO FORMAS DE RESOLVER</span></div>
-      <div class="work-intro-body"><h2 id="work-title">Projetos em <em>prática.</em></h2><p>Interfaces, interação e sistemas: cinco projetos para explorar por dentro.</p></div>
+      <div class="work-intro-body"><h2 id="work-title">Projetos em <em>prática.</em></h2><div class="work-intro-aside"><p>Interfaces, interação e sistemas: cinco projetos para explorar por dentro.</p><div class="preview-control" role="group" aria-label="Visualizar capturas dos projetos" hidden><span>VER CAPTURAS EM</span><button type="button" data-preview-mode="desktop" aria-pressed="true">Desktop</button><button type="button" data-preview-mode="mobile" aria-pressed="false">Celular</button></div></div></div>
+      <nav class="work-index" aria-label="Navegar pelos projetos">
+        <a href="#nexo-desk"><span>01</span>Nexo Desk</a>
+        <a href="#entre-cenas"><span>02</span>Entre Cenas</a>
+        <a href="#forma"><span>03</span>Forma</a>
+        <a href="#price-cards"><span>04</span>Price Cards</a>
+        <a href="#fio-tech"><span>05</span>FIO / tech</a>
+      </nav>
       <div class="project-list">
       <article class="project-row" id="nexo-desk" aria-labelledby="nexo-title">
         <a class="project-visual" href="https://nexo-desk-pi.vercel.app/" data-project="nexoDesk" target="_blank" rel="noopener noreferrer" aria-label="Abrir Nexo Desk em nova aba"><picture><source media="(max-width: 520px)" srcset="assets/nexo-desk-mobile.png"><img src="assets/nexo-desk.png" width="1440" height="1400" alt="Visão geral do Nexo Desk com indicadores e fila de chamados" loading="lazy"></picture><span class="visual-corner" aria-hidden="true">↗</span></a>
@@ -129,7 +150,7 @@
     </section>
 
     <section class="contact" id="contato" aria-labelledby="contact-title">
-      <div class="contact-inner"><div class="section-label"><span>04 / VAMOS CONVERSAR</span><span>ABERTO A OPORTUNIDADES DE ESTÁGIO E TRABALHO</span></div><h2 id="contact-title">Encontrou o que procura?<br><em>Vamos conversar.</em></h2><div class="contact-bottom"><p>Estou aberto a oportunidades de estágio ou trabalho e a conversas sobre interfaces e tecnologia.</p><div class="contact-actions"><a class="email-link" href="mailto:eduardopiresbianchi2003@gmail.com">eduardopiresbianchi2003@gmail.com <span aria-hidden="true">↗</span></a><a class="phone-link" href="tel:+5567999969634"><span>Telefone</span><strong>+55 (67) 9 9996-9634</strong><span aria-hidden="true">↗</span></a><a class="whatsapp-link" href="https://wa.me/5567999969634" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Eduardo no WhatsApp em nova aba">Conversar no WhatsApp <span aria-hidden="true">↗</span></a><div class="contact-links"><button id="copy-email" type="button">Copiar e-mail <span aria-hidden="true">⧉</span></button><a href="https://github.com/devEduardoBianchi" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/eduardo-bianchi-31bb76321/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span></div></div></div>
+      <div class="contact-inner"><div class="section-label"><span>04 / VAMOS CONVERSAR</span><span>ABERTO A OPORTUNIDADES DE ESTÁGIO E TRABALHO</span></div><h2 id="contact-title">Encontrou o que procura?<br><em>Vamos conversar.</em></h2><div class="contact-bottom"><div class="contact-intro"><p>Estou aberto a oportunidades de estágio ou trabalho e a conversas sobre interfaces e tecnologia.</p><div class="contact-social"><a href="https://github.com/devEduardoBianchi" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/eduardo-bianchi-31bb76321/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div><div class="contact-actions"><a class="email-link" href="mailto:eduardopiresbianchi2003@gmail.com">eduardopiresbianchi2003@gmail.com <span aria-hidden="true">↗</span></a><a class="phone-link" href="tel:+5567999969634"><span>Telefone</span><strong>+55 (67) 9 9996-9634</strong><span aria-hidden="true">↗</span></a><a class="whatsapp-link" href="https://wa.me/5567999969634" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Eduardo no WhatsApp em nova aba">Conversar no WhatsApp <span aria-hidden="true">↗</span></a><div class="contact-links"><button id="copy-email" type="button">Copiar e-mail <span aria-hidden="true">⧉</span></button></div><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span></div></div></div>
     </section>
   </main>
   <footer class="footer"><a class="footer-brand" href="#inicio" aria-label="Voltar ao início">EB<span>.</span></a><p>© <span id="year">2026</span> Eduardo Pires Bianchi</p><span>FEITO COM CURIOSIDADE E CÓDIGO.</span><a href="#inicio">Voltar ao topo ↑</a></footer>

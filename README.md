@@ -2,13 +2,13 @@
 
 Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Software em Dourados, MS. Reúne projetos de interfaces, uma aplicação de suporte e experiências interativas.
 
-![Prévia do portfólio](assets/portfolio-preview.png)
+![Prévia da abertura do portfólio](assets/portfolio-preview.png)
 
 ## Conteúdo
 
 - Página responsiva em português e inglês, com temas claro e escuro.
 - Animações GSAP com suporte à preferência por movimento reduzido.
-- **Nexo Desk**, **Entre Cenas**, **Forma**, **Price Cards** e **FIO / tech** apresentados em uma galeria de painéis equivalentes, com capturas reais das interfaces.
+- **Nexo Desk**, **Entre Cenas**, **Forma**, **Price Cards** e **FIO / tech** apresentados como estudos de caso equivalentes, com índice navegável e capturas reais das interfaces. Em telas grandes, um controle permite comparar as capturas desktop e mobile.
 - Demonstrações públicas dos cinco projetos, além de versões locais de **Entre Cenas**, **Forma** e **Price Cards**.
 - Contato por e-mail, telefone e botão que abre uma conversa no WhatsApp.
 - Currículo em PDF disponível na seção Sobre.

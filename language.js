@@ -9,6 +9,22 @@
     'Tema escuro': 'Dark theme',
     'Tema claro ativado.': 'Light theme enabled.',
     'Tema escuro ativado.': 'Dark theme enabled.',
+    'Acesso rápido': 'Quick access',
+    'Abrir acesso rápido': 'Open quick access',
+    'Fechar acesso rápido': 'Close quick access',
+    'Acesso rápido (Ctrl/⌘ K)': 'Quick access (Ctrl/⌘ K)',
+    'ACESSO RÁPIDO / PORTFÓLIO': 'QUICK ACCESS / PORTFOLIO',
+    'Buscar destino': 'Search destination',
+    'Busque uma seção ou projeto': 'Search a section or project',
+    'SEÇÕES': 'SECTIONS',
+    'PROJETOS': 'PROJECTS',
+    'Seções do portfólio': 'Portfolio sections',
+    'Projetos do portfólio': 'Portfolio projects',
+    'Início': 'Home',
+    'Sobre mim': 'About me',
+    'Nenhum resultado encontrado.': 'No results found.',
+    '↑ ↓ navegar · Enter abrir': '↑ ↓ navigate · Enter open',
+    'ESC fechar': 'ESC close',
     '01 / ESTRUTURA': '01 / STRUCTURE',
     '02 / INTERAÇÃO': '02 / INTERACTION',
     '03 / DADOS': '03 / DATA',
@@ -93,6 +109,10 @@
     'Interface real de Price Cards com três planos, comparação de recursos e Premium recomendado': 'Actual Price Cards interface with three plans, feature comparison, and recommended Premium',
     'Pular para o conteúdo': 'Skip to content',
     'Projetos': 'Projects', 'Sobre': 'About', 'Formação': 'Education',
+    'Navegar pelos projetos': 'Navigate projects',
+    'Visualizar capturas dos projetos': 'View project screenshots',
+    'VER CAPTURAS EM': 'VIEW SCREENSHOTS IN',
+    'Celular': 'Mobile',
     'Vamos conversar': "Let’s talk", 'Contato': 'Contact',
     'DESENVOLVIMENTO WEB · PORTFÓLIO': 'WEB DEVELOPMENT · PORTFOLIO',
     'Aberto a estágio e trabalho': 'Open to internships and jobs',
@@ -205,8 +225,8 @@
     if (Object.hasOwn(english, key)) records.push({ node, original: node.textContent, translated: node.textContent.replace(key, english[key]) });
   }
   const attributes = [];
-  document.querySelectorAll('[aria-label], [title], img[alt]').forEach(element => {
-    for (const name of ['aria-label', 'alt', 'title']) {
+  document.querySelectorAll('[aria-label], [title], [placeholder], img[alt]').forEach(element => {
+    for (const name of ['aria-label', 'alt', 'title', 'placeholder']) {
       const original = element.getAttribute(name);
       if (Object.hasOwn(english, original)) attributes.push({ element, name, original, translated: english[original] });
     }
