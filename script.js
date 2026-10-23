@@ -20,7 +20,7 @@ function setTheme(choice, announce = false) {
   document.documentElement.dataset.theme = theme;
   themeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
   window.PortfolioSwitch?.update(document.querySelector('.theme-switch'), theme, announce);
-  themeColor.content = theme === 'light' ? '#f4f5f7' : '#090a0d';
+  themeColor.content = theme === 'light' ? '#f5f6f8' : '#0b0d11';
   if (announce) {
     const message = theme === 'light' ? 'Tema claro ativado.' : 'Tema escuro ativado.';
     themeStatus.textContent = window.PortfolioLanguage?.text(message) || message;
@@ -203,8 +203,7 @@ if (window.gsap && window.ScrollTrigger) {
       .from('.hero .eyebrow-line', { y: 12, opacity: 0, clearProps: 'transform,opacity' }, .12)
       .from('.hero h1>span', { y: 36, opacity: 0, stagger: .13, clearProps: 'transform,opacity' }, .24)
       .from('.hero-statement', { y: 18, opacity: 0, clearProps: 'transform,opacity' }, .63)
-      .from('.hero-actions', { y: 16, opacity: 0, clearProps: 'transform,opacity' }, .75)
-      .from('.hero-coordinates', { y: 14, opacity: 0, clearProps: 'transform,opacity' }, .85);
+      .from('.hero-actions', { y: 16, opacity: 0, clearProps: 'transform,opacity' }, .75);
 
     gsap.to('.reading-progress', {
       scaleX: 1, ease: 'none',

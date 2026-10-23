@@ -7,7 +7,7 @@ Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Soft
 ## Conteúdo
 
 - Página responsiva em português e inglês, com temas claro e escuro.
-- Animações GSAP com suporte à preferência por movimento reduzido.
+- Animações GSAP, trilhas de luz em Canvas na abertura e uma faixa contínua de tecnologias, com suporte à preferência por movimento reduzido.
 - **Nexo Desk**, **Entre Cenas**, **Forma**, **Price Cards** e **FIO / tech** apresentados como estudos de caso equivalentes, com índice navegável e capturas reais das interfaces. Em telas grandes, um controle permite comparar as capturas desktop e mobile.
 - Demonstrações públicas dos cinco projetos, além de versões locais de **Entre Cenas**, **Forma** e **Price Cards**.
 - Contato por e-mail, telefone e botão que abre uma conversa no WhatsApp.
@@ -37,7 +37,7 @@ No Windows, também é possível usar `py -3 -m http.server 8080`. Acesse `http:
 
 ## Estrutura
 
-- `index.html`, `style.css`, `script.js`, `language.js`: página, estilos, interações e traduções.
+- `index.html`, `style.css`, `script.js`, `language.js`, `effects.js`: página, estilos, interações, traduções e efeitos visuais.
 - `assets/`: capturas reais, artes originais, fontes com suas licenças e currículo público.
 - `assets/vendor/`: cópias locais do GSAP e ScrollTrigger com avisos de licença preservados.
 - `projetos/`: demonstrações autocontidas dos projetos incluídos.

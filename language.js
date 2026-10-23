@@ -182,6 +182,7 @@ window.PortfolioSwitch = {
     'Minha caixa de ferramentas': 'My toolkit',
     'Retrato de Eduardo Pires Bianchi': 'Portrait of Eduardo Pires Bianchi',
     'Conhecimentos que estou colocando em prática.': 'Skills I’m putting into practice.',
+    'Tecnologias em prática': 'Technologies in practice',
     'Interfaces web': 'Web interfaces',
     'Fundamentos & ferramentas': 'Fundamentals & tools',
     'Lógica de programação · Git · GitHub · Codex como apoio ao desenvolvimento': 'Programming logic · Git · GitHub · Codex as a development aid',
