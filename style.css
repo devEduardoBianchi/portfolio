@@ -1059,3 +1059,69 @@ html{scroll-padding-top:120px}
   .project-visual img{transition:none}
   .work-index{backdrop-filter:none}
 }
+
+/* Confirmação de cópia: alternância curta com desfoque, adaptada da Spell UI. */
+.contact-links .copy-button{
+  display:inline-grid;place-items:center;position:relative;min-width:178px;min-height:46px;
+  padding:0 14px;border:1px solid var(--dark-line);border-radius:5px;
+  background:var(--paper-2);color:var(--ink);font:700 13px/1.2 Manrope,sans-serif;
+  cursor:pointer;transition:border-color .2s,color .2s,background .2s;
+}
+.contact-links .copy-button:hover,.contact-links .copy-button:focus-visible{
+  border-color:var(--blue);background:var(--soft-accent);color:var(--blue);
+}
+.copy-button-states{display:grid;place-items:center}
+.copy-button-state{
+  grid-area:1/1;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  white-space:nowrap;transition:opacity .24s ease,filter .24s ease,transform .24s cubic-bezier(.16,1,.3,1);
+}
+.copy-button-state svg{width:18px;height:18px;flex:none}
+.copy-button-success{opacity:0;filter:blur(7px);transform:translateY(6px);pointer-events:none}
+.copy-button[data-copied="true"] .copy-button-idle{opacity:0;filter:blur(7px);transform:translateY(-6px)}
+.copy-button[data-copied="true"] .copy-button-success{opacity:1;filter:blur(0);transform:translateY(0)}
+.copy-status.sr-only{min-height:0}
+@media(prefers-reduced-motion:reduce){
+  .copy-button-state{transition:none}
+  .copy-button-success,.copy-button[data-copied="true"] .copy-button-idle{filter:none;transform:none}
+}
+
+/* Squish Switch: o marcador acompanha a opção ativa e se comprime na troca. */
+.header .theme-switch,.header .language-switch{
+  position:relative;isolation:isolate;gap:0;padding:3px;overflow:visible;
+  border:1px solid var(--line);border-radius:6px;background:var(--paper-2);
+}
+.header .theme-button,.header .language-button{
+  position:relative;z-index:1;flex:1 1 0;height:100%;min-height:0;min-width:48px;
+  border:0;border-radius:4px;background:transparent;color:var(--muted);
+  transition:color .18s ease,background-color .18s ease;
+}
+.header .language-button{min-width:64px}
+.header .theme-button[aria-pressed="true"],.header .language-button[aria-pressed="true"]{
+  background:transparent;color:var(--accent-ink);
+}
+.header .theme-button:hover:not([aria-pressed="true"]),
+.header .language-button:hover:not([aria-pressed="true"]){background:var(--soft-accent);color:var(--ink)}
+.squish-switch-thumb{
+  position:absolute;z-index:0;top:3px;bottom:3px;left:3px;
+  width:calc((100% - 6px)/2);pointer-events:none;
+  transform:translateX(0);
+  transition:transform .42s cubic-bezier(.25,1.45,.42,1);
+}
+.squish-switch-surface{position:absolute;inset:0;border-radius:4px;background:var(--blue);pointer-events:none}
+.theme-switch[data-active="dark"] .squish-switch-thumb,
+.language-switch[data-active="en"] .squish-switch-thumb{transform:translateX(100%)}
+.header .theme-button:focus-visible,.header .language-button:focus-visible{
+  z-index:2;outline:2px solid var(--blue);outline-offset:2px;
+}
+@media(max-width:780px){
+  .header .theme-button{min-width:40px}
+  .header .language-button{min-width:53px}
+}
+@media(max-width:360px){
+  .header .theme-button{min-width:36px}
+  .header .language-button{min-width:48px}
+}
+@media(prefers-reduced-motion:reduce){
+  .squish-switch-thumb{transition:none}
+  .header .theme-button,.header .language-button{transition:none}
+}

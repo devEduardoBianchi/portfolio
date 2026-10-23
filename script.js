@@ -19,6 +19,7 @@ function setTheme(choice, announce = false) {
   const theme = choice === 'light' ? 'light' : 'dark';
   document.documentElement.dataset.theme = theme;
   themeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
+  window.PortfolioSwitch?.update(document.querySelector('.theme-switch'), theme, announce);
   themeColor.content = theme === 'light' ? '#f4f5f7' : '#090a0d';
   if (announce) {
     const message = theme === 'light' ? 'Tema claro ativado.' : 'Tema escuro ativado.';
@@ -156,13 +157,20 @@ if (previews.length && previews.every(preview => preview.mobile)) {
 const copyButton = document.querySelector('#copy-email');
 const copyStatus = document.querySelector('#copy-status');
 let statusTimer;
+let copyFeedbackTimer;
 copyButton.addEventListener('click', async () => {
   clearTimeout(statusTimer);
+  clearTimeout(copyFeedbackTimer);
   try {
     await navigator.clipboard.writeText(portfolio.email);
+    copyButton.dataset.copied = 'true';
+    copyStatus.classList.add('sr-only');
     copyStatus.textContent = window.PortfolioLanguage?.text('E-mail copiado!') || 'E-mail copiado!';
+    copyFeedbackTimer = setTimeout(() => { copyButton.dataset.copied = 'false'; }, 2400);
   } catch {
     const message = 'Selecione o endereço acima para copiar ou clique nele para enviar um e-mail.';
+    copyButton.dataset.copied = 'false';
+    copyStatus.classList.remove('sr-only');
     copyStatus.textContent = window.PortfolioLanguage?.text(message) || message;
   }
   statusTimer = setTimeout(() => { copyStatus.textContent = ''; }, 6000);

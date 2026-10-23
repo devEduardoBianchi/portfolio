@@ -1,5 +1,19 @@
 // Textos editoriais: cada chave corresponde a um trecho do HTML em português.
 // Nós de texto são atualizados sem recriar elementos, links ou animações.
+window.PortfolioSwitch = {
+  update(group, state, animate = false) {
+    if (!group) return;
+    group.dataset.active = state;
+    const surface = group.querySelector('.squish-switch-surface');
+    if (!animate || !surface || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+    surface.animate([
+      { transform: 'scaleX(.86)', offset: 0 },
+      { transform: 'scaleX(1.2)', offset: .42 },
+      { transform: 'scaleX(.94)', offset: .76 },
+      { transform: 'scaleX(1)', offset: 1 },
+    ], { duration: 420, easing: 'cubic-bezier(.22, 1, .36, 1)' });
+  },
+};
 (() => {
   const english = {
     'Tema da página': 'Page theme',
@@ -247,6 +261,7 @@
     document.title = isEnglish ? 'Eduardo Bianchi — Web Development' : originalTitle;
     description.content = isEnglish ? 'Portfolio of Eduardo Pires Bianchi, a Software Engineering student in Dourados, Brazil. Web interfaces and projects including Nexo Desk, FIO / tech, Entre Cenas, Forma and Price Cards.' : originalDescription;
     document.querySelectorAll('[data-language]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
+    window.PortfolioSwitch.update(document.querySelector('.language-switch'), language, announce);
     document.querySelectorAll('[data-public-project]').forEach(link => {
       const labels = link.dataset.publicProject === 'fioTech' ? ['Abrir FIO / tech ↗', 'Open FIO / tech ↗'] : ['Abrir Nexo Desk ↗', 'Open Nexo Desk ↗'];
       link.textContent = labels[Number(isEnglish)];
