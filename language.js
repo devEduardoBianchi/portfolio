@@ -149,6 +149,7 @@
     '03 / ESTUDO DE INTERFACE': '03 / UI STUDY',
     'Página de planos de hospedagem com comparação de recursos, layout responsivo e estados de interação. A paleta grafite e verde destaca o Premium como recomendado para pequenos projetos.': 'A hosting plans page with feature comparison, responsive layout and interactive states. Its charcoal and green palette highlights Premium as the recommended plan for small projects.',
     'Design responsivo': 'Responsive design',
+    'Versão local: Node.js · Express · SQLite': 'Local version: Node.js · Express · SQLite',
     'Explorar Price Cards': 'Explore Price Cards',
     'Preços demonstrativos; nenhum plano pode ser contratado.': 'Demo pricing; plans cannot be purchased.',
     '02 / SOBRE MIM': '02 / ABOUT ME',

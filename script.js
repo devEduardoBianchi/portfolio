@@ -168,6 +168,21 @@ copyButton.addEventListener('click', async () => {
   statusTimer = setTimeout(() => { copyStatus.textContent = ''; }, 6000);
 });
 
+// O índice acompanha o estudo de caso em leitura, inclusive sem GSAP.
+const projectRows = [...document.querySelectorAll('.project-row')];
+const projectIndexLinks = [...document.querySelectorAll('.work-index a')];
+if ('IntersectionObserver' in window) {
+  const projectObserver = new IntersectionObserver(entries => {
+    const current = entries.find(entry => entry.isIntersecting);
+    if (!current) return;
+    projectIndexLinks.forEach(link => {
+      if (link.hash === `#${current.target.id}`) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }, { rootMargin: '-25% 0px -55% 0px' });
+  projectRows.forEach(row => projectObserver.observe(row));
+}
+
 // Conteúdo e links permanecem acessíveis se GSAP não carregar.
 if (window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);

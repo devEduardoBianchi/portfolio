@@ -622,6 +622,7 @@ body{background:var(--paper);color:var(--ink)}
 .project-copy>p:not(.project-stack,.project-note){max-width:470px;font-size:clamp(16px,1.25vw,20px);line-height:1.57}
 .project-stack{max-width:450px;margin-top:clamp(23px,3vw,38px);padding-top:16px;border-top:1px solid var(--gallery-rule);font-size:12px;line-height:1.7}
 .project-copy .text-link,.project-public-link{margin-top:clamp(23px,2.8vw,38px);color:var(--ink);border-bottom:1px solid var(--project-accent)}
+.project-copy .text-link::after{content:none}
 .project-copy .text-link:hover,.project-copy .text-link:focus-visible,.project-public-link:hover,.project-public-link:focus-visible{color:var(--project-accent)}
 .project-note{max-width:460px;line-height:1.5}
 .about{background-size:cover,cover;background-position:center,center;background-repeat:no-repeat;border-top:1px solid var(--line)}
@@ -979,4 +980,82 @@ html{scroll-padding-top:120px}
 @media(max-width:780px){
   .header-controls{justify-self:end}
   .header nav{justify-content:center;gap:clamp(18px,4vw,30px)}
+}
+
+/* Galeria 2026: a interface de cada projeto é a peça principal. */
+:root[data-theme="dark"]{
+  --hero-art:url("assets/hero-gallery.webp");
+  --hero-veil:linear-gradient(90deg,rgba(6,7,10,.65),rgba(6,7,10,.28) 55%,rgba(6,7,10,.08));
+  --about-wash:linear-gradient(90deg,rgba(10,11,14,.94),rgba(10,11,14,.82) 52%,rgba(10,11,14,.62));
+}
+:root[data-theme="light"]{
+  --hero-art:url("assets/hero-gallery.webp");
+  --hero-veil:linear-gradient(90deg,rgba(246,248,251,.93),rgba(246,248,251,.78) 48%,rgba(246,248,251,.18));
+  --about-wash:linear-gradient(90deg,rgba(246,248,251,.97),rgba(246,248,251,.9) 52%,rgba(246,248,251,.7));
+}
+.hero-art{filter:none;background-position:center center}
+.hero h1{max-width:920px}
+.work-section{padding-top:clamp(76px,7vw,112px);padding-bottom:clamp(80px,8vw,120px)}
+.work-intro-body{margin:clamp(34px,4vw,60px) 0 clamp(34px,4vw,58px)}
+.work-section h2{font-size:clamp(52px,6.2vw,92px)}
+.work-index{position:sticky;top:82px;z-index:12;margin-bottom:20px;background:color-mix(in srgb,var(--gallery-ground) 96%,transparent);backdrop-filter:blur(12px)}
+.work-index a{position:relative;min-height:64px}
+.work-index a[aria-current="location"]{color:var(--ink);background:var(--soft-accent)}
+.work-index a[aria-current="location"]::after{content:"";position:absolute;right:0;bottom:-1px;left:0;height:3px;background:var(--blue)}
+.project-row{grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr);gap:clamp(38px,5.4vw,100px);min-height:0;padding:clamp(54px,5.4vw,86px) 0;scroll-margin-top:155px}
+.project-row:nth-of-type(even){grid-template-columns:minmax(320px,.7fr) minmax(0,1.3fr)}
+.project-row::before{width:54px}
+.project-visual{height:clamp(410px,38vw,600px);box-shadow:0 26px 68px rgba(0,0,0,.2)}
+.project-visual::before{top:13px;left:18px}
+.project-visual picture{inset:0;box-shadow:none;background:transparent}
+.project-visual img{object-fit:cover;object-position:center top}
+#entre-cenas .project-visual img,
+#forma .project-visual img,
+#price-cards .project-visual img{object-fit:cover}
+#nexo-desk .project-visual img{object-position:center top}
+.project-headline{margin-bottom:24px}
+.project-copy h3{font-size:clamp(44px,4.2vw,64px);line-height:1.04}
+.project-copy>p:not(.project-stack,.project-note){font-size:clamp(16px,1.15vw,18px);line-height:1.58}
+.project-stack{margin-top:24px}
+.about{background-attachment:scroll,scroll;background-size:cover,cover;background-position:center,center}
+.capabilities{margin-top:clamp(72px,8vw,128px)}
+:root[data-theme="dark"] .about{color:var(--ink)}
+@media(max-width:1100px){
+  .project-row,.project-row:nth-of-type(even){grid-template-columns:minmax(0,1.1fr) minmax(290px,.9fr);gap:34px}
+  .project-row:nth-of-type(even){grid-template-columns:minmax(290px,.9fr) minmax(0,1.1fr)}
+  .project-visual{height:430px}
+}
+@media(max-width:780px){
+  :root[data-theme="dark"] .hero{--hero-veil:linear-gradient(90deg,rgba(6,7,10,.96),rgba(6,7,10,.82) 62%,rgba(6,7,10,.48))}
+  :root[data-theme="light"] .hero{--hero-veil:linear-gradient(90deg,rgba(246,248,251,.98),rgba(246,248,251,.91) 62%,rgba(246,248,251,.55))}
+  .hero-statement{grid-template-columns:1fr;max-width:440px}
+  .hero-statement>p:last-child{max-width:340px}
+  .work-index{position:static;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;scroll-snap-type:none}
+  .work-index a{min-height:52px;white-space:normal;padding:8px 10px;border-bottom:1px solid var(--gallery-rule)}
+  .work-index a:first-child{padding-left:10px}
+  .work-index a:nth-child(3){border-right:0}
+  .project-row,.project-row:nth-of-type(even){grid-template-columns:1fr;gap:26px;padding:48px 0 54px}
+  .project-row:nth-of-type(even) .project-visual,.project-row:nth-of-type(even) .project-copy{order:initial}
+  .project-visual{height:auto;aspect-ratio:1.55}
+  .project-copy h3{font-size:clamp(43px,7vw,60px)}
+}
+@media(max-width:520px){
+  :root[data-theme="dark"] .hero{--hero-veil:linear-gradient(90deg,rgba(6,7,10,.94),rgba(6,7,10,.77) 70%,rgba(6,7,10,.53))}
+  :root[data-theme="light"] .hero{--hero-veil:linear-gradient(90deg,rgba(246,248,251,.98),rgba(246,248,251,.92) 75%,rgba(246,248,251,.69))}
+  .hero-art{background-position:62% center}
+  .work-index{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:8px}
+  .work-index a:nth-child(3){border-right:1px solid var(--gallery-rule)}
+  .work-index a:nth-child(even){border-right:0}
+  .project-row,.project-row:nth-of-type(even){padding:42px 0 48px}
+  .project-visual{aspect-ratio:auto;height:auto;min-height:0;background:var(--paper-2)}
+  .project-visual picture{position:relative;display:block;inset:auto;width:100%;height:auto;overflow:visible}
+  .project-visual img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+  #entre-cenas .project-visual img,
+  #forma .project-visual img,
+  #price-cards .project-visual img{object-fit:contain}
+  .project-copy h3{font-size:clamp(42px,10vw,55px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .project-visual img{transition:none}
+  .work-index{backdrop-filter:none}
 }
