@@ -231,6 +231,34 @@ window.PortfolioSwitch = {
     'Voltar ao início': 'Back to home',
     'E-mail copiado!': 'Email copied!',
     'Selecione o endereço acima para copiar ou clique nele para enviar um e-mail.': 'Select the address above to copy it, or click it to send an email.',
+    'Gosto de entender como as coisas funcionam.': 'I like understanding how things work.',
+    'E de colocar esse aprendizado em prática.': 'And putting what I learn into practice.',
+    'Estudo Engenharia de Software e crio projetos para aprender desenvolvimento web.': 'I study Software Engineering and build projects to learn web development.',
+    '01 / PROJETOS': '01 / PROJECTS',
+    'CINCO PROJETOS PARA EXPLORAR': 'FIVE PROJECTS TO EXPLORE',
+    'O que venho': 'What I have been',
+    'criando.': 'building.',
+    'De interfaces a aplicações: projetos que fiz para testar ideias e aprender fazendo.': 'From interfaces to applications: projects I built to test ideas and learn by doing.',
+    'Quem está': 'The person',
+    'por trás dos projetos.': 'behind the projects.',
+    'Estudante de Engenharia de Software · Dourados, MS': 'Software Engineering student · Dourados, Brazil',
+    'Fale comigo': 'Get in touch',
+    'Ferramentas que uso': 'Tools I use',
+    'Tecnologias presentes nos meus estudos e projetos.': 'Technologies I use in my studies and projects.',
+    'O que estou': 'What I am',
+    'estudando.': 'studying.',
+    'Além da graduação, faço cursos e aplico o que aprendo nos projetos.': 'Alongside my degree, I take courses and apply what I learn in projects.',
+    '04 / CONTATO': '04 / CONTACT',
+    'Gostou do que viu?': 'Like what you see?',
+    'Entre em contato.': 'Get in touch.',
+    'Estou aberto a oportunidades de estágio ou trabalho. Se quiser conversar sobre projetos, interfaces ou tecnologia, me escreva.': 'I’m open to internships and jobs. If you want to discuss projects, interfaces or technology, send me a message.',
+    'Criei o Nexo Desk para organizar o trabalho de suporte em um só lugar. Dá para acompanhar chamados, prioridades e prazos, usar filtros e quadro por status, registrar notas e consultar o histórico. Ações em lote podem ser desfeitas por 60 segundos.': 'I built Nexo Desk to organize support work in one place. You can track tickets, priorities and deadlines, use filters and a status board, add notes and check the history. Bulk actions can be undone for 60 seconds.',
+    'Um diário para quem gosta de cinema. Nele, dá para descobrir filmes, montar uma lista pessoal, dar notas e acompanhar estatísticas da coleção. O catálogo TMDb é opcional.': 'A journal for movie lovers. Discover films, build a personal list, rate them and track collection statistics. The TMDb catalog is optional.',
+    'Uma página de contato pensada para funcionar bem em cada etapa: preenchimento, validação, envio e retorno. Tem temas claro e escuro. Assunto e orçamento são opcionais; na demonstração, nenhuma mensagem é enviada.': 'A contact page designed for each step: filling out the form, validation, sending and feedback. It has light and dark themes. Subject and budget are optional; the demo sends no messages.',
+    'Um estudo de interface para comparar planos de hospedagem. A página resume as opções e sugere um plano conforme a quantidade de sites e a necessidade de e-mail personalizado. O Premium aparece como opção recomendada para pequenos projetos.': 'A UI study for comparing hosting plans. The page summarizes the options and suggests a plan based on the number of sites and the need for custom email. Premium is recommended for small projects.',
+    'Uma loja conceitual de eletrônicos e informática. Dá para filtrar produtos, comparar até três itens, salvar favoritos e responder a um questionário para montar um setup. Produtos e preços são fictícios; não há compra.': 'A concept electronics and computer store. Filter products, compare up to three items, save favorites and answer a setup quiz. Products and prices are fictional; purchases are unavailable.',
+    'Convivo com computadores desde cedo. A vontade de entender como as coisas funcionam me levou ao desenvolvimento web. Hoje, aprendo na faculdade, em cursos e, principalmente, criando projetos.': 'I have been around computers since I was young. Wanting to understand how things work led me to web development. Today I learn at university, through courses and, above all, by building projects.',
+    'Procuro uma oportunidade de estágio ou trabalho em tecnologia para colaborar com uma equipe e continuar aprendendo na prática.': 'I’m looking for an internship or job in technology where I can work with a team and keep learning through practice.',
   };
   const records = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
@@ -259,8 +287,8 @@ window.PortfolioSwitch = {
     records.forEach(record => { record.node.textContent = isEnglish ? record.translated : record.original; });
     attributes.forEach(record => record.element.setAttribute(record.name, isEnglish ? record.translated : record.original));
     document.documentElement.lang = language;
-    document.title = isEnglish ? 'Eduardo Bianchi — Web Development' : originalTitle;
-    description.content = isEnglish ? 'Portfolio of Eduardo Pires Bianchi, a Software Engineering student in Dourados, Brazil. Web interfaces and projects including Nexo Desk, FIO / tech, Entre Cenas, Forma and Price Cards.' : originalDescription;
+    document.title = isEnglish ? 'Eduardo Bianchi | Web projects and development' : originalTitle;
+    description.content = isEnglish ? 'Explore web projects by Eduardo Pires Bianchi, a Software Engineering student in Dourados, Brazil. Interfaces, applications and contact details.' : originalDescription;
     document.querySelectorAll('[data-language]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
     window.PortfolioSwitch.update(document.querySelector('.language-switch'), language, announce);
     document.querySelectorAll('[data-public-project]').forEach(link => {
@@ -271,7 +299,6 @@ window.PortfolioSwitch = {
     document.querySelector('#theme-status').textContent = '';
     if (announce) status.textContent = isEnglish ? 'Page language changed to English.' : 'Idioma da página alterado para português.';
     try { localStorage.setItem('portfolio-language', language); } catch { /* Funciona também sem armazenamento. */ }
-    if (window.ScrollTrigger) requestAnimationFrame(() => ScrollTrigger.refresh());
   }
 
   window.PortfolioLanguage = { text: value => language === 'en' ? (english[value] || value) : value };

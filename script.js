@@ -1,6 +1,6 @@
 // Endereços públicos confirmados podem ser adicionados aqui sem alterar o HTML.
 const portfolio = {
-  email: 'eduardopiresbianchi2003@gmail.com',
+  email: 'deveduardobianchi@gmail.com',
   projectUrls: {
     nexoDesk: 'https://nexo-desk-pi.vercel.app/',
     entreCenas: 'https://entrecenas-blond.vercel.app/',
@@ -134,6 +134,7 @@ if (previews.length && previews.every(preview => preview.mobile)) {
     const mode = button.dataset.previewMode;
     document.querySelector('.work-section').dataset.previewMode = mode;
     previewButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    window.PortfolioSwitch?.update(previewControl, mode, true);
     previews.forEach(preview => { preview.image.src = mode === 'mobile' ? preview.mobile : preview.desktop; });
   }));
 }
@@ -191,71 +192,54 @@ if ('IntersectionObserver' in window) {
   projectRows.forEach(row => projectObserver.observe(row));
 }
 
-// Conteúdo e links permanecem acessíveis se GSAP não carregar.
-if (window.gsap && window.ScrollTrigger) {
-  gsap.registerPlugin(ScrollTrigger);
-  const motion = gsap.matchMedia();
-
-  motion.add('(prefers-reduced-motion: no-preference)', () => {
-    const entrance = gsap.timeline({ defaults: { duration: .78, ease: 'power3.out' } });
-    entrance
-      .from('.hero-art', { scale: 1.045, opacity: .35, duration: 1.35, ease: 'power2.out', clearProps: 'transform,opacity' }, 0)
-      .from('.hero .eyebrow-line', { y: 12, opacity: 0, clearProps: 'transform,opacity' }, .12)
-      .from('.hero h1>span', { y: 36, opacity: 0, stagger: .13, clearProps: 'transform,opacity' }, .24)
-      .from('.hero-statement', { y: 18, opacity: 0, clearProps: 'transform,opacity' }, .63)
-      .from('.hero-actions', { y: 16, opacity: 0, clearProps: 'transform,opacity' }, .75);
-
-    gsap.to('.reading-progress', {
-      scaleX: 1, ease: 'none',
-      scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: .3 },
+// Entrada inspirada em Animated Content: só transforma elementos quando há suporte e movimento permitido.
+const motionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (motionAllowed && 'IntersectionObserver' in window) {
+  const targets = document.querySelectorAll('.work-intro-body, .project-row, .about-grid, .capabilities, .skill-row, .education-intro, .courses, .contact h2, .contact-bottom');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
     });
-
-    gsap.timeline({
-      scrollTrigger: { trigger: '.work-intro-body', start: 'top 82%', once: true },
-      defaults: { ease: 'power2.out', duration: .65 },
-    })
-      .from('.work-intro-body h2', { y: 24, clearProps: 'transform' })
-      .from('.work-intro-aside', { y: 16, opacity: 0, clearProps: 'transform,opacity' }, '<.08');
-
-    gsap.utils.toArray('.project-row').forEach(row => {
-      const elements = [row.querySelector('.project-visual'), row.querySelector('.project-copy')];
-      gsap.timeline({
-        scrollTrigger: { trigger: row, start: 'top 78%', once: true },
-        defaults: { ease: 'power2.out', duration: .72 },
-      })
-        .from(elements[0], { y: 24, opacity: 0, clearProps: 'transform,opacity' })
-        .from(elements[1], { y: 18, opacity: 0, clearProps: 'transform,opacity' }, '<.14');
-    });
-
-    gsap.timeline({
-      scrollTrigger: { trigger: '.about-grid', start: 'top 80%', once: true },
-      defaults: { ease: 'power2.out', duration: .75 },
-    })
-      .from('.about-identity h2, .about-portrait', { y: 25, opacity: 0, stagger: .1, clearProps: 'transform,opacity' })
-      .from('.about-copy', { y: 20, opacity: 0, clearProps: 'transform,opacity' }, '<.18');
-
-    gsap.timeline({
-      scrollTrigger: { trigger: '.capabilities', start: 'top 84%', once: true },
-      defaults: { ease: 'power2.out', duration: .65 },
-    })
-      .from('.capabilities h3, .capabilities p', { y: 18, opacity: 0, stagger: .08, clearProps: 'transform,opacity' })
-      .from('.skill-row', { x: 20, opacity: 0, stagger: .11, clearProps: 'transform,opacity' }, '<.18');
-
-    gsap.timeline({
-      scrollTrigger: { trigger: '.education-grid', start: 'top 80%', once: true },
-      defaults: { ease: 'power2.out', duration: .72 },
-    })
-      .from('.education-intro', { y: 25, opacity: 0, clearProps: 'transform,opacity' })
-      .from('.courses>h3, .courses>p', { y: 16, opacity: 0, stagger: .08, clearProps: 'transform,opacity' }, '<.15')
-      .from('.course-list li', { y: 17, opacity: 0, stagger: .09, duration: .52, clearProps: 'transform,opacity' }, '<.12');
-
-    gsap.timeline({
-      scrollTrigger: { trigger: '.contact h2', start: 'top 82%', once: true },
-      defaults: { ease: 'power2.out', duration: .72 },
-    })
-      .from('.contact h2', { y: 28, opacity: 0, clearProps: 'transform,opacity' })
-      .from('.contact-intro, .contact-actions', { y: 20, opacity: 0, stagger: .12, clearProps: 'transform,opacity' }, '<.2');
+  }, { threshold: .08, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(target => {
+    if (target.getBoundingClientRect().top < window.innerHeight * .95) return;
+    target.classList.add('animated-content');
+    observer.observe(target);
   });
+}
 
-  window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+const progress = document.querySelector('.reading-progress');
+let progressFrame = 0;
+function updateProgress() {
+  cancelAnimationFrame(progressFrame);
+  progressFrame = requestAnimationFrame(() => {
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.transform = `scaleX(${total > 0 ? window.scrollY / total : 0})`;
+  });
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+window.addEventListener('resize', updateProgress, { passive: true });
+updateProgress();
+
+// Revelação curta do nome; o texto permanece legível sem JavaScript.
+if (motionAllowed) document.querySelector('.hero')?.classList.add('hero-reveal-ready');
+
+// Inclinação leve do retrato. A foto e o link continuam utilizáveis sem JavaScript.
+const profileCard = document.querySelector('.profile-card');
+if (profileCard && motionAllowed && window.matchMedia('(hover: hover)').matches) {
+  profileCard.addEventListener('pointermove', event => {
+    const bounds = profileCard.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - .5;
+    const y = (event.clientY - bounds.top) / bounds.height - .5;
+    profileCard.style.setProperty('--card-rotate-x', `${-y * 7}deg`);
+    profileCard.style.setProperty('--card-rotate-y', `${x * 7}deg`);
+    profileCard.style.setProperty('--glare-x', `${(x + .5) * 100}%`);
+    profileCard.style.setProperty('--glare-y', `${(y + .5) * 100}%`);
+  });
+  profileCard.addEventListener('pointerleave', () => {
+    profileCard.style.removeProperty('--card-rotate-x');
+    profileCard.style.removeProperty('--card-rotate-y');
+  });
 }
