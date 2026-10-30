@@ -195,7 +195,7 @@ if ('IntersectionObserver' in window) {
 // Entrada inspirada em Animated Content: só transforma elementos quando há suporte e movimento permitido.
 const motionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (motionAllowed && 'IntersectionObserver' in window) {
-  const targets = document.querySelectorAll('.work-intro-body, .project-row, .about-grid, .capabilities, .skill-row, .education-intro, .courses, .contact h2, .contact-bottom');
+  const targets = document.querySelectorAll('.work-intro-body, .project-copy, .about-identity h2, .about-copy, .capabilities, .skill-row, .education-intro, .courses, .contact h2, .contact-bottom');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -213,10 +213,11 @@ if (motionAllowed && 'IntersectionObserver' in window) {
 const progress = document.querySelector('.reading-progress');
 let progressFrame = 0;
 function updateProgress() {
-  cancelAnimationFrame(progressFrame);
+  if (progressFrame) return;
   progressFrame = requestAnimationFrame(() => {
     const total = document.documentElement.scrollHeight - window.innerHeight;
     progress.style.transform = `scaleX(${total > 0 ? window.scrollY / total : 0})`;
+    progressFrame = 0;
   });
 }
 window.addEventListener('scroll', updateProgress, { passive: true });
