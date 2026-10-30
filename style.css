@@ -1180,7 +1180,7 @@ html{scroll-padding-top:120px}
 .profile-contact{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:7px;min-height:43px;padding:0 12px;background:var(--blue);color:var(--accent-ink);font-size:13px;font-weight:700}
 .profile-contact:hover{filter:brightness(1.1)}
 .profile-contact:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.animated-content{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.animated-content{opacity:0;transform:translateY(44px);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1)}
 .animated-content.is-visible{opacity:1;transform:translateY(0)}
 .footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
 .footer>a:last-child{justify-self:end}

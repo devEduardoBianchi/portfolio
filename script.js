@@ -202,9 +202,9 @@ if (motionAllowed && 'IntersectionObserver' in window) {
       entry.target.classList.add('is-visible');
       observer.unobserve(entry.target);
     });
-  }, { threshold: .08, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: .12, rootMargin: '0px 0px -18% 0px' });
   targets.forEach(target => {
-    if (target.getBoundingClientRect().top < window.innerHeight * .95) return;
+    if (target.getBoundingClientRect().top < window.innerHeight * .8) return;
     target.classList.add('animated-content');
     observer.observe(target);
   });

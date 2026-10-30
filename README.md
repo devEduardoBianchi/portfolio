@@ -2,13 +2,16 @@
 
 Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Software em Dourados, MS. Reúne projetos de interfaces, uma aplicação de suporte e experiências interativas.
 
+**Acesse:** [www.eduardopbianchi.com.br](https://www.eduardopbianchi.com.br/)
+
 ![Prévia da abertura do portfólio](assets/portfolio-preview.png)
 
 ## Conteúdo
 
-- Página responsiva em português e inglês, com temas claro e escuro.
-- Animações GSAP, trilhas de luz em Canvas na abertura e uma faixa contínua de tecnologias, com suporte à preferência por movimento reduzido.
-- **Nexo Desk**, **Entre Cenas**, **Forma**, **Price Cards** e **FIO / tech** apresentados como estudos de caso equivalentes, com índice navegável e capturas reais das interfaces. Em telas grandes, um controle permite comparar as capturas desktop e mobile.
+- Site estático em HTML, CSS e JavaScript, responsivo, em português e inglês, com temas claro e escuro.
+- Navegação por seções e acesso rápido com `Ctrl+K`/`⌘K`.
+- Animações de entrada em CSS, faixa de ferramentas em movimento quando visível e suporte à preferência por movimento reduzido. A página principal não carrega GSAP nem Canvas.
+- **Nexo Desk**, **Entre Cenas**, **Forma**, **Price Cards** e **FIO / tech** apresentados com o mesmo peso visual, índice navegável e capturas reais. Um controle alterna as capturas entre desktop e celular.
 - Demonstrações públicas dos cinco projetos, além de versões locais de **Entre Cenas**, **Forma** e **Price Cards**.
 - Contato por e-mail, telefone e botão que abre uma conversa no WhatsApp.
 - Currículo em PDF disponível na seção Sobre.
@@ -25,6 +28,12 @@ Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Soft
 
 As demonstrações de Entre Cenas, Forma e Price Cards também estão incluídas em `projetos/` e funcionam sem instalar dependências. Nexo Desk e FIO / tech são apresentados com capturas reais; suas aplicações não fazem parte deste repositório. Os cinco endereços públicos estão configurados em `script.js`.
 
+## Movimento e desempenho
+
+As entradas durante a rolagem usam `IntersectionObserver` e animam apenas opacidade e posição. Nos projetos, a entrada afeta o texto; as capturas não são animadas como um bloco grande. A navbar e o índice de projetos mantêm a posição fixa durante a leitura sem aplicar desfoque ao conteúdo que passa atrás deles. O indicador de progresso é atualizado com `requestAnimationFrame`, no máximo uma vez por quadro. A faixa de ferramentas pausa fora da área visível.
+
+Essas escolhas reduzem o trabalho de renderização durante a rolagem. Não há uma medição de FPS publicada neste repositório; o resultado pode variar conforme o aparelho e o navegador.
+
 ## Executar localmente
 
 O site é estático e não precisa de compilação nem instalação de pacotes. Na pasta do repositório, inicie um servidor HTTP local:
@@ -37,9 +46,9 @@ No Windows, também é possível usar `py -3 -m http.server 8080`. Acesse `http:
 
 ## Estrutura
 
-- `index.html`, `style.css`, `script.js`, `language.js`, `effects.js`: página, estilos, interações, traduções e efeitos visuais.
+- `index.html`, `style.css`, `script.js`, `language.js`, `effects.js`: página, estilos, interações, traduções e faixa de ferramentas.
 - `assets/`: capturas reais, artes originais, fontes com suas licenças e currículo público.
-- `assets/vendor/`: cópias locais do GSAP e ScrollTrigger com avisos de licença preservados.
+- `assets/vendor/`: cópias locais do GSAP e ScrollTrigger usadas pelas demonstrações incluídas, com avisos de licença preservados.
 - `projetos/`: demonstrações autocontidas dos projetos incluídos.
 - `tools/build_resume.py`: código-fonte do currículo PDF. Requer Python, ReportLab e fontes Arial disponíveis no ambiente Windows usado para gerá-lo.
 - `DESIGN.md`: notas sobre a direção visual do portfólio.
