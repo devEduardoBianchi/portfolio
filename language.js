@@ -27,7 +27,7 @@ window.PortfolioSwitch = {
 
     'Galeria de projetos': 'Project gallery',
     'Ver projeto completo': 'View project details',
-    'Ver todos os projetos': 'View all projects',
+    'Conheça melhor os projetos': 'Learn more about the projects',
     'Interface do Nexo Desk': 'Nexo Desk interface',
     'Interface do Entre Cenas': 'Entre Cenas interface',
     'Interface do Forma': 'Forma interface',
