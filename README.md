@@ -44,6 +44,14 @@ python -m http.server 8080
 
 No Windows, também é possível usar `py -3 -m http.server 8080`. Acesse `http://localhost:8080` no navegador. Para conferir uma demonstração diretamente, abra `projetos/entre-cenas/`, `projetos/forma/` ou `projetos/price-cards/`.
 
+## Busca e compartilhamento
+
+O domínio canônico é `https://www.eduardopbianchi.com.br/`. O título, a descrição e as tags Open Graph/Twitter estão no HTML inicial, disponíveis sem executar JavaScript. A capa de compartilhamento é `assets/portfolio-social-v1.jpg`, em JPEG de 1200 × 630 pixels. O briefing da arte está em `assets/portfolio-social-brief.md`.
+
+`robots.txt` permite o rastreamento e informa o endereço de `sitemap.xml`. O sitemap lista apenas a página principal: as seções com `#` fazem parte dessa mesma página, e as demonstrações externas têm seus próprios domínios.
+
+Após publicar estas alterações na Vercel, confira `/robots.txt`, `/sitemap.xml` e `/assets/portfolio-social-v1.jpg` no domínio oficial. No Google Search Console, envie `https://www.eduardopbianchi.com.br/sitemap.xml`. A indexação e a atualização de prévias dependem dos serviços; o WhatsApp pode manter uma imagem anterior em cache.
+
 ## Estrutura
 
 - `index.html`, `style.css`, `script.js`, `language.js`, `effects.js`: página, estilos, interações, traduções e faixa de ferramentas.

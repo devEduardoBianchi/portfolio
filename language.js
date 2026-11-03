@@ -287,8 +287,8 @@ window.PortfolioSwitch = {
     records.forEach(record => { record.node.textContent = isEnglish ? record.translated : record.original; });
     attributes.forEach(record => record.element.setAttribute(record.name, isEnglish ? record.translated : record.original));
     document.documentElement.lang = language;
-    document.title = isEnglish ? 'Eduardo Bianchi | Web projects and development' : originalTitle;
-    description.content = isEnglish ? 'Explore web projects by Eduardo Pires Bianchi, a Software Engineering student in Dourados, Brazil. Interfaces, applications and contact details.' : originalDescription;
+    document.title = isEnglish ? 'Eduardo Bianchi | Portfolio and Web Development' : originalTitle;
+    description.content = isEnglish ? 'Meet Eduardo Pires Bianchi, a Software Engineering student. Explore my web development projects, education and ways to get in touch.' : originalDescription;
     document.querySelectorAll('[data-language]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
     window.PortfolioSwitch.update(document.querySelector('.language-switch'), language, announce);
     document.querySelectorAll('[data-public-project]').forEach(link => {
