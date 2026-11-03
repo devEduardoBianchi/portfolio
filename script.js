@@ -3,6 +3,7 @@ const portfolio = {
   email: 'deveduardobianchi@gmail.com',
   projectUrls: {
     nexoDesk: 'https://nexo-desk-pi.vercel.app/',
+    nexoOficina: 'https://nexo-informatica-murex.vercel.app/',
     entreCenas: 'https://entrecenas-blond.vercel.app/',
     forma: 'https://forma-nine-wheat.vercel.app/#inicio',
     priceCards: 'https://pricecards.vercel.app/#inicio',

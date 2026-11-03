@@ -1,0 +1,11 @@
+# Nexo Oficina Digital — imagens de apresentação
+
+Ferramenta: image_gen integrada, modo de edição. Referências: capturas reais do site publicado. As imagens de apresentação são recriações assistidas por IA; a captura móvel original foi preservada.
+
+## Horizontal
+
+Use case: precise-object-edit. Asset type: portfolio presentation preview recreated faithfully from an actual website screenshot. Edit target: supplied screenshot. Recreate at high resolution with crisp typography and sharper photographic details. Preserve the exact NEXO OFICINA DIGITAL brand/logo, coral red and navy palette, all existing layout, text, spacing, photo composition and proportions. This is restoration, not a redesign. No new UI, features, words, devices, mockup frames, or watermarks. Remove only the browser scrollbar along the right edge. Text verbatim: "Projeto de portfólio · Empresa fictícia · Atendimento simulado", "Tecnologia perto.", "Soluções reais.", "Informática, equipamentos e assistência técnica para acompanhar o seu dia a dia.", "INFORMÁTICA COM CONEXÃO HUMANA.", "Falar no WhatsApp", "Conhecer serviços". Keep other visible text exactly as reference. Landscape 16:10 canvas. Keep the entire desktop navigation and hero, with the products/services strip at the bottom.
+
+## Vertical
+
+Use case: precise-object-edit. Asset type: portfolio presentation preview recreated faithfully from an actual website screenshot. Edit target: supplied screenshot. Recreate at high resolution with crisp typography and sharper photographic details. Preserve the exact NEXO OFICINA DIGITAL brand/logo, coral red and navy palette, all existing layout, text, spacing, photo composition and proportions. This is restoration, not a redesign. No new UI, features, words, devices, mockup frames, or watermarks. Remove only the browser scrollbar along the right edge. Text verbatim: "Projeto de portfólio · Empresa fictícia · Atendimento simulado", "Tecnologia perto.", "Soluções reais.", "Informática, equipamentos e assistência técnica para acompanhar o seu dia a dia.", "INFORMÁTICA COM CONEXÃO HUMANA.", "Falar no WhatsApp", "Conhecer serviços". Keep other visible text exactly as reference. Portrait 3:4 canvas. Preserve the two-row navigation, hero, services strip and the start of the next section exactly as shown.

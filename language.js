@@ -16,6 +16,19 @@ window.PortfolioSwitch = {
 };
 (() => {
   const english = {
+    "Prévia de apresentação do Nexo Oficina Digital": "Nexo Oficina Digital presentation preview",
+    "SEIS PROJETOS PARA EXPLORAR": "SIX PROJECTS TO EXPLORE",
+    "02 / SITE DE INFORMÁTICA": "02 / COMPUTER SERVICES WEBSITE",
+    "03 / APLICAÇÃO WEB": "03 / WEB APPLICATION",
+    "04 / INTERAÇÃO E FORMULÁRIOS": "04 / INTERACTION AND FORMS",
+    "05 / ESTUDO DE INTERFACE": "05 / INTERFACE STUDY",
+    "06 / LOJA CONCEITUAL": "06 / CONCEPT STORE",
+    "Interface do Nexo Oficina Digital": "Nexo Oficina Digital interface",
+    "Abrir Nexo Oficina Digital em nova aba": "Open Nexo Oficina Digital in a new tab",
+    "Explorar Nexo Oficina Digital": "Explore Nexo Oficina Digital",
+    "Um site conceitual para uma empresa de informática e assistência técnica. Reúne serviços, catálogo com busca, filtros e ordenação, Blog e uma página dedicada ao reparo de notebooks.": "A concept website for a computer sales and repair business. It brings together services, a searchable catalogue with filters and sorting, a blog and a dedicated laptop repair page.",
+    "Marca, produtos e contatos fictícios. O atendimento é simulado; nenhuma mensagem é enviada.": "Fictional brand, products and contacts. Customer service is simulated; no messages are sent.",
+
     'VER PRÉVIAS EM': 'VIEW PREVIEWS IN',
     'Visualizar prévias dos projetos': 'View project previews',
     'Apresentação': 'Presentation',

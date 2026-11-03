@@ -11,7 +11,7 @@ Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Soft
 - Site estático em HTML, CSS e JavaScript, responsivo, em português e inglês, somente no tema escuro.
 - Navegação direta pelas seções na barra superior.
 - Animações de entrada em CSS, faixa de ferramentas em movimento quando visível e suporte à preferência por movimento reduzido. A página principal não carrega GSAP nem Canvas.
-- **Nexo Desk**, **Entre Cenas**, **Forma**, **Price Cards** e **FIO / tech** apresentados com o mesmo peso visual, índice navegável e capturas reais. Um controle alterna as capturas entre desktop e celular.
+- **Nexo Desk**, **Nexo Oficina Digital**, **Entre Cenas**, **Forma**, **Price Cards** e **FIO / tech** apresentados com o mesmo peso visual, índice navegável e capturas reais. Um controle alterna as capturas entre desktop e celular.
 - Demonstrações públicas dos cinco projetos, além de versões locais de **Entre Cenas**, **Forma** e **Price Cards**.
 - Contato por e-mail, telefone e botão que abre uma conversa no WhatsApp.
 - Currículo em PDF disponível na seção Sobre.
@@ -21,12 +21,13 @@ Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Soft
 | Projeto | Sobre | Tecnologias |
 | --- | --- | --- |
 | [**Nexo Desk**](https://nexo-desk-pi.vercel.app/) | Sistema de suporte com fila e quadro de chamados, filtros, indicadores, histórico, notas internas e ações em lote com opção de desfazer. A demonstração pública usa dados fictícios no navegador; não atende chamados reais nem inclui a API ou o banco. | HTML, CSS, JavaScript, GSAP, localStorage na demonstração, Node.js, Express, SQLite |
+| [**Nexo Oficina Digital**](https://nexo-informatica-murex.vercel.app/) | Site conceitual de informática e assistência técnica, com catálogo pesquisável, filtros, Blog e página de reparos de notebooks. Marca e contatos fictícios; atendimento simulado. | HTML, CSS, JavaScript, GSAP |
 | [**Entre Cenas**](https://entrecenas-blond.vercel.app/) | Diário de cinema para descobrir filmes, organizar uma lista pessoal e registrar avaliações e anotações. O catálogo TMDb é opcional e pede um token no navegador; a coleção de demonstração funciona sem ele. | HTML, CSS, JavaScript, GSAP, localStorage, TMDb opcional |
 | [**Forma**](https://forma-nine-wheat.vercel.app/#inicio) | Página de contato somente no tema escuro, validação acessível, assunto e orçamento opcionais. A demonstração não envia mensagens; o envio real depende de um serviço configurado. | HTML, CSS, JavaScript, GSAP |
 | [**Price Cards**](https://pricecards.vercel.app/#inicio) | Estudo responsivo de planos de hospedagem com comparação interativa, resumos e indicação por quantidade de sites e necessidade de e-mail personalizado. Preços apenas demonstrativos. | HTML, CSS, JavaScript |
 | [**FIO / tech**](https://fiotech-six.vercel.app/) | Loja conceitual de eletrônicos e informática com catálogo, filtros, comparação de até três itens, favoritos e questionário de setup baseado em regras explicadas. Produtos e preços fictícios; sem compra real. | React, TypeScript, Vite, CSS, GSAP, localStorage |
 
-As demonstrações de Entre Cenas, Forma e Price Cards também estão incluídas em `projetos/` e funcionam sem instalar dependências. Nexo Desk e FIO / tech são apresentados com capturas reais; suas aplicações não fazem parte deste repositório. Os cinco endereços públicos estão configurados em `script.js`.
+As demonstrações de Entre Cenas, Forma e Price Cards também estão incluídas em `projetos/` e funcionam sem instalar dependências. Nexo Desk e FIO / tech são apresentados com capturas reais; suas aplicações não fazem parte deste repositório. Os seis endereços públicos estão configurados em `script.js`.
 
 ## Movimento e desempenho
 

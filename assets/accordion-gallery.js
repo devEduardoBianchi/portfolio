@@ -19,7 +19,7 @@
       panel.setAttribute('aria-expanded', String(open));
       const values = mobile.matches
         ? { height: open ? 280 : 62, flexGrow: 0, rotationY: 0 }
-        : { height: root.clientHeight, flexGrow: open ? 4.333 : 1, rotationY: open ? 0 : index < active ? 4 : -4 };
+        : { height: root.clientHeight, flexGrow: open ? (panels.length - 1) * .52 / .48 : 1, rotationY: open ? 0 : index < active ? 4 : -4 };
       if (timeline) {
         timeline.to(panel, { ...values, duration, ease: 'power3.out' }, 0);
         timeline.to(panel.querySelector('.ag-media'), { x: open || mobile.matches ? 0 : Math.max(-1.5, Math.min(1.5, active-index)) * 12, duration, ease: 'power3.out' }, 0);
