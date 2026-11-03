@@ -8,8 +8,8 @@ Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Soft
 
 ## Conteúdo
 
-- Site estático em HTML, CSS e JavaScript, responsivo, em português e inglês, com temas claro e escuro.
-- Navegação por seções e acesso rápido com `Ctrl+K`/`⌘K`.
+- Site estático em HTML, CSS e JavaScript, responsivo, em português e inglês, somente no tema escuro.
+- Navegação direta pelas seções na barra superior.
 - Animações de entrada em CSS, faixa de ferramentas em movimento quando visível e suporte à preferência por movimento reduzido. A página principal não carrega GSAP nem Canvas.
 - **Nexo Desk**, **Entre Cenas**, **Forma**, **Price Cards** e **FIO / tech** apresentados com o mesmo peso visual, índice navegável e capturas reais. Um controle alterna as capturas entre desktop e celular.
 - Demonstrações públicas dos cinco projetos, além de versões locais de **Entre Cenas**, **Forma** e **Price Cards**.
@@ -22,7 +22,7 @@ Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Soft
 | --- | --- | --- |
 | [**Nexo Desk**](https://nexo-desk-pi.vercel.app/) | Sistema de suporte com fila e quadro de chamados, filtros, indicadores, histórico, notas internas e ações em lote com opção de desfazer. A demonstração pública usa dados fictícios no navegador; não atende chamados reais nem inclui a API ou o banco. | HTML, CSS, JavaScript, GSAP, localStorage na demonstração, Node.js, Express, SQLite |
 | [**Entre Cenas**](https://entrecenas-blond.vercel.app/) | Diário de cinema para descobrir filmes, organizar uma lista pessoal e registrar avaliações e anotações. O catálogo TMDb é opcional e pede um token no navegador; a coleção de demonstração funciona sem ele. | HTML, CSS, JavaScript, GSAP, localStorage, TMDb opcional |
-| [**Forma**](https://forma-nine-wheat.vercel.app/#inicio) | Página de contato com temas claro e escuro, validação acessível, assunto e orçamento opcionais. A demonstração não envia mensagens; o envio real depende de um serviço configurado. | HTML, CSS, JavaScript, GSAP |
+| [**Forma**](https://forma-nine-wheat.vercel.app/#inicio) | Página de contato somente no tema escuro, validação acessível, assunto e orçamento opcionais. A demonstração não envia mensagens; o envio real depende de um serviço configurado. | HTML, CSS, JavaScript, GSAP |
 | [**Price Cards**](https://pricecards.vercel.app/#inicio) | Estudo responsivo de planos de hospedagem com comparação interativa, resumos e indicação por quantidade de sites e necessidade de e-mail personalizado. Preços apenas demonstrativos. | HTML, CSS, JavaScript |
 | [**FIO / tech**](https://fiotech-six.vercel.app/) | Loja conceitual de eletrônicos e informática com catálogo, filtros, comparação de até três itens, favoritos e questionário de setup baseado em regras explicadas. Produtos e preços fictícios; sem compra real. | React, TypeScript, Vite, CSS, GSAP, localStorage |
 
@@ -92,3 +92,49 @@ O README, o código e os recursos deste repositório não precisam de arquivos `
 ## Licenças
 
 Os arquivos de fonte e as cópias do GSAP incluem seus avisos de licença. Este repositório não define uma licença geral de reutilização para o portfólio, currículo, imagens e código. Peça autorização ao autor antes de reutilizar esses materiais.
+
+### Fundo da abertura — AeroShards
+
+O fundo anterior da hero, AeroShards do React Bits, está preservado em `assets/aero-shards.js`. A dependência VGPU 0.3.0 está empacotada localmente em `assets/vendor/vgpu.js`, com licença ao lado. Não é necessário instalar React nem executar build para publicar.
+
+O carregador `assets/hero-shards.js` importa o efeito depois da conclusão da abertura (e do carregamento da página): 420 fragmentos no desktop, 180 no celular, resolução limitada, sem bloom e sem desfoque de profundidade. O desenho está limitado a 30 fps e pausa fora da hero ou quando a aba está oculta. Movimento reduzido, economia de dados ou ausência de WebGPU mantêm a abertura com fundo sólido e conteúdo completo. Não há mais foto de fundo nem preload dessa imagem na abertura.
+
+O fundo da hero usa faixas horizontais sem reação ao mouse. A abertura anterior ScrollExpand foi substituída pelo Perspective Tunnel em `assets/perspective-tunnel.js`, adaptado do prompt ProfitizeBuild para JavaScript nativo. A tipografia do túnel usa as fontes de sistema do exemplo, com título branco em degradê. A rolagem controla nove cartões 3D em uma camada fixa, sem altura extra no documento, com suavização e paralaxe discreta; ao concluir, o portfólio aparece desde o topo e os conteúdos da hero entram. A abertura roda uma vez por sessão, pode ser pulada e é desativada com movimento reduzido. O texto começa totalmente oculto e aparece somente ao avançar. Na saída, uma proteção curta absorve o restante do gesto para evitar que a hero seja deslocada. O trabalho de animação para quando o visitante deixa de interagir.
+
+As capturas atuais dos cinco sites publicados estão em `assets/tunnel/*-live.png`, com versões WebP leves usadas nos cartões. Quatro capturas móveis reais existentes completam os nove cartões. Fontes e processamento: `assets/tunnel/README.md`. Não foram necessárias imagens geradas.
+
+
+A navbar em `assets/adaptive-navbar.js` fica transparente sobre a hero e assume a cor de fundo da seção sob ela ao navegar. O contraste dos links e controles é ajustado automaticamente para superfícies claras ou escuras; não muda o tema do site. A cor é lida do fundo CSS real da seção, sem analisar imagens nem executar um loop contínuo.
+
+As imagens para a futura Accordion Gallery estão em `assets/accordion-gallery/`, com cinco capturas reais verticais 3:4, variantes horizontais e manifest de dimensões. A galeria não foi implementada.
+
+
+### Experimento atual: Aurora
+
+O seletor `HERO_BACKGROUND` no início de `assets/hero-shards.js` está em `aurora`. O arquivo `assets/aurora.js` adapta o shader WebGL2 do prompt ProfitizeBuild, sem novas dependências. Paleta: #7197ff, #dceaff, #315eff e #07152f. O efeito inicia somente depois do túnel, reage suavemente ao ponteiro sobre a hero ou até 120 px ao redor, acompanha a atualização da tela via requestAnimationFrame, sem limite artificial de FPS, em meia resolução e pausa fora da tela/na aba oculta. Com movimento reduzido ou economia de dados, desenha um quadro estático. Sem WebGL2, mantém o fundo sólido. O canvas, observadores e recursos WebGL são liberados ao desmontar.
+
+Para restaurar o teste anterior, trocar apenas `HERO_BACKGROUND` para `shards`; os arquivos e ajustes do AeroShards foram preservados.
+
+A hero ocupa a altura da tela, sem a antiga faixa “Interfaces · Sistemas · Experiência”. A seção de projetos começa com espaçamento superior de 40 a 64 px.
+
+### Galeria de projetos
+
+A página inicial usa uma adaptação do Accordion Gallery (React Bits) em HTML, CSS e JavaScript com o GSAP local já disponível. Os cinco painéis usam recriações por imagegen das interfaces reais em `assets/accordion-gallery/*-restored.webp`; expandem por mouse, foco, setas do teclado ou toque. Em celular a galeria fica vertical. A animação só executa ao selecionar ou redimensionar e respeita movimento reduzido. O botão “Ver todos os projetos” abre `/trabalhos/`, que preserva as descrições completas, tecnologias, demonstrações e comparação de capturas desktop/celular.
+
+As seções depois da hero compartilham um fundo quase preto com luz azul estática em CSS, sem novos loops, shaders ou blur. A barra de rolagem do documento fica oculta visualmente; a rolagem nativa continua funcionando.
+
+As cinco imagens foram recriadas por imagegen integrado usando os screenshots como referência, seguindo o fluxo de restauração do projeto Ricardo Salão de Beleza. Fontes PNG e prompts em `output/imagegen/`; as versões WebP usadas na galeria somam aproximadamente 502 KB. A página `/trabalhos/` mantém as capturas originais para consulta das interfaces reais.
+
+A galeria foi conferida no navegador em 1440, 768 e 390 px, com teclado, seleção de painéis, português/inglês e navegação para a página completa. O teste de largura móvel simula o layout; não equivale a medir desempenho em um celular físico. A inspeção visual usou CUA; o inspetor automatizado da skill não foi executado porque o controle do navegador nesta sessão é feito exclusivamente por CUA.
+
+As luzes azuis nas bordas das seções são pareadas: posição, cor, intensidade e raio vertical coincidem entre a saída de uma seção e a entrada da próxima. A transição é estática em CSS, sem processamento por quadro.
+
+### Página de trabalhos: Relevo
+
+A página `/trabalhos/` usa `assets/relevo.css` e `assets/relevo.js`: texto e prévia alternados em zigue-zague, cinco painéis 16:10, colunas, margens e espaçamento idênticos. Uma altura de conteúdo compartilhada mantém as linhas do desktop iguais sem cortar descrições. Em até 900 px, os blocos empilham com espaçamentos uniformes.
+
+As entradas GSAP acontecem uma vez por visita: navegação, introdução, textos e imagens de cada projeto, contato e rodapé. Só transform e opacidade são animados; movimento reduzido mostra tudo pronto. A inclinação de até 5° segue o mouse apenas em desktop, sem brilho sobre as imagens; não existe loop de animação ocioso. A apresentação usa as imagens recriadas via imagegen em `assets/relevo/*-wide.webp`, todas com 1586 × 992 px. Fontes PNG e prompts em `output/imagegen/relevo/`. O controle permite alternar para as capturas reais de celular.
+
+Verificação do Relevo: em 1440 px, os cinco blocos mediram 636 px de altura, painéis de 787 × 492 px, 72 px de margem interna vertical e 57,6 px entre as colunas. Em 1024 px, todos mediram 631 px de altura. Em 768 px, os cinco painéis mediram 702 × 439 px, com gap de 32 px e padding de 54 px; em 390 px, 354 × 221 px, gap de 26 px e padding de 42 px. Português/inglês, prévias móveis, carregamento e ausência de rolagem lateral foram conferidos no navegador. As medidas móveis são de viewport simulado, não benchmark em aparelho físico.
+
+Na página inicial, `assets/home-entrances.js` anima os cinco painéis da galeria em cascata e a moldura da foto com sua legenda, uma vez ao entrar na tela. As entradas usam transform e opacidade, aguardam o fim da abertura e respeitam movimento reduzido; a expansão da galeria e a inclinação do cartão continuam independentes.

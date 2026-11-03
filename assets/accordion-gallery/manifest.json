@@ -1,0 +1,72 @@
+[
+  {
+    "project": "entrecenas",
+    "portrait": "entrecenas-portrait.webp",
+    "portraitSize": [
+      885,
+      1180
+    ],
+    "landscape": "entrecenas-landscape.webp",
+    "landscapeSize": [
+      1265,
+      712
+    ],
+    "objectPosition": "50% 0%"
+  },
+  {
+    "project": "fiotech",
+    "portrait": "fiotech-portrait.webp",
+    "portraitSize": [
+      885,
+      1180
+    ],
+    "landscape": "fiotech-landscape.webp",
+    "landscapeSize": [
+      1265,
+      712
+    ],
+    "objectPosition": "50% 0%"
+  },
+  {
+    "project": "forma",
+    "portrait": "forma-portrait.webp",
+    "portraitSize": [
+      885,
+      1180
+    ],
+    "landscape": "forma-landscape.webp",
+    "landscapeSize": [
+      1265,
+      712
+    ],
+    "objectPosition": "50% 0%"
+  },
+  {
+    "project": "nexo",
+    "portrait": "nexo-portrait.webp",
+    "portraitSize": [
+      885,
+      1180
+    ],
+    "landscape": "nexo-landscape.webp",
+    "landscapeSize": [
+      1265,
+      712
+    ],
+    "objectPosition": "50% 0%"
+  },
+  {
+    "project": "pricecards",
+    "portrait": "pricecards-portrait.webp",
+    "portraitSize": [
+      885,
+      1180
+    ],
+    "landscape": "pricecards-landscape.webp",
+    "landscapeSize": [
+      1265,
+      712
+    ],
+    "objectPosition": "50% 0%"
+  }
+]

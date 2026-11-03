@@ -32,11 +32,11 @@ function rules(source) {
   return result;
 }
 
-const initialClass = /\.(?:hero(?:-[\w-]+)?|header(?:-[\w-]+)?|brand(?:-[\w-]+)?|theme-(?:switch|button)|language-(?:switch|button)|squish-switch(?:-[\w-]+)?|quick-open|eyebrow-line|availability(?:-dot)?|action-(?:link(?:-primary)?|arrow)|reading-progress|skip-link|sr-only)(?![\w-])/;
+const initialClass = /\.(?:hero(?:-[\w-]+)?|site-intro(?:-[\w-]+)?|tunnel-intro|pt-[\w-]+|header(?:-[\w-]+)?|brand(?:-[\w-]+)?|theme-(?:switch|button)|language-(?:switch|button)|squish-switch(?:-[\w-]+)?|quick-open|eyebrow-line|availability(?:-dot)?|action-(?:link(?:-primary)?|arrow)|reading-progress|skip-link|sr-only)(?![\w-])/;
 const globalSelector = /^(?:\*|:root|::selection|\[hidden\]|(?:html|body|a|button|input|textarea|select|img|picture|p|h[1-6]|figure|dialog)(?![\w-]))/;
 function critical(source) {
   return rules(source).map(({ selector, body }) => {
-    if (/^@(media|supports|layer)\b/.test(selector)) {
+    if (/^@(media|supports|layer|container)\b/.test(selector)) {
       const children = critical(body);
       return children ? `${selector}{${children}}` : '';
     }
@@ -54,3 +54,11 @@ const marker = /<!-- critical-css:start -->[\s\S]*?<!-- critical-css:end -->/;
 if (!marker.test(html)) throw new Error('Marcadores do CSS inicial não encontrados');
 fs.writeFileSync(target, html.replace(marker, `<!-- critical-css:start -->\n  <style id="critical-styles">\n${output}\n  </style>\n  <!-- critical-css:end -->`));
 console.log(`CSS inicial gerado: ${Buffer.byteLength(output)} bytes; fonte completa: ${Buffer.byteLength(css)} bytes.`);
+
+// A página de projetos compartilha a fonte; os caminhos inline partem de /trabalhos/.
+const projectsTarget = path.join(root, 'trabalhos', 'index.html');
+if (fs.existsSync(projectsTarget)) {
+  const projectsHtml = fs.readFileSync(projectsTarget, 'utf8');
+  const projectsCss = output.replace(/url\((['"]?)assets\//g, 'url($1../assets/');
+  fs.writeFileSync(projectsTarget, projectsHtml.replace(marker, `<!-- critical-css:start -->\n  <style id="critical-styles">\n${projectsCss}\n  </style>\n  <!-- critical-css:end -->`));
+}

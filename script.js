@@ -12,23 +12,7 @@ const portfolio = {
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
-const themeButtons = document.querySelectorAll('[data-theme-choice]');
-const themeStatus = document.querySelector('#theme-status');
-const themeColor = document.querySelector('meta[name="theme-color"]');
-function setTheme(choice, announce = false) {
-  const theme = choice === 'light' ? 'light' : 'dark';
-  document.documentElement.dataset.theme = theme;
-  themeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
-  window.PortfolioSwitch?.update(document.querySelector('.theme-switch'), theme, announce);
-  themeColor.content = theme === 'light' ? '#f5f6f8' : '#0b0d11';
-  if (announce) {
-    const message = theme === 'light' ? 'Tema claro ativado.' : 'Tema escuro ativado.';
-    themeStatus.textContent = window.PortfolioLanguage?.text(message) || message;
-  }
-  try { localStorage.setItem('portfolio-theme', theme); } catch { /* O controle continua funcional nesta visita. */ }
-}
-setTheme(document.documentElement.dataset.theme);
-themeButtons.forEach(button => button.addEventListener('click', () => setTheme(button.dataset.themeChoice, true)));
+document.documentElement.dataset.theme = 'dark';
 
 const confirmedUrl = value => {
   try {
@@ -66,60 +50,6 @@ if ('IntersectionObserver' in window && sectionLinks.length) {
   sections.forEach(section => sectionObserver.observe(section));
 }
 
-// Janela de comandos: navegação rápida por seções e projetos já presentes na página.
-const quickOpen = document.querySelector('#quick-open');
-const quickDialog = document.querySelector('#quick-dialog');
-const quickInput = document.querySelector('#quick-input');
-const quickResults = [...quickDialog.querySelectorAll('.quick-result')];
-const quickGroups = [...quickDialog.querySelectorAll('.quick-group')];
-const quickEmpty = quickDialog.querySelector('.quick-empty');
-const normalizeQuery = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-
-function filterQuickResults() {
-  const query = normalizeQuery(quickInput.value);
-  quickResults.forEach(link => {
-    link.hidden = !!query && !normalizeQuery(`${link.textContent} ${link.dataset.search}`).includes(query);
-  });
-  quickGroups.forEach(group => { group.hidden = !group.querySelector('.quick-result:not([hidden])'); });
-  quickEmpty.hidden = quickResults.some(link => !link.hidden);
-}
-
-function openQuickDialog() {
-  quickInput.value = '';
-  filterQuickResults();
-  quickDialog.showModal();
-  quickInput.focus();
-}
-
-quickOpen.addEventListener('click', () => openQuickDialog());
-quickDialog.querySelector('.quick-close').addEventListener('click', () => quickDialog.close());
-quickDialog.addEventListener('click', event => { if (event.target === quickDialog) quickDialog.close(); });
-quickInput.addEventListener('input', filterQuickResults);
-quickDialog.addEventListener('keydown', event => {
-  const available = quickResults.filter(link => !link.hidden);
-  if (!available.length) return;
-  if (event.key === 'Enter' && document.activeElement === quickInput) {
-    event.preventDefault();
-    available[0].click();
-  }
-  if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-    event.preventDefault();
-    const current = available.indexOf(document.activeElement);
-    const next = event.key === 'ArrowDown'
-      ? (current + 1) % available.length
-      : (current < 0 ? available.length - 1 : (current - 1 + available.length) % available.length);
-    available[next].focus();
-  }
-});
-quickResults.forEach(link => link.addEventListener('click', () => quickDialog.close()));
-document.addEventListener('keydown', event => {
-  if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
-    event.preventDefault();
-    if (quickDialog.open) quickDialog.close();
-    else openQuickDialog();
-  }
-});
-
 // Compara as capturas reais de desktop e celular sem alterar os links dos projetos.
 const previewControl = document.querySelector('.preview-control');
 const previewButtons = document.querySelectorAll('[data-preview-mode]');
@@ -152,7 +82,7 @@ if (previews.length && previews.every(preview => preview.mobile)) {
   link.className = 'project-public-link';
   link.dataset.publicProject = project.key;
   link.textContent = window.PortfolioLanguage?.text(project.label) || project.label;
-  document.querySelector(project.slot).replaceWith(link);
+  document.querySelector(project.slot)?.replaceWith(link);
 });
 
 const copyButton = document.querySelector('#copy-email');
@@ -194,8 +124,8 @@ if ('IntersectionObserver' in window) {
 
 // Entrada inspirada em Animated Content: só transforma elementos quando há suporte e movimento permitido.
 const motionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (motionAllowed && 'IntersectionObserver' in window) {
-  const targets = document.querySelectorAll('.work-intro-body, .project-copy, .about-identity h2, .about-copy, .capabilities, .skill-row, .education-intro, .courses, .contact h2, .contact-bottom');
+if (motionAllowed && !document.body.classList.contains('projects-page') && 'IntersectionObserver' in window) {
+  const targets = document.querySelectorAll('.work-intro-body, .project-copy, .about-heading, .about-copy, .capabilities, .skill-row, .education-intro, .courses, .contact h2, .contact-bottom');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -225,7 +155,7 @@ window.addEventListener('resize', updateProgress, { passive: true });
 updateProgress();
 
 // Revelação curta do nome; o texto permanece legível sem JavaScript.
-if (motionAllowed) document.querySelector('.hero')?.classList.add('hero-reveal-ready');
+// The ScrollExpand opening starts the hero content reveal after expansion.
 
 // Inclinação leve do retrato. A foto e o link continuam utilizáveis sem JavaScript.
 const profileCard = document.querySelector('.profile-card');

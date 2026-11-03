@@ -16,6 +16,23 @@ window.PortfolioSwitch = {
 };
 (() => {
   const english = {
+    'VER PRÉVIAS EM': 'VIEW PREVIEWS IN',
+    'Visualizar prévias dos projetos': 'View project previews',
+    'Apresentação': 'Presentation',
+    'Prévia de apresentação do Nexo Desk': 'Nexo Desk presentation preview',
+    'Prévia de apresentação do Entre Cenas': 'Entre Cenas presentation preview',
+    'Prévia de apresentação do Forma': 'Forma presentation preview',
+    'Prévia de apresentação do Price Cards': 'Price Cards presentation preview',
+    'Prévia de apresentação do FIO / tech': 'FIO / tech presentation preview',
+
+    'Galeria de projetos': 'Project gallery',
+    'Ver projeto completo': 'View project details',
+    'Ver todos os projetos': 'View all projects',
+    'Interface do Nexo Desk': 'Nexo Desk interface',
+    'Interface do Entre Cenas': 'Entre Cenas interface',
+    'Interface do Forma': 'Forma interface',
+    'Interface do Price Cards': 'Price Cards interface',
+    'Interface do FIO / tech': 'FIO / tech interface',
     'Política de privacidade': 'Privacy policy',
     'Termos de uso': 'Terms of use',
     'Tema da página': 'Page theme',
@@ -299,7 +316,6 @@ window.PortfolioSwitch = {
       link.textContent = labels[Number(isEnglish)];
     });
     document.querySelector('#copy-status').textContent = '';
-    document.querySelector('#theme-status').textContent = '';
     if (announce) status.textContent = isEnglish ? 'Page language changed to English.' : 'Idioma da página alterado para português.';
     try { localStorage.setItem('portfolio-language', language); } catch { /* Funciona também sem armazenamento. */ }
   }
