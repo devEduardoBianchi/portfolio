@@ -379,3 +379,8 @@ fieldset:disabled .control-shell { opacity: .58; }
     animation: none !important;
   }
 }
+
+/* Identificacao publica do responsavel pelo portfolio. */
+.footer-identity{display:block;margin-top:8px;font-size:11px;line-height:1.6;overflow-wrap:anywhere}
+.site-footer{flex-wrap:wrap}
+.site-footer .footer-identity a{min-height:0;display:inline}

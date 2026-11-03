@@ -15,3 +15,8 @@
 .plan-card{animation-fill-mode:backwards}
 .plan-card[data-selected="true"]:not(.featured){border-left:3px solid var(--accent)}
 .plan-card.featured[data-selected="false"]{border-color:#506251;box-shadow:none}
+
+/* Identificacao publica do responsavel pelo portfolio. */
+.footer-identity{display:block;margin-top:8px;font-size:11px;line-height:1.6;overflow-wrap:anywhere}
+.site-footer{flex-wrap:wrap}
+.site-footer .footer-identity a{min-height:0;display:inline}

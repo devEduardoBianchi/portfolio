@@ -16,6 +16,8 @@ window.PortfolioSwitch = {
 };
 (() => {
   const english = {
+    'Política de privacidade': 'Privacy policy',
+    'Termos de uso': 'Terms of use',
     'Tema da página': 'Page theme',
     'Usar tema claro': 'Use light theme',
     'Usar tema escuro': 'Use dark theme',
@@ -287,6 +289,7 @@ window.PortfolioSwitch = {
     records.forEach(record => { record.node.textContent = isEnglish ? record.translated : record.original; });
     attributes.forEach(record => record.element.setAttribute(record.name, isEnglish ? record.translated : record.original));
     document.documentElement.lang = language;
+    document.dispatchEvent(new CustomEvent('portfolio:language'));
     document.title = isEnglish ? 'Eduardo Bianchi | Portfolio and Web Development' : originalTitle;
     description.content = isEnglish ? 'Meet Eduardo Pires Bianchi, a Software Engineering student. Explore my web development projects, education and ways to get in touch.' : originalDescription;
     document.querySelectorAll('[data-language]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
