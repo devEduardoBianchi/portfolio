@@ -1,5 +1,8 @@
 // One-time entrances, separate from the gallery expansion and portrait tilt.
 (() => {
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelector('.hero')?.classList.add('hero-reveal-ready');
+  }
   if (document.body.classList.contains('projects-page') || !window.gsap || !('IntersectionObserver' in window)) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let observer;
@@ -39,8 +42,7 @@
       observer.observe(group.root);
     });
   }
-  if (document.documentElement.classList.contains('site-intro-active')) document.addEventListener('portfolio:intro-complete', start, { once: true });
-  else start();
+  start();
   reduced.addEventListener('change', () => { if (reduced.matches) finish(); });
   window.addEventListener('pagehide', finish);
 })();

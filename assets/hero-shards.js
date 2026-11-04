@@ -7,7 +7,7 @@ let effect;
 let generation = 0;
 let started = false;
 async function start() {
-  if (started || document.readyState !== 'complete' || document.documentElement.classList.contains('site-intro-active')) return;
+  if (started || document.readyState !== 'complete') return;
   const current = ++generation;
   effect?.destroy();
   effect = null;
@@ -44,7 +44,6 @@ reduced.addEventListener('change', () => {
   started = false;
   start();
 });
-document.addEventListener('portfolio:intro-complete', start);
 window.addEventListener('pagehide', () => { generation++; effect?.destroy(); effect = null; started = false; });
 window.addEventListener('pageshow', event => { if (event.persisted) start(); });
 if (document.readyState === 'complete') start();

@@ -14,7 +14,7 @@ Portfólio pessoal de **Eduardo Pires Bianchi**, estudante de Engenharia de Soft
 - **Nexo Desk**, **Nexo Oficina Digital**, **Entre Cenas**, **Forma**, **Price Cards** e **FIO / tech** apresentados com o mesmo peso visual, índice navegável e capturas reais. Um controle alterna as capturas entre desktop e celular.
 - Demonstrações públicas dos cinco projetos, além de versões locais de **Entre Cenas**, **Forma** e **Price Cards**.
 - Contato por e-mail, telefone e botão que abre uma conversa no WhatsApp.
-- Currículo em PDF disponível na seção Sobre.
+- Currículo em PDF disponível na hero e na seção Sobre.
 
 ## Projetos
 
@@ -94,16 +94,11 @@ O README, o código e os recursos deste repositório não precisam de arquivos `
 
 Os arquivos de fonte e as cópias do GSAP incluem seus avisos de licença. Este repositório não define uma licença geral de reutilização para o portfólio, currículo, imagens e código. Peça autorização ao autor antes de reutilizar esses materiais.
 
-### Fundo da abertura — AeroShards
+### Abertura e fundo da hero
 
-O fundo anterior da hero, AeroShards do React Bits, está preservado em `assets/aero-shards.js`. A dependência VGPU 0.3.0 está empacotada localmente em `assets/vendor/vgpu.js`, com licença ao lado. Não é necessário instalar React nem executar build para publicar.
+O site abre diretamente na hero, sem túnel nem bloqueio de rolagem. A hero apresenta Eduardo como engenheiro de software e desenvolvedor web full stack e descreve as tecnologias de front-end e back-end usadas e o cuidado com a navegação e as interfaces em diferentes telas. A formação acadêmica aparece na seção Sobre mim. O conteúdo tem uma entrada breve, desativada quando o visitante prefere movimento reduzido.
 
-O carregador `assets/hero-shards.js` importa o efeito depois da conclusão da abertura (e do carregamento da página): 420 fragmentos no desktop, 180 no celular, resolução limitada, sem bloom e sem desfoque de profundidade. O desenho está limitado a 30 fps e pausa fora da hero ou quando a aba está oculta. Movimento reduzido, economia de dados ou ausência de WebGPU mantêm a abertura com fundo sólido e conteúdo completo. Não há mais foto de fundo nem preload dessa imagem na abertura.
-
-O fundo da hero usa faixas horizontais sem reação ao mouse. A abertura anterior ScrollExpand foi substituída pelo Perspective Tunnel em `assets/perspective-tunnel.js`, adaptado do prompt ProfitizeBuild para JavaScript nativo. A tipografia do túnel usa as fontes de sistema do exemplo, com título branco em degradê. A rolagem controla nove cartões 3D em uma camada fixa, sem altura extra no documento, com suavização e paralaxe discreta; ao concluir, o portfólio aparece desde o topo e os conteúdos da hero entram. A abertura roda uma vez por sessão, pode ser pulada e é desativada com movimento reduzido. O texto começa totalmente oculto e aparece somente ao avançar. Na saída, uma proteção curta absorve o restante do gesto para evitar que a hero seja deslocada. O trabalho de animação para quando o visitante deixa de interagir.
-
-As capturas atuais dos cinco sites publicados estão em `assets/tunnel/*-live.png`, com versões WebP leves usadas nos cartões. Quatro capturas móveis reais existentes completam os nove cartões. Fontes e processamento: `assets/tunnel/README.md`. Não foram necessárias imagens geradas.
-
+O fundo atual usa Aurora em `assets/aurora.js`, carregado por `assets/hero-shards.js` após o carregamento da página. A animação acompanha a taxa de atualização da tela, usa resolução limitada e pausa fora da hero ou com a aba oculta. O AeroShards anterior e os arquivos do túnel estão preservados como recursos inativos.
 
 A navbar em `assets/adaptive-navbar.js` fica transparente sobre a hero e assume a cor de fundo da seção sob ela ao navegar. O contraste dos links e controles é ajustado automaticamente para superfícies claras ou escuras; não muda o tema do site. A cor é lida do fundo CSS real da seção, sem analisar imagens nem executar um loop contínuo.
 
