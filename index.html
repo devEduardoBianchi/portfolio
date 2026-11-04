@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Show the hero after its background has painted; release it if loading fails.
+    (() => {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      document.documentElement.classList.add('hero-awaiting-background');
+      window.releaseHeroEntrance = () => {
+        document.documentElement.classList.remove('hero-awaiting-background');
+        document.querySelector('.hero')?.classList.add('hero-reveal-ready');
+      };
+      setTimeout(window.releaseHeroEntrance, 1800);
+    })();
+  </script>
+  <link rel="modulepreload" href="assets/aurora.js?v=20261104-ready">
   <meta name="theme-color" content="#0b0d11">
   <script src="assets/privacy.js?v=20261103b" defer></script>
   <script src="assets/meta-pixel.js?v=20261103b" defer></script>
@@ -626,17 +639,21 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
 .hero.hero-reveal-ready .hero-actions>.availability{animation-delay:.81s}
 .hero-statement{max-width:800px}
 .hero-statement .hero-lead{max-width:800px;text-wrap:balance}
+.hero-awaiting-background .hero .eyebrow-line,
+.hero-awaiting-background .hero h1>span,
+.hero-awaiting-background .hero .hero-statement>p,
+.hero-awaiting-background .hero .hero-actions>*{opacity:0}
   </style>
   <!-- critical-css:end -->
-  <link rel="preload" as="style" href="style.css?v=20261104-resume" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="style.css?v=20261104-resume"></noscript>
-  <script src="language.js?v=20261104-resume" defer></script>
+  <link rel="preload" as="style" href="style.css?v=20261104-gallery-summary" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css?v=20261104-gallery-summary"></noscript>
+  <script src="language.js?v=20261104-gallery-summary" defer></script>
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/accordion-gallery.js?v=20261103-single-link" defer></script>
   <script src="script.js?v=20261103-about-heading" defer></script>
-  <script src="assets/home-entrances.js?v=20261104-direct-hero" defer></script>
-  <script type="module" src="assets/hero-shards.js?v=20261104-direct-hero"></script>
-  <script src="assets/adaptive-navbar.js?v=20261104-direct-hero" defer></script>
+  <script src="assets/home-entrances.js?v=20261104-background-ready" defer></script>
+  <script type="module" src="assets/hero-shards.js?v=20261104-background-ready"></script>
+  <script src="assets/adaptive-navbar.js?v=20261104-background-ready" defer></script>
   <script src="effects.js?v=20261029e" defer></script>
 </head>
 <body>
@@ -687,32 +704,32 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
         <button class="ag-panel ag-panel--active" type="button" aria-expanded="true" aria-label="Nexo Desk" data-detail="trabalhos/#nexo-desk">
           <picture class="ag-media"><source media="(max-width: 640px)" srcset="assets/accordion-gallery/nexo-restored.webp"><img src="assets/accordion-gallery/nexo-restored.webp" alt="Prévia de apresentação do Nexo Desk" width="1086" height="1448" loading="lazy" decoding="async" draggable="false"></picture>
           <span class="ag-shade" aria-hidden="true"></span>
-          <span class="ag-closed" aria-hidden="true">Nexo Desk</span><span class="ag-caption"><strong>Nexo Desk</strong><span>HTML · CSS · JavaScript · GSAP</span></span>
+          <span class="ag-closed" aria-hidden="true">Nexo Desk</span><span class="ag-caption"><strong>Nexo Desk</strong><span>Sistema demonstrativo para organizar e acompanhar chamados de suporte.</span></span>
         </button>
         <button class="ag-panel" type="button" aria-expanded="false" aria-label="Nexo Oficina Digital" data-detail="trabalhos/#nexo-oficina">
           <picture class="ag-media"><img src="assets/accordion-gallery/nexo-oficina-clean.webp" alt="Prévia de apresentação do Nexo Oficina Digital" width="1086" height="1405" loading="lazy" decoding="async" draggable="false"></picture>
           <span class="ag-shade" aria-hidden="true"></span>
-          <span class="ag-closed" aria-hidden="true">Nexo Oficina Digital</span><span class="ag-caption"><strong>Nexo Oficina Digital</strong><span>HTML · CSS · JavaScript · GSAP</span></span>
+          <span class="ag-closed" aria-hidden="true">Nexo Oficina Digital</span><span class="ag-caption"><strong>Nexo Oficina Digital</strong><span>Site de assistência técnica com serviços e catálogo de produtos.</span></span>
         </button>
         <button class="ag-panel" type="button" aria-expanded="false" aria-label="Entre Cenas" data-detail="trabalhos/#entre-cenas">
           <picture class="ag-media"><source media="(max-width: 640px)" srcset="assets/accordion-gallery/entrecenas-restored.webp"><img src="assets/accordion-gallery/entrecenas-restored.webp" alt="Prévia de apresentação do Entre Cenas" width="1086" height="1448" loading="lazy" decoding="async" draggable="false"></picture>
           <span class="ag-shade" aria-hidden="true"></span>
-          <span class="ag-closed" aria-hidden="true">Entre Cenas</span><span class="ag-caption"><strong>Entre Cenas</strong><span>HTML · CSS · JavaScript · GSAP</span></span>
+          <span class="ag-closed" aria-hidden="true">Entre Cenas</span><span class="ag-caption"><strong>Entre Cenas</strong><span>Diário de cinema para organizar filmes, avaliações e anotações.</span></span>
         </button>
         <button class="ag-panel" type="button" aria-expanded="false" aria-label="Forma" data-detail="trabalhos/#forma">
           <picture class="ag-media"><source media="(max-width: 640px)" srcset="assets/accordion-gallery/forma-restored.webp"><img src="assets/accordion-gallery/forma-restored.webp" alt="Prévia de apresentação do Forma" width="1086" height="1448" loading="lazy" decoding="async" draggable="false"></picture>
           <span class="ag-shade" aria-hidden="true"></span>
-          <span class="ag-closed" aria-hidden="true">Forma</span><span class="ag-caption"><strong>Forma</strong><span>HTML · CSS · JavaScript · GSAP</span></span>
+          <span class="ag-closed" aria-hidden="true">Forma</span><span class="ag-caption"><strong>Forma</strong><span>Página de contato com formulário e validação acessível.</span></span>
         </button>
         <button class="ag-panel" type="button" aria-expanded="false" aria-label="Price Cards" data-detail="trabalhos/#price-cards">
           <picture class="ag-media"><source media="(max-width: 640px)" srcset="assets/accordion-gallery/pricecards-restored.webp"><img src="assets/accordion-gallery/pricecards-restored.webp" alt="Prévia de apresentação do Price Cards" width="1086" height="1448" loading="lazy" decoding="async" draggable="false"></picture>
           <span class="ag-shade" aria-hidden="true"></span>
-          <span class="ag-closed" aria-hidden="true">Price Cards</span><span class="ag-caption"><strong>Price Cards</strong><span>HTML · CSS · JavaScript</span></span>
+          <span class="ag-closed" aria-hidden="true">Price Cards</span><span class="ag-caption"><strong>Price Cards</strong><span>Comparação de planos de hospedagem para diferentes necessidades.</span></span>
         </button>
         <button class="ag-panel" type="button" aria-expanded="false" aria-label="FIO / tech" data-detail="trabalhos/#fio-tech">
           <picture class="ag-media"><source media="(max-width: 640px)" srcset="assets/accordion-gallery/fiotech-restored.webp"><img src="assets/accordion-gallery/fiotech-restored.webp" alt="Prévia de apresentação do FIO / tech" width="1086" height="1448" loading="lazy" decoding="async" draggable="false"></picture>
           <span class="ag-shade" aria-hidden="true"></span>
-          <span class="ag-closed" aria-hidden="true">FIO / tech</span><span class="ag-caption"><strong>FIO / tech</strong><span>React · TypeScript · Vite · GSAP</span></span>
+          <span class="ag-closed" aria-hidden="true">FIO / tech</span><span class="ag-caption"><strong>FIO / tech</strong><span>Loja conceitual de eletrônicos com catálogo, comparação e favoritos.</span></span>
         </button>
       </div>
       <div class="gallery-footer"><a class="text-link gallery-all" href="trabalhos/"><span>Conheça melhor os projetos</span><span aria-hidden="true">↗</span></a></div>

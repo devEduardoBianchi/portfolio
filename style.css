@@ -1395,3 +1395,10 @@ main>.education::before{background-position:-180px -120px}
 .hero-actions .availability{flex-basis:100%;justify-content:center}
 .hero.hero-reveal-ready .hero-actions>.availability{animation-delay:.81s}
 .hero-statement{max-width:800px}.hero-statement .hero-lead{max-width:800px;text-wrap:balance}
+
+/* Keep the first entrance in step with the Aurora canvas. */
+.hero-awaiting-background .hero .eyebrow-line,
+.hero-awaiting-background .hero h1>span,
+.hero-awaiting-background .hero .hero-statement>p,
+.hero-awaiting-background .hero .hero-actions>*{opacity:0}
+.ag-caption>span{max-width:46ch;line-height:1.55;text-wrap:pretty}

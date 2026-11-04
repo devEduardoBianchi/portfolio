@@ -1,13 +1,13 @@
 // Change only this value to 'shards' to restore the previous background.
 const HERO_BACKGROUND = 'aurora';
-// Keep GPU dependencies out of the initial rendering path.
+// Load the background as soon as the DOM is ready, before revealing the hero.
 const container = document.querySelector('.hero-shards');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 let effect;
 let generation = 0;
 let started = false;
 async function start() {
-  if (started || document.readyState !== 'complete') return;
+  if (started) return;
   const current = ++generation;
   effect?.destroy();
   effect = null;
@@ -17,9 +17,13 @@ async function start() {
   started = true;
   try {
     if (HERO_BACKGROUND === 'aurora') {
-      const { mountAurora } = await import('./aurora.js?v=20261103-native-fps');
+      const { mountAurora } = await import('./aurora.js?v=20261104-ready');
       if (current !== generation) return;
       effect = { destroy: mountAurora(container, { warm: '#7197ff', light: '#dceaff', cool: '#315eff', deep: '#07152f' }) };
+      // The first draw is synchronous; allow it to paint before the text enters.
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        if (current === generation) window.releaseHeroEntrance?.();
+      }));
       return;
     }
     const { mountAeroShards } = await import('./aero-shards.js');
@@ -35,7 +39,7 @@ async function start() {
       pulseOnClick: false, holdToGather: false,
       onError: () => { container.dataset.fallback = 'true'; }
     });
-  } catch { container.dataset.fallback = 'true'; }
+  } catch { container.dataset.fallback = 'true'; window.releaseHeroEntrance?.(); }
 }
 reduced.addEventListener('change', () => {
   generation++;
@@ -46,5 +50,5 @@ reduced.addEventListener('change', () => {
 });
 window.addEventListener('pagehide', () => { generation++; effect?.destroy(); effect = null; started = false; });
 window.addEventListener('pageshow', event => { if (event.persisted) start(); });
-if (document.readyState === 'complete') start();
-else window.addEventListener('load', start, { once: true });
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
+else start();

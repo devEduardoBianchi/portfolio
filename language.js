@@ -16,6 +16,13 @@ window.PortfolioSwitch = {
 };
 (() => {
   const english = {
+    'Sistema demonstrativo para organizar e acompanhar chamados de suporte.': 'A demo system for organizing and tracking support tickets.',
+    'Site de assistência técnica com serviços e catálogo de produtos.': 'A computer repair website with services and a product catalogue.',
+    'Diário de cinema para organizar filmes, avaliações e anotações.': 'A movie journal for organizing films, ratings and notes.',
+    'Página de contato com formulário e validação acessível.': 'A contact page with an accessible form and validation.',
+    'Comparação de planos de hospedagem para diferentes necessidades.': 'Hosting plans compared for different needs.',
+    'Loja conceitual de eletrônicos com catálogo, comparação e favoritos.': 'A concept electronics store with a catalogue, comparisons and favourites.',
+
     "Prévia de apresentação do Nexo Oficina Digital": "Nexo Oficina Digital presentation preview",
     "SEIS PROJETOS PARA EXPLORAR": "SIX PROJECTS TO EXPLORE",
     "02 / SITE DE INFORMÁTICA": "02 / COMPUTER SERVICES WEBSITE",
