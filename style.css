@@ -1349,14 +1349,14 @@ html{scroll-padding-top:84px}
 :root[data-theme="dark"]{--paper:#03060d;--paper-2:#0a1020;--gallery-ground:#03060d;--contact-bg:#02050b;--dark:#02050b;--line:#1b263b;--gallery-rule:#1b263b}
 /* Each outgoing light matches the next section's incoming light exactly.
    Fixed vertical radii keep the join independent of section height. */
-main>section:not(.hero){background-color:#03060d;background-image:radial-gradient(ellipse 75vw 360px at var(--night-in-x) 0%,var(--night-in),transparent 100%),radial-gradient(ellipse 75vw 360px at var(--night-out-x) 100%,var(--night-out),transparent 100%);background-size:100% 100%;background-position:center;background-repeat:no-repeat;background-blend-mode:normal;border-top:0;border-bottom:0}
+main>section:not(.hero){background-color:#0c111b;background-image:radial-gradient(ellipse 75vw 360px at var(--night-in-x) 0%,var(--night-in),transparent 100%),radial-gradient(ellipse 75vw 360px at var(--night-out-x) 100%,var(--night-out),transparent 100%);background-size:100% 100%;background-position:center;background-repeat:no-repeat;background-blend-mode:normal;border-top:0;border-bottom:0}
 main>.work-section{--night-in-x:8%;--night-in:rgba(113,151,255,.09);--night-out-x:90%;--night-out:rgba(49,94,255,.17)}
 main>.about{--night-in-x:90%;--night-in:rgba(49,94,255,.17);--night-out-x:10%;--night-out:rgba(49,94,255,.14)}
 main>.education{--night-in-x:10%;--night-in:rgba(49,94,255,.14);--night-out-x:85%;--night-out:rgba(49,94,255,.15)}
 main>.contact{--night-in-x:85%;--night-in:rgba(49,94,255,.15);--night-out-x:20%;--night-out:rgba(49,94,255,.19)}
 .projects-page main>.contact{--night-in-x:90%;--night-in:rgba(49,94,255,.17)}
 .work-section::before,.education::before,.contact::before{content:none}
-.footer{background:#03060d radial-gradient(ellipse 75vw 360px at 20% 0%,rgba(49,94,255,.19),transparent 100%);border-top:0}
+.footer{background:#0c111b radial-gradient(ellipse 75vw 360px at 20% 0%,rgba(49,94,255,.19),transparent 100%);border-top:0}
 /* Hide only the document scrollbar; native scrolling and inner controls remain available. */
 html{scrollbar-width:none}
 html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none}
@@ -1402,3 +1402,11 @@ main>.education::before{background-position:-180px -120px}
 .hero-awaiting-background .hero .hero-statement>p,
 .hero-awaiting-background .hero .hero-actions>*{opacity:0}
 .ag-caption>span{max-width:46ch;line-height:1.55;text-wrap:pretty}
+
+/* Keep desktop glyphs; use consistent vector arrows on phone layouts. */
+.mobile-safe-arrow .mobile-arrow-label{font-style:normal}
+.mobile-safe-arrow svg{display:none;width:1em;height:1em;vertical-align:middle;flex-shrink:0}
+@media(max-width:640px){
+  .mobile-safe-arrow .mobile-arrow-label{display:none}
+  .mobile-safe-arrow svg{display:inline-block}
+}

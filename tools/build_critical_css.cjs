@@ -32,7 +32,7 @@ function rules(source) {
   return result;
 }
 
-const initialClass = /\.(?:hero(?:-[\w-]+)?|site-intro(?:-[\w-]+)?|tunnel-intro|pt-[\w-]+|header(?:-[\w-]+)?|brand(?:-[\w-]+)?|theme-(?:switch|button)|language-(?:switch|button)|squish-switch(?:-[\w-]+)?|quick-open|eyebrow-line|availability(?:-dot)?|action-(?:link(?:-primary)?|arrow)|reading-progress|skip-link|sr-only)(?![\w-])/;
+const initialClass = /\.(?:hero(?:-[\w-]+)?|site-intro(?:-[\w-]+)?|tunnel-intro|pt-[\w-]+|header(?:-[\w-]+)?|brand(?:-[\w-]+)?|theme-(?:switch|button)|language-(?:switch|button)|squish-switch(?:-[\w-]+)?|quick-open|eyebrow-line|availability(?:-dot)?|action-(?:link(?:-primary)?|arrow)|mobile-safe-arrow|reading-progress|skip-link|sr-only)(?![\w-])/;
 const globalSelector = /^(?:\*|:root|::selection|\[hidden\]|(?:html|body|a|button|input|textarea|select|img|picture|p|h[1-6]|figure|dialog)(?![\w-]))/;
 function critical(source) {
   return rules(source).map(({ selector, body }) => {

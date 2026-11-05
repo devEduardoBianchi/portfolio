@@ -627,7 +627,7 @@ html{scroll-padding-top:74px}}
 .gallery-footer .action-link{min-height:52px}
 @media(max-width:640px){.gallery-footer .action-link{justify-content:space-between}}
 :root[data-theme="dark"]{--paper:#03060d;--paper-2:#0a1020;--gallery-ground:#03060d;--contact-bg:#02050b;--dark:#02050b;--line:#1b263b;--gallery-rule:#1b263b}
-main>section:not(.hero){background-color:#03060d;background-image:radial-gradient(ellipse 75vw 360px at var(--night-in-x) 0%,var(--night-in),transparent 100%),radial-gradient(ellipse 75vw 360px at var(--night-out-x) 100%,var(--night-out),transparent 100%);background-size:100% 100%;background-position:center;background-repeat:no-repeat;background-blend-mode:normal;border-top:0;border-bottom:0}
+main>section:not(.hero){background-color:#0c111b;background-image:radial-gradient(ellipse 75vw 360px at var(--night-in-x) 0%,var(--night-in),transparent 100%),radial-gradient(ellipse 75vw 360px at var(--night-out-x) 100%,var(--night-out),transparent 100%);background-size:100% 100%;background-position:center;background-repeat:no-repeat;background-blend-mode:normal;border-top:0;border-bottom:0}
 html{scrollbar-width:none}
 html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none}
 main>section:not(.hero){position:relative;isolation:isolate}
@@ -643,10 +643,14 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
 .hero-awaiting-background .hero h1>span,
 .hero-awaiting-background .hero .hero-statement>p,
 .hero-awaiting-background .hero .hero-actions>*{opacity:0}
+.mobile-safe-arrow .mobile-arrow-label{font-style:normal}
+.mobile-safe-arrow svg{display:none;width:1em;height:1em;vertical-align:middle;flex-shrink:0}
+@media(max-width:640px){.mobile-safe-arrow .mobile-arrow-label{display:none}
+.mobile-safe-arrow svg{display:inline-block}}
   </style>
   <!-- critical-css:end -->
-  <link rel="preload" as="style" href="style.css?v=20261104-gallery-summary" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="style.css?v=20261104-gallery-summary"></noscript>
+  <link rel="preload" as="style" href="style.css?v=20261105-mobile-arrows" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css?v=20261105-mobile-arrows"></noscript>
   <script src="language.js?v=20261104-gallery-summary" defer></script>
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/accordion-gallery.js?v=20261103-single-link" defer></script>
@@ -664,7 +668,7 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
       <a href="#projetos">Projetos</a>
       <a href="#sobre">Sobre</a>
       <a href="#formacao">Formação</a>
-      <a href="#contato">Contato <span aria-hidden="true">↗</span></a>
+      <a href="#contato">Contato <span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
     </nav>
     <div class="header-controls">
       <div class="language-switch squish-switch" role="group" aria-label="Idioma da página" data-active="pt-BR" hidden>
@@ -689,8 +693,8 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
             <p>Desenvolvedor de sites e aplicações web. Crio interfaces com atenção à navegação e ao funcionamento em diferentes telas, conectando a experiência de quem usa à lógica por trás da aplicação.</p>
           </div>
           <div class="hero-actions">
-            <a class="action-link action-link-primary" href="#projetos"><span>Conheça meu trabalho</span><span class="action-arrow" aria-hidden="true">↗</span></a>
-            <a class="action-link hero-resume-link" href="assets/curriculo-eduardo-bianchi.pdf?v=20261104" target="_blank" rel="noopener noreferrer" type="application/pdf" aria-describedby="resume-note"><span>Ver meu currículo</span><span class="action-arrow" aria-hidden="true">↗</span></a>
+            <a class="action-link action-link-primary" href="#projetos"><span>Conheça meu trabalho</span><span class="mobile-safe-arrow action-arrow" aria-hidden="true"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+            <a class="action-link hero-resume-link" href="assets/curriculo-eduardo-bianchi.pdf?v=20261104" target="_blank" rel="noopener noreferrer" type="application/pdf" aria-describedby="resume-note"><span>Ver meu currículo</span><span class="mobile-safe-arrow action-arrow" aria-hidden="true"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
             <span class="availability"><span class="availability-dot" aria-hidden="true"></span> Aberto a estágio e trabalho</span>
           </div>
         </div>
@@ -702,7 +706,7 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
       <div class="work-intro-body"><h2 id="work-title">Projetos que tenho <em>criado.</em></h2><div class="work-intro-aside"><p>De interfaces a aplicações: projetos que fiz para testar ideias e aprender fazendo.</p></div></div>
       <div class="accordion-gallery" role="group" aria-label="Galeria de projetos">
         <button class="ag-panel ag-panel--active" type="button" aria-expanded="true" aria-label="Nexo Desk" data-detail="trabalhos/#nexo-desk">
-          <picture class="ag-media"><source media="(max-width: 640px)" srcset="assets/accordion-gallery/nexo-restored.webp"><img src="assets/accordion-gallery/nexo-restored.webp" alt="Prévia de apresentação do Nexo Desk" width="1086" height="1448" loading="lazy" decoding="async" draggable="false"></picture>
+          <picture class="ag-media"><source media="(max-width: 640px)" srcset="assets/accordion-gallery/nexo-light.webp"><img src="assets/accordion-gallery/nexo-light.webp" alt="Prévia de apresentação do Nexo Desk" width="1086" height="1448" loading="lazy" decoding="async" draggable="false"></picture>
           <span class="ag-shade" aria-hidden="true"></span>
           <span class="ag-closed" aria-hidden="true">Nexo Desk</span><span class="ag-caption"><strong>Nexo Desk</strong><span>Sistema demonstrativo para organizar e acompanhar chamados de suporte.</span></span>
         </button>
@@ -717,7 +721,7 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
           <span class="ag-closed" aria-hidden="true">Entre Cenas</span><span class="ag-caption"><strong>Entre Cenas</strong><span>Diário de cinema para organizar filmes, avaliações e anotações.</span></span>
         </button>
         <button class="ag-panel" type="button" aria-expanded="false" aria-label="Forma" data-detail="trabalhos/#forma">
-          <picture class="ag-media"><source media="(max-width: 640px)" srcset="assets/accordion-gallery/forma-restored.webp"><img src="assets/accordion-gallery/forma-restored.webp" alt="Prévia de apresentação do Forma" width="1086" height="1448" loading="lazy" decoding="async" draggable="false"></picture>
+          <picture class="ag-media"><source media="(max-width: 640px)" srcset="assets/accordion-gallery/forma-light.webp"><img src="assets/accordion-gallery/forma-light.webp" alt="Prévia de apresentação do Forma" width="1086" height="1448" loading="lazy" decoding="async" draggable="false"></picture>
           <span class="ag-shade" aria-hidden="true"></span>
           <span class="ag-closed" aria-hidden="true">Forma</span><span class="ag-caption"><strong>Forma</strong><span>Página de contato com formulário e validação acessível.</span></span>
         </button>
@@ -732,7 +736,7 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
           <span class="ag-closed" aria-hidden="true">FIO / tech</span><span class="ag-caption"><strong>FIO / tech</strong><span>Loja conceitual de eletrônicos com catálogo, comparação e favoritos.</span></span>
         </button>
       </div>
-      <div class="gallery-footer"><a class="text-link gallery-all" href="trabalhos/"><span>Conheça melhor os projetos</span><span aria-hidden="true">↗</span></a></div>
+      <div class="gallery-footer"><a class="text-link gallery-all" href="trabalhos/"><span>Conheça melhor os projetos</span><span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div>
     </section>
 
     <section class="about section-wrap" id="sobre" aria-labelledby="about-title">
@@ -740,13 +744,13 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
       <h2 class="about-heading" id="about-title">Quem está <em>por trás dos projetos.</em></h2>
       <div class="about-grid">
         <div class="about-identity">
-          <figure class="about-portrait profile-card"><div class="portrait-frame"><img src="assets/eduardo-perfil.jpeg" width="640" height="640" alt="Retrato de Eduardo Pires Bianchi" loading="lazy" decoding="async"><span class="profile-glare" aria-hidden="true"></span></div><figcaption class="profile-caption"><strong class="about-signature">Eduardo Pires Bianchi</strong><span>Estudante de Engenharia de Software · Dourados, MS</span><a href="#contato" class="profile-contact">Fale comigo <span aria-hidden="true">↗</span></a></figcaption></figure>
+          <figure class="about-portrait profile-card"><div class="portrait-frame"><img src="assets/eduardo-perfil.jpeg" width="640" height="640" alt="Retrato de Eduardo Pires Bianchi" loading="lazy" decoding="async"><span class="profile-glare" aria-hidden="true"></span></div><figcaption class="profile-caption"><strong class="about-signature">Eduardo Pires Bianchi</strong><span>Estudante de Engenharia de Software · Dourados, MS</span><a href="#contato" class="profile-contact">Fale comigo <span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></figcaption></figure>
         </div>
         <div class="about-copy">
           <p class="lead">Sou Eduardo Pires Bianchi, estudante de Engenharia de Software na Unigran.</p>
           <p>Convivo com computadores desde cedo. A vontade de entender como as coisas funcionam me levou ao desenvolvimento web. Hoje, aprendo na faculdade, em cursos e, principalmente, criando projetos.</p>
           <p>Procuro uma oportunidade de estágio ou trabalho em tecnologia para colaborar com uma equipe e continuar aprendendo na prática.</p>
-          <a class="text-link" href="assets/curriculo-eduardo-bianchi.pdf?v=20261104" target="_blank" rel="noopener noreferrer" type="application/pdf" aria-describedby="resume-note">Ver currículo em PDF <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="assets/curriculo-eduardo-bianchi.pdf?v=20261104" target="_blank" rel="noopener noreferrer" type="application/pdf" aria-describedby="resume-note">Ver currículo em PDF <span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
           <p class="quiet-note" id="resume-note">PDF em português · Abre em nova aba</p>
           <div class="about-facts"><div><span>BASE</span><strong>Dourados, MS</strong></div><div><span>IDIOMA</span><strong>Inglês intermediário</strong></div></div>
           <div class="about-path"><h3>Meu percurso</h3><dl><div><dt>Ensino Médio</dt><dd>Elite Rede de Ensino · Dourados</dd></div><div><dt>Estudos complementares</dt><dd>Alura · Udemy</dd></div></dl></div>
@@ -786,7 +790,7 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
     </section>
 
     <section class="contact" id="contato" aria-labelledby="contact-title">
-      <div class="contact-inner"><div class="section-label"><span>04 / CONTATO</span><span>ABERTO A OPORTUNIDADES DE ESTÁGIO E TRABALHO</span></div><h2 id="contact-title">Gostou do que viu?<br><em>Entre em contato.</em></h2><div class="contact-bottom"><div class="contact-intro"><p>Estou aberto a oportunidades de estágio ou trabalho. Se quiser conversar sobre projetos, interfaces ou tecnologia, me escreva.</p><div class="contact-social"><a href="https://github.com/devEduardoBianchi" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/eduardo-bianchi-31bb76321/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div><div class="contact-actions"><a class="email-link" href="mailto:deveduardobianchi@gmail.com">deveduardobianchi@gmail.com <span aria-hidden="true">↗</span></a><a class="phone-link" href="tel:+5567999969634"><span>Telefone</span><strong>+55 (67) 9 9996-9634</strong><span aria-hidden="true">↗</span></a><a class="whatsapp-link" href="https://wa.me/5567999969634" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Eduardo no WhatsApp em nova aba">Conversar no WhatsApp <span aria-hidden="true">↗</span></a><div class="contact-links"><button id="copy-email" class="copy-button" type="button" data-copied="false"><span class="sr-only">Copiar e-mail</span><span class="copy-button-states" aria-hidden="true"><span class="copy-button-state copy-button-idle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span>Copiar e-mail</span></span><span class="copy-button-state copy-button-success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span>E-mail copiado!</span></span></span></button></div><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span></div></div></div>
+      <div class="contact-inner"><div class="section-label"><span>04 / CONTATO</span><span>ABERTO A OPORTUNIDADES DE ESTÁGIO E TRABALHO</span></div><h2 id="contact-title">Gostou do que viu?<br><em>Entre em contato.</em></h2><div class="contact-bottom"><div class="contact-intro"><p>Estou aberto a oportunidades de estágio ou trabalho. Se quiser conversar sobre projetos, interfaces ou tecnologia, me escreva.</p><div class="contact-social"><a href="https://github.com/devEduardoBianchi" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a><a href="https://www.linkedin.com/in/eduardo-bianchi-31bb76321/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div></div><div class="contact-actions"><a class="email-link" href="mailto:deveduardobianchi@gmail.com">deveduardobianchi@gmail.com <span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a><a class="phone-link" href="tel:+5567999969634"><span>Telefone</span><strong>+55 (67) 9 9996-9634</strong><span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a><a class="whatsapp-link" href="https://wa.me/5567999969634" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Eduardo no WhatsApp em nova aba">Conversar no WhatsApp <span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a><div class="contact-links"><button id="copy-email" class="copy-button" type="button" data-copied="false"><span class="sr-only">Copiar e-mail</span><span class="copy-button-states" aria-hidden="true"><span class="copy-button-state copy-button-idle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span>Copiar e-mail</span></span><span class="copy-button-state copy-button-success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span>E-mail copiado!</span></span></span></button></div><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span></div></div></div>
     </section>
   </main>
   <footer class="footer"><a class="footer-brand" href="#inicio" aria-label="Voltar ao início">EB<span>.</span></a><p><span class="footer-copyright">© <span id="year">2026</span> Eduardo Pires Bianchi</span><span class="footer-identity">Dourados, MS · <a href="mailto:deveduardobianchi@gmail.com">deveduardobianchi@gmail.com</a></span><span class="footer-legal"><a href="/privacidade/">Política de privacidade</a> · <a href="/termos/">Termos de uso</a></span></p><a href="#inicio">Voltar ao topo ↑</a></footer>
