@@ -55,6 +55,7 @@ window.PortfolioSwitch = {
     'Interface do FIO / tech': 'FIO / tech interface',
     'Política de privacidade': 'Privacy policy',
     'Termos de uso': 'Terms of use',
+    'Todos os direitos reservados.': 'All rights reserved.',
     'Tema da página': 'Page theme',
     'Usar tema claro': 'Use light theme',
     'Usar tema escuro': 'Use dark theme',

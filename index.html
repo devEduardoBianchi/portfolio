@@ -628,8 +628,12 @@ html{scroll-padding-top:74px}}
 @media(max-width:640px){.gallery-footer .action-link{justify-content:space-between}}
 :root[data-theme="dark"]{--paper:#03060d;--paper-2:#0a1020;--gallery-ground:#03060d;--contact-bg:#02050b;--dark:#02050b;--line:#1b263b;--gallery-rule:#1b263b}
 main>section:not(.hero){background-color:#0c111b;background-image:radial-gradient(ellipse 75vw 360px at var(--night-in-x) 0%,var(--night-in),transparent 100%),radial-gradient(ellipse 75vw 360px at var(--night-out-x) 100%,var(--night-out),transparent 100%);background-size:100% 100%;background-position:center;background-repeat:no-repeat;background-blend-mode:normal;border-top:0;border-bottom:0}
-html{scrollbar-width:none}
-html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none}
+html{scrollbar-width:thin;scrollbar-color:var(--blue) var(--paper)}
+html::-webkit-scrollbar{width:10px;height:10px}
+html::-webkit-scrollbar-track{background:var(--paper)}
+html::-webkit-scrollbar-thumb{background:var(--blue);border:2px solid var(--paper);border-radius:999px}
+html::-webkit-scrollbar-thumb:hover{background:#7a93ff}
+html::-webkit-scrollbar-corner{background:var(--paper)}
 main>section:not(.hero){position:relative;isolation:isolate}
 main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;height:auto;z-index:-1;border:0;pointer-events:none;background:url("assets/night-traces.svg") center top/1200px 1100px repeat;mask-image:none;opacity:.18}
 @media(max-width:640px){main>section:not(.hero)::before{background-size:800px 735px;opacity:.13}}
@@ -647,11 +651,13 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
 .mobile-safe-arrow svg{display:none;width:1em;height:1em;vertical-align:middle;flex-shrink:0}
 @media(max-width:640px){.mobile-safe-arrow .mobile-arrow-label{display:none}
 .mobile-safe-arrow svg{display:inline-block}}
+:root{--section-title-size:clamp(30px,4.1vw,66px);--section-title-leading:1.1}
+@media(max-width:640px){:root{--section-title-size:clamp(30px,6vw,38px);--section-title-leading:1.15}}
   </style>
   <!-- critical-css:end -->
-  <link rel="preload" as="style" href="style.css?v=20261105-mobile-arrows" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="style.css?v=20261105-mobile-arrows"></noscript>
-  <script src="language.js?v=20261104-gallery-summary" defer></script>
+  <link rel="preload" as="style" href="style.css?v=20261105-footer-gap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css?v=20261105-footer-gap"></noscript>
+  <script src="language.js?v=20261105-footer" defer></script>
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/accordion-gallery.js?v=20261103-single-link" defer></script>
   <script src="script.js?v=20261103-about-heading" defer></script>
@@ -793,7 +799,7 @@ main>section:not(.hero)::before{content:"";position:absolute;inset:0;width:auto;
       <div class="contact-inner"><div class="section-label"><span>04 / CONTATO</span><span>ABERTO A OPORTUNIDADES DE ESTÁGIO E TRABALHO</span></div><h2 id="contact-title">Gostou do que viu?<br><em>Entre em contato.</em></h2><div class="contact-bottom"><div class="contact-intro"><p>Estou aberto a oportunidades de estágio ou trabalho. Se quiser conversar sobre projetos, interfaces ou tecnologia, me escreva.</p><div class="contact-social"><a href="https://github.com/devEduardoBianchi" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a><a href="https://www.linkedin.com/in/eduardo-bianchi-31bb76321/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div></div><div class="contact-actions"><a class="email-link" href="mailto:deveduardobianchi@gmail.com">deveduardobianchi@gmail.com <span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a><a class="phone-link" href="tel:+5567999969634"><span>Telefone</span><strong>+55 (67) 9 9996-9634</strong><span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a><a class="whatsapp-link" href="https://wa.me/5567999969634" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Eduardo no WhatsApp em nova aba">Conversar no WhatsApp <span aria-hidden="true" class="mobile-safe-arrow"><i class="mobile-arrow-label">↗</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a><div class="contact-links"><button id="copy-email" class="copy-button" type="button" data-copied="false"><span class="sr-only">Copiar e-mail</span><span class="copy-button-states" aria-hidden="true"><span class="copy-button-state copy-button-idle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span>Copiar e-mail</span></span><span class="copy-button-state copy-button-success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span>E-mail copiado!</span></span></span></button></div><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span></div></div></div>
     </section>
   </main>
-  <footer class="footer"><a class="footer-brand" href="#inicio" aria-label="Voltar ao início">EB<span>.</span></a><p><span class="footer-copyright">© <span id="year">2026</span> Eduardo Pires Bianchi</span><span class="footer-identity">Dourados, MS · <a href="mailto:deveduardobianchi@gmail.com">deveduardobianchi@gmail.com</a></span><span class="footer-legal"><a href="/privacidade/">Política de privacidade</a> · <a href="/termos/">Termos de uso</a></span></p><a href="#inicio">Voltar ao topo ↑</a></footer>
+  <footer class="footer"><a class="footer-brand" href="#inicio" aria-label="Voltar ao início">EB<span>.</span></a><p><span class="footer-copyright">© <span id="year">2026</span> Eduardo Pires Bianchi</span><span class="footer-identity">Todos os direitos reservados.</span><span class="footer-legal"><a href="/privacidade/">Política de privacidade</a> · <a href="/termos/">Termos de uso</a></span></p><a href="#inicio">Voltar ao topo ↑</a></footer>
 </body>
 </html>
 
